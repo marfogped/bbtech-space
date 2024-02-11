@@ -1,0 +1,11 @@
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+.section-container {
+  @apply xs:w-[90%] sm:w-[90%] lg:w-[80%] mx-auto h-full;
+}
