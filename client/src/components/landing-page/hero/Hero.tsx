@@ -4,7 +4,7 @@ import { HeroImg } from "../../../lib/images";
 const Hero: React.FC = () => {
   return (
     <header className="w-full h-screen">
-      <div className="section-container grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-5 gap-5">
+      <div className="section-container container-grid">
         <div className="lg:col-span-3 flex xs:justify-end sm:justify-end md:justify-center flex-col gap-5">
           <div className="flex flex-col gap-5">
             <h1 className="xs:text-6xl sm:text-7xl lg:text-8xl font-vt323">
