@@ -135,25 +135,28 @@ const MatrixRain: React.FC = () => {
   const streamCount = containerSize ? Math.floor(containerSize.width / 26) : 0;
 
   return (
-    <div
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        bottom: 0,
-        right: 0,
-        overflow: "hidden",
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-        zIndex: -10,
-      }}
-      ref={containerRef}
-    >
-      {Array.from({ length: streamCount }, (_, i) => (
-        <RainStream key={i} height={containerSize?.height ?? 0} />
-      ))}
-    </div>
+    <>
+      <div className="fixed inset-0 bg-black/60 -z-[9]"></div>
+      <div
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          bottom: 0,
+          right: 0,
+          overflow: "hidden",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "center",
+          zIndex: -10,
+        }}
+        ref={containerRef}
+      >
+        {Array.from({ length: streamCount }, (_, i) => (
+          <RainStream key={i} height={containerSize?.height ?? 0} />
+        ))}
+      </div>
+    </>
   );
 };
 
