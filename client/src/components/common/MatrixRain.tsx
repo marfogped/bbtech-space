@@ -146,6 +146,7 @@ const MatrixRain: React.FC = () => {
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
+        zIndex: -10,
       }}
       ref={containerRef}
     >
