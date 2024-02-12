@@ -1,5 +1,6 @@
 import React from "react";
 import { AboutImg } from "../../../lib/images";
+import { SectionTag } from "../..";
 
 const About: React.FC = () => {
   return (
@@ -7,6 +8,7 @@ const About: React.FC = () => {
       <div className="section-container container-grid">
         <div className="lg:col-span-3 flex xs:justify-end sm:justify-end md:justify-center flex-col gap-5">
           <div className="flex flex-col gap-5">
+            <SectionTag index={1} label="About" />
             <h2 className="xs:text-5xl sm:text-5xl lg:text-6xl font-vt323 text-pretty">
               Building Your Digital Opportunity{" "}
               <span className="bg-purplePrimary w-max text-black">
