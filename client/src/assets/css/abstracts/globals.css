@@ -10,6 +10,10 @@
   @apply xs:w-[90%] sm:w-[90%] lg:w-[80%] mx-auto h-full;
 }
 
+.container-grid {
+  @apply grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-5 gap-5;
+}
+
 .flexCenter {
   @apply flex items-center justify-center;
 }
