@@ -1,4 +1,5 @@
 import { Hero, About, Navbar, MatrixRain } from "./components";
+import "./lib/i18n";
 
 function App() {
   return (
