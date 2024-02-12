@@ -1,4 +1,4 @@
-import { Hero, About, Navbar, MatrixRain } from "./components";
+import { Hero, About, Navbar, MatrixRain, Services } from "./components";
 import "./lib/i18n";
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
       <main>
         <Hero />
         <About />
+        <Services />
       </main>
     </>
   );
