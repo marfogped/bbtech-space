@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@use-it/interval": "1.0.0",
     "framer-motion": "11.0.3",
     "i18next": "23.8.2",
     "i18next-browser-languagedetector": "7.2.0",

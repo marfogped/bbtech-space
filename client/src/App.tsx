@@ -1,8 +1,9 @@
-import { Hero, About, Navbar } from "./components";
+import { Hero, About, Navbar, MatrixRain } from "./components";
 
 function App() {
   return (
     <>
+      <MatrixRain />
       <Navbar />
       <main>
         <Hero />
