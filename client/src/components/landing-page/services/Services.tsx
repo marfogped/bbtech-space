@@ -1,8 +1,17 @@
 import React from "react";
 import { SectionTag } from "../..";
 import ServiceCard from "./components/ServiceCard";
+import { useTranslation } from 'react-i18next';
 
 const Services: React.FC = () => {
+  const { t } = useTranslation('services');
+  const services: {
+    image: string;
+    title: string;
+    tag: string;
+    description: string;
+    btn: string;
+  }[] = t('services', { returnObjects: true });
   return (
     <section className="w-full h-screen">
       <div className="section-container container-grid">
@@ -10,18 +19,20 @@ const Services: React.FC = () => {
           <div className="flex flex-col items-center gap-5">
             <SectionTag index={2} label="Services" />
             <h2 className="xs:text-5xl sm:text-5xl lg:text-6xl text-center font-vt323 text-pretty">
-              Crafting Pathways to <br />
-              Connect Talent and{" "}
+              {t('title')}{" "}
               <span className="bg-purplePrimary block w-max mx-auto text-black">
-                Opportunities
+                {t('purple-word')}
               </span>{" "}
             </h2>
           </div>
         </div>
 
         <div className="col-span-full grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-5">
-          <ServiceCard />
-          <ServiceCard />
+          {
+            services.map((service, index) => (
+              <ServiceCard key={index} service={service} />
+            ))
+          }
         </div>
       </div>
     </section>

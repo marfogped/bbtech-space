@@ -1,0 +1,21 @@
+{
+    "title": "Creando Percorsi per Connettere Talento e",
+    "purple-word": "Opportunità",
+    "services": [
+        {
+            "image": "",
+            "title": "Scopri la Tua Prossima Opportunità Professionale",
+            "tag": "Per Lavoratori",
+            "description": "Nel panorama tecnologico in costante evoluzione, trovare il ruolo perfetto che si allinea con le tue abilità e aspirazioni può essere scoraggiante. Il nostro servizio di ricerca di opportunità è su misura per i professionisti IT che mirano a far avanzare la loro carriera. Ti connettiamo con aziende leader alla ricerca dei tuoi talenti unici, assicurando che la tua prossima mossa professionale sia un trionfo.",
+            "btn": "Inizia"
+        },
+        {
+            "image": "",
+            "title": "Trova il Talento di cui la tua Azienda ha Bisogno",
+            "tag": "Per Aziende",
+            "description": "Nel competitivo mondo dell'IT, il successo della tua azienda dipende dal talento che la guida. Il nostro servizio di pubblicazione di lavoro rende facile connettersi con professionisti altamente qualificati pronti a portare la tua attività al livello successivo. Siamo specializzati nella comprensione delle esigenze uniche della tua azienda per fornire candidati che soddisfano i requisiti tecnici e si integrano perfettamente nella tua cultura aziendale.",
+            "btn": "Inizia"
+        }
+    ]
+}
+  

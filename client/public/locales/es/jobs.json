@@ -1,0 +1,47 @@
+{
+    "title": "Oportunidades de Tecnología Elite",
+    "purple-word": "Esperan",
+    "jobs": [
+      {
+        "company": "Apple Inc.",
+        "companyIcon": "",
+        "areas": ["IA", "Software", "Aprendizaje Automático"],
+        "offices": 30,
+        "employees": 15000,
+        "jobs": 10
+      },
+      {
+        "company": "Netflix",
+        "companyIcon": "",
+        "areas": ["Software", "Servicios Profesionales"],
+        "offices": 15,
+        "employees": 5000,
+        "jobs": 64
+      },
+      {
+        "company": "Google Inc.",
+        "companyIcon": "",
+        "areas": ["IA", "Software", "Aprendizaje Automático"],
+        "offices": 50,
+        "employees": 25000,
+        "jobs": 12
+      },
+      {
+        "company": "Forbes",
+        "companyIcon": "",
+        "areas": ["Negocios", "Finanzas"],
+        "offices": 5,
+        "employees": 2000,
+        "jobs": 7
+      },
+      {
+        "company": "3M",
+        "companyIcon": "",
+        "areas": ["Negocios", "Finanzas"],
+        "offices": 10,
+        "employees": 2000,
+        "jobs": 2
+      }
+    ]
+  }
+  

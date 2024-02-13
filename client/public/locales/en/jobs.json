@@ -1,0 +1,46 @@
+{
+    "title": "Elite Tech Opportunities",
+    "purple-word": "Await",
+    "jobs": [
+        {
+            "company": "Apple Inc.",
+            "companyIcon" : "",
+            "areas": ["AI", "Software", "Machine Learning"],
+            "offices": 30,
+            "employees" : 15000,
+            "jobs" : 10
+        },
+        {
+            "company": "Netflix",
+            "companyIcon" : "",
+            "areas": ["Software", "Proffesional Services"],
+            "offices": 15,
+            "employees" : 5000,
+            "jobs" : 64
+        },
+        {
+            "company": "Google Inc.",
+            "companyIcon" : "",
+            "areas": ["AI", "Software", "Machine Learning"],
+            "offices": 50,
+            "employees" : 25000,
+            "jobs" : 12
+        },
+        {
+            "company": "Forbes",
+            "companyIcon" : "",
+            "areas": ["Business", "Finance"],
+            "offices": 5,
+            "employees" : 2000,
+            "jobs" : 7
+        },
+        {
+            "company": "3M",
+            "companyIcon" : "",
+            "areas": ["Business", "Finance"],
+            "offices": 10,
+            "employees" : 2000,
+            "jobs" : 2
+        }
+    ]
+}
