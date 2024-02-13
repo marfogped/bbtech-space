@@ -10,6 +10,7 @@ i18n
   .init({
     fallbackLng: "en",
     debug: true,
+    ns: ['navbar', 'hero', 'about', 'services', 'jobs'],
     interpolation: {
       escapeValue: false,
     },

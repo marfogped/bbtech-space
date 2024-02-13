@@ -2,13 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Logo } from "../../lib/images";
 import useWindowDimensions from "../../lib/useWindowDimensions";
 // import { ScrollTo } from "..";
-// import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 const Navbar: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [color, setColor] = useState<boolean>(false);
   const { windowWidth } = useWindowDimensions();
-  // const { t } = useTranslation();
+  const { t } = useTranslation('navbar');
 
   const openNav = () => {
     setIsActive(!isActive);
@@ -40,10 +40,10 @@ const Navbar: React.FC = () => {
 
         {windowWidth > 768 ? (
           <ul className="flex items-center gap-5 font-zenKaku text-xl">
-            <li>What We Do</li>
-            <li>Services</li>
-            <li>Jobs</li>
-            <li>Sponsors</li>
+            <li>{t('about')}</li>
+            <li>{t('services')}</li>
+            <li>{t('jobs')}</li>
+            <li>{t('sponsors')}</li>
           </ul>
         ) : (
           <div className="menu-toggle xs:flex sm:flex md:hidden">
