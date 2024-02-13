@@ -1,15 +1,30 @@
-import { Hero, About, Navbar, MatrixRain, Services } from "./components";
+import { Hero, About, Navbar, MatrixRain, Services, Jobs } from "./components";
 import "./lib/i18n";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 function App() {
+
+  const location = useLocation();
+
   return (
     <>
       <MatrixRain />
       <Navbar />
       <main>
-        <Hero />
-        <About />
-        <Services />
+      <Routes location={location} key={location.pathname}>
+        <Route 
+        index 
+        element={ 
+          <>
+            <Hero />
+            <About />
+            <Services />
+            <Jobs />
+          </>
+        } 
+        />
+        <Route path="*" element={ <div>Error</div>} />
+      </Routes>
       </main>
     </>
   );
