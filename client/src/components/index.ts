@@ -6,3 +6,4 @@ export { default as SectionTag } from "./common/SectionTag";
 export { default as Hero } from "./landing-page/hero/Hero";
 export { default as About } from "./landing-page/about/About";
 export { default as Services } from "./landing-page/services/Services";
+export { default as Jobs } from "./landing-page/jobs/Jobs";

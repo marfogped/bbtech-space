@@ -18,6 +18,22 @@
   @apply flex items-center justify-center;
 }
 
+/* ====== SWIPER ====== */
+
+.swiper {
+  width: 100%;
+  height: max-content;
+}
+
+.swiper-slide {
+  text-align: center;
+  background: rgba(20,20,20, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* ====== NAVBAR MENU ====== */
 #menu-toggle-btn {
   display: flex;
