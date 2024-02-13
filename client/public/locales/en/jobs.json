@@ -8,7 +8,8 @@
             "areas": ["AI", "Software", "Machine Learning"],
             "offices": 30,
             "employees" : 15000,
-            "jobs" : 10
+            "jobs" : 10,
+            "btn": "Jobs"
         },
         {
             "company": "Netflix",
@@ -16,7 +17,8 @@
             "areas": ["Software", "Proffesional Services"],
             "offices": 15,
             "employees" : 5000,
-            "jobs" : 64
+            "jobs" : 64,
+            "btn": "Jobs"
         },
         {
             "company": "Google Inc.",
@@ -24,7 +26,8 @@
             "areas": ["AI", "Software", "Machine Learning"],
             "offices": 50,
             "employees" : 25000,
-            "jobs" : 12
+            "jobs" : 12,
+            "btn": "Jobs"
         },
         {
             "company": "Forbes",
@@ -32,7 +35,8 @@
             "areas": ["Business", "Finance"],
             "offices": 5,
             "employees" : 2000,
-            "jobs" : 7
+            "jobs" : 7,
+            "btn": "Jobs"
         },
         {
             "company": "3M",
@@ -40,7 +44,8 @@
             "areas": ["Business", "Finance"],
             "offices": 10,
             "employees" : 2000,
-            "jobs" : 2
+            "jobs" : 2,
+            "btn": "Jobs"
         }
     ]
 }
