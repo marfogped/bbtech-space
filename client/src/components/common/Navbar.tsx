@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Logo } from "../../lib/images";
+import { LanguageSelector } from "..";
 import useWindowDimensions from "../../lib/useWindowDimensions";
 // import { ScrollTo } from "..";
 import { useTranslation } from 'react-i18next';
@@ -39,12 +40,16 @@ const Navbar: React.FC = () => {
         </div>
 
         {windowWidth > 768 ? (
-          <ul className="flex items-center gap-5 font-zenKaku text-xl">
-            <li>{t('about')}</li>
-            <li>{t('services')}</li>
-            <li>{t('jobs')}</li>
-            <li>{t('sponsors')}</li>
-          </ul>
+          <div className="flex items-center gap-4">
+            <ul className="flex items-center gap-5 font-zenKaku text-xl">
+              <li>{t('about')}</li>
+              <li>{t('services')}</li>
+              <li>{t('jobs')}</li>
+              <li>{t('sponsors')}</li>
+            </ul>
+
+            <LanguageSelector />
+          </div>
         ) : (
           <div className="menu-toggle xs:flex sm:flex md:hidden">
             <div
