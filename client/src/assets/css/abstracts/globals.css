@@ -34,6 +34,21 @@
   align-items: center;
 }
 
+.testimonial-card{
+  background: rgba(20,20,20, 0.7);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  transition: box-shadow .3s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.testimonial-card:hover{
+  box-shadow: 0px 5px 10px 0px rgba(154, 17, 217,0.5);
+}
+
 /* ====== NAVBAR MENU ====== */
 #menu-toggle-btn {
   display: flex;

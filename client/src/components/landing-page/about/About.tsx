@@ -7,7 +7,7 @@ import { useTranslation } from 'react-i18next';
 const About: React.FC = () => {
   const { t } = useTranslation('about');
   return (
-    <section className="w-full h-screen">
+    <section className="w-full h-max py-24">
       <div className="section-container container-grid">
         <div className="lg:col-span-3 flex xs:justify-end sm:justify-end md:justify-center flex-col gap-5">
           <div className="flex flex-col gap-5">
