@@ -6,6 +6,7 @@ import {
     FacebookIcon, 
     MapPinned
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const WhatsAppIcon = () => {
     return (
@@ -35,6 +36,8 @@ const WhatsAppIcon = () => {
 }
 
 const Footer: React.FC = () => {
+    const { t } = useTranslation('footer');
+
   return (
     <footer className='w-full h-max bg-bkgGray rounded-t-[3rem] mt-24'>
         <div className="section-container">
@@ -48,11 +51,11 @@ const Footer: React.FC = () => {
                 </div>
 
                 <div className='col-span-4 items-center justify-start xs:hidden sm:hidden lg:flex'>
-                    <h3 className='font-vt323 text-5xl'>Our Offices</h3>
+                    <h3 className='font-vt323 text-5xl'>{t('our-offices')}</h3>
                 </div>
 
                 <div className='col-span-1 flex items-center justify-start xs:hidden sm:hidden lg:flex'>
-                    <h3 className='font-vt323 text-5xl'>Contact</h3>
+                    <h3 className='font-vt323 text-5xl'>{t('contact')}</h3>
                 </div>
             </header>
 
@@ -76,7 +79,7 @@ const Footer: React.FC = () => {
                     
                     <div className='flex flex-col items-start justify-start gap-4'>
                         <div className='flex items-center gap-2 font-zenKaku text-2xl font-semibold'>
-                            <MapPinned size={32} /> Italy
+                            <MapPinned size={32} /> {t('italy')}
                         </div>
                         <div className='flex items-center gap-2 font-zenKaku text-lg'>
                             Corso Stati Uniti, 38
@@ -90,7 +93,7 @@ const Footer: React.FC = () => {
                     
                     <div className='flex flex-col items-start justify-start gap-4'>
                         <div className='flex items-center gap-2 font-zenKaku text-2xl font-semibold'>
-                            <MapPinned size={32} /> Spain
+                            <MapPinned size={32} /> {t('spain')}
                         </div>
                         <div className='flex items-center gap-2 font-zenKaku text-lg'>
                             P.º de la Pechina, 72
@@ -102,7 +105,7 @@ const Footer: React.FC = () => {
                     
                     <div className='flex flex-col items-start justify-start gap-4'>
                         <div className='flex items-center gap-2 font-zenKaku text-2xl font-semibold'>
-                            <MapPinned size={32} /> England
+                            <MapPinned size={32} /> {t('england')}
                         </div>
                         <div className='flex items-center gap-2 font-zenKaku text-lg'>
                             172-180 Newhall St
@@ -117,7 +120,7 @@ const Footer: React.FC = () => {
                 <div className='col-span-1 flex flex-col items-start justify-start'>
                     <div className='flex flex-col items-start justify-start gap-4'>
                         <div className='flex items-center gap-2 font-zenKaku text-2xl font-semibold'>
-                            <MapPinned size={32} /> For Companies
+                            <MapPinned size={32} /> {t('for-companies')}
                         </div>
                         <div className='flex items-center gap-2 font-zenKaku text-lg'>
                             barbi@bbtech.space
@@ -126,7 +129,7 @@ const Footer: React.FC = () => {
 
                     <div className='flex flex-col items-start justify-start gap-4 mt-4'>
                         <div className='flex items-center gap-2 font-zenKaku text-2xl font-semibold'>
-                            <MapPinned size={32} /> For Workers
+                            <MapPinned size={32} /> {t('for-workers')}
                         </div>
                         <div className='flex items-center gap-2 font-zenKaku text-lg'>
                             cv@bbtech.space
@@ -140,13 +143,13 @@ const Footer: React.FC = () => {
         <div className='w-full py-2 bg-purplePrimary'>
             <div className="section-container flex xs:flex-col sm:flex-col lg:flex-row items-center justify-between">
                 <div>
-                    <p>© 2024 All Rights Reserved.</p>
+                    <p>{t('copy')}</p>
                 </div>
 
                 <ul className='flex items-center xs:pt-4 sm:pt-4 lg:pt-0 lg:gap-16 xs:flex-col sm:flex-col lg:flex-row'>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="">FAQ</a></li>
+                    <li><a href="#">{t('terms')}</a></li>
+                    <li><a href="#">{t('privacy')}</a></li>
+                    <li><a href="#">{t('faq')}</a></li>
                 </ul>
             </div>
         </div>
