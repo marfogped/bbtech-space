@@ -11,7 +11,7 @@ const About: React.FC = () => {
       <div className="section-container container-grid">
         <div className="lg:col-span-3 flex xs:justify-end sm:justify-end md:justify-center flex-col gap-5">
           <div className="flex flex-col gap-5">
-            <SectionTag index={1} label="About" />
+            <SectionTag index={1} label={t('tag-label')} />
             <h2 className="xs:text-5xl sm:text-5xl lg:text-6xl font-vt323 text-pretty">
               {t('title')}{" "}
               <span className="bg-purplePrimary w-max text-black">
