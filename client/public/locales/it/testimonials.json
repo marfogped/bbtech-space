@@ -1,0 +1,80 @@
+{
+    "title": "Perché si Fidano",
+    "purple-word": "di Noi",
+    "tag-label": "Testimonianze",
+    "testimonials": [
+      {
+        "_id": "1",
+        "username": "JaneDoe",
+        "userIcon": "https://github.com/shadcn.png",
+        "description": "Servizio incredibile! Vanno davvero oltre per garantire la soddisfazione del cliente.",
+        "testimonialLink": "https://example.com/janedoe/testimonial",
+        "socialMedia": "Twitter",
+        "btn": "Vedi Post"
+      },
+      {
+        "_id": "2",
+        "username": "JohnSmith",
+        "userIcon": "https://github.com/shadcn.png",
+        "description": "Sono rimasto completamente impressionato dalla professionalità e qualità del lavoro. Altamente raccomandato!",
+        "testimonialLink": "https://example.com/johnsmith/testimonial",
+        "socialMedia": "LinkedIn",
+        "btn": "Vedi Post"
+      },
+      {
+        "_id": "3",
+        "username": "AlexBrown",
+        "userIcon": "https://github.com/shadcn.png",
+        "description": "La loro attenzione ai dettagli è senza pari. Sicuramente il miglior servizio che abbia mai utilizzato.",
+        "testimonialLink": "https://example.com/alexbrown/testimonial",
+        "socialMedia": "Facebook",
+        "btn": "Vedi Post"
+      },
+      {
+        "_id": "4",
+        "username": "EmmaGreen",
+        "userIcon": "https://github.com/shadcn.png",
+        "description": "Il team è stato incredibilmente reattivo e la loro competenza era evidente fin dall'inizio. Non potrei essere più felice!",
+        "testimonialLink": "https://example.com/emmagreen/testimonial",
+        "socialMedia": "Instagram",
+        "btn": "Vedi Post"
+      },
+      {
+        "_id": "5",
+        "username": "MikeJohnson",
+        "userIcon": "https://github.com/shadcn.png",
+        "description": "Dall'inizio alla fine, il processo è stato fluido e i risultati hanno superato le mie aspettative. Servizio A++!",
+        "testimonialLink": "https://example.com/mikejohnson/testimonial",
+        "socialMedia": "Instagram",
+        "btn": "Vedi Post"
+      },
+      {
+        "_id": "6",
+        "username": "SaraMiller",
+        "userIcon": "https://github.com/shadcn.png",
+        "description": "Ho apprezzato l'attenzione personalizzata che ho ricevuto. È raro trovare fornitori di servizi così dedicati.",
+        "testimonialLink": "https://example.com/saramiller/testimonial",
+        "socialMedia": "Twitter",
+        "btn": "Vedi Post"
+      },
+      {
+        "_id": "7",
+        "username": "DavidWilson",
+        "userIcon": "https://github.com/shadcn.png",
+        "description": "Il loro lavoro è di prim'ordine e il personale è amichevole e competente. Sono profondamente impressionato!",
+        "testimonialLink": "https://example.com/davidwilson/testimonial",
+        "socialMedia": "LinkedIn",
+        "btn": "Vedi Post"
+      },
+      {
+        "_id": "8",
+        "username": "LilyAnderson",
+        "userIcon": "https://github.com/shadcn.png",
+        "description": "Non ho mai sperimentato un servizio così fluido ed efficace. Capiscono veramente le esigenze dei loro clienti.",
+        "testimonialLink": "https://example.com/lilyanderson/testimonial",
+        "socialMedia": "Facebook",
+        "btn": "Vedi Post"
+      }
+    ]
+  }
+  
