@@ -1,4 +1,4 @@
-import { Hero, About, Navbar, MatrixRain, Services, Jobs, Testimonials } from "./components";
+import { Hero, About, Navbar, MatrixRain, Services, Jobs, Testimonials, Footer } from "./components";
 import "./lib/i18n";
 import { Route, Routes, useLocation } from "react-router-dom";
 
@@ -21,6 +21,7 @@ function App() {
             <Services />
             <Jobs />
             <Testimonials />
+            <Footer />
           </>
         } 
         />
