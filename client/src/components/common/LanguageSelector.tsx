@@ -13,9 +13,9 @@ const LanguageSelector: React.FC = () => {
     className="border font-zenKaku text-sm block w-auto p-2.5 bg-bkgBlack border-bkgGray placeholder-gray-400 text-white focus:ring-purplePrimary focus:border-purplePrimary"
     onChange={changeLanguage} defaultValue={i18n.language}
     >
-      <option value="es">Español</option>
-      <option value="en">English</option>
-      <option value="it">Italiano</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="en">🇬🇧 English</option>
+      <option value="it">🇮🇹 Italiano</option>
     </select>
   );
 };

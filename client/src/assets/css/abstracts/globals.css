@@ -62,15 +62,6 @@
   z-index: 10000;
 }
 
-#menu-toggle-btn .black {
-  height: 2px;
-  background: #000;
-  width: 40px;
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  transition: all 0.3s;
-}
 #menu-toggle-btn .white {
   height: 2px;
   background: #f5f5f5;
