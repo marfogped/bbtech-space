@@ -41,7 +41,7 @@ const Jobs: React.FC = () => {
                     <Link 
                     to={"/jobs"} 
                     className='text-neutral underline font-zenKaku text-xl'>
-                        See All Jobs
+                        {t('all-jobs')}
                     </Link>
                 </div>
                 <Swiper
@@ -90,7 +90,7 @@ const Jobs: React.FC = () => {
                                                     <li className='text-neutral/90'>
                                                         {area}
                                                     </li>
-                                                    {areaIdx < job.areas.length - 1 && <span>-</span>} {/* Agrega un guion después de cada elemento excepto el último */}
+                                                    {areaIdx < job.areas.length - 1 && <span>-</span>}
                                                     </React.Fragment>
                                                 ))}
                                             </ul>
@@ -98,8 +98,8 @@ const Jobs: React.FC = () => {
                                     </div>
 
                                     <div className='mt-10 flex flex-col flex-grow'>
-                                        <p className='font-lato text-lg font-zenKaku text-start text-neutral/90'>{job.employees} Employees</p>
-                                        <p className='font-lato text-lg font-zenKaku text-start text-neutral/90'>{job.offices} Offices</p>
+                                        <p className='font-lato text-lg font-zenKaku text-start text-neutral/90'>{job.employees} {t('employees')}</p>
+                                        <p className='font-lato text-lg font-zenKaku text-start text-neutral/90'>{job.offices} {t('offices')}</p>
                                     </div>
 
                                     <div className='pt-4'>

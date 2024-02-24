@@ -2,6 +2,9 @@
     "title": "Elite Tech Opportunities",
     "tag-label" : "Jobs",
     "purple-word": "Await",
+    "all-jobs" : "See All Jobs",
+    "employees": "Employees",
+    "offices": "Offices",
     "jobs": [
         {
             "company": "Apple Inc.",

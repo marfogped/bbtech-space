@@ -2,6 +2,9 @@
     "title": "Opportunità di Tecnologia Elite",
     "tag-label" : "Lavori",
     "purple-word": "Attesa",
+    "employees": "Dipendenti",
+    "offices": "Uffici",
+    "all-jobs" : "Vedi tutti i lavori",
     "jobs": [
       {
         "company": "Apple Inc.",

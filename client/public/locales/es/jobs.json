@@ -1,6 +1,9 @@
 {
     "title": "Oportunidades de Tecnología Elite",
     "tag-label" : "Trabajos",
+    "all-jobs" : "Ver Todos los Trabajos",
+    "employees": "Empleados",
+    "offices": "Oficinas",
     "purple-word": "Esperan",
     "jobs": [
       {
