@@ -13,7 +13,7 @@ const Services: React.FC = () => {
     btn: string;
   }[] = t('services', { returnObjects: true });
   return (
-    <section className="w-full h-max py-24">
+    <section className="w-full h-max py-24" id="services">
       <div className="section-container container-grid">
         <div className="col-span-full flex xs:justify-end sm:justify-end md:justify-center flex-col gap-5">
           <div className="flex flex-col items-center gap-5">

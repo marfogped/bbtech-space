@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Logo } from "../../lib/images";
-import { LanguageSelector } from "..";
+import { LanguageSelector, ScrollTo } from "..";
 import useWindowDimensions from "../../lib/useWindowDimensions";
-// import { ScrollTo } from "..";
 import { useTranslation } from 'react-i18next';
 
 const Navbar: React.FC = () => {
@@ -42,10 +41,21 @@ const Navbar: React.FC = () => {
         {windowWidth > 768 ? (
           <div className="flex items-center gap-4">
             <ul className="flex items-center gap-5 font-zenKaku text-xl">
-              <li>{t('about')}</li>
-              <li>{t('services')}</li>
-              <li>{t('jobs')}</li>
-              <li>{t('sponsors')}</li>
+              <li>
+                <ScrollTo id="about">
+                  {t('about')}
+                </ScrollTo>
+              </li>
+              <li>
+                <ScrollTo id="services">
+                  {t('services')}
+                </ScrollTo>
+              </li>
+              <li>
+                <ScrollTo id="jobs">
+                  {t('jobs')}
+                </ScrollTo>
+              </li>
             </ul>
 
             <LanguageSelector />
@@ -57,7 +67,7 @@ const Navbar: React.FC = () => {
               id="menu-toggle-btn"
               className={isActive ? "active" : ""}
             >
-              <span className={color ? "black" : "white"}></span>
+              <span className={"white"}></span>
             </div>
           </div>
         )}
