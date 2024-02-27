@@ -8,7 +8,7 @@
     "testimonials": [
       {
         "_id": "1",
-        "username": "JaneDoe",
+        "username": "Jane Doe",
         "userIcon": "https://github.com/shadcn.png",
         "description": "Servizio incredibile! Vanno davvero oltre per garantire la soddisfazione del cliente.",
         "testimonialLink": "https://example.com/janedoe/testimonial",
@@ -17,7 +17,7 @@
       },
       {
         "_id": "2",
-        "username": "JohnSmith",
+        "username": "John Smith",
         "userIcon": "https://github.com/shadcn.png",
         "description": "Sono rimasto completamente impressionato dalla professionalità e qualità del lavoro. Altamente raccomandato!",
         "testimonialLink": "https://example.com/johnsmith/testimonial",
@@ -26,7 +26,7 @@
       },
       {
         "_id": "3",
-        "username": "AlexBrown",
+        "username": "Alex Brown",
         "userIcon": "https://github.com/shadcn.png",
         "description": "La loro attenzione ai dettagli è senza pari. Sicuramente il miglior servizio che abbia mai utilizzato.",
         "testimonialLink": "https://example.com/alexbrown/testimonial",
@@ -35,7 +35,7 @@
       },
       {
         "_id": "4",
-        "username": "EmmaGreen",
+        "username": "Emma Green",
         "userIcon": "https://github.com/shadcn.png",
         "description": "Il team è stato incredibilmente reattivo e la loro competenza era evidente fin dall'inizio. Non potrei essere più felice!",
         "testimonialLink": "https://example.com/emmagreen/testimonial",
@@ -44,7 +44,7 @@
       },
       {
         "_id": "5",
-        "username": "MikeJohnson",
+        "username": "Mike Johnson",
         "userIcon": "https://github.com/shadcn.png",
         "description": "Dall'inizio alla fine, il processo è stato fluido e i risultati hanno superato le mie aspettative. Servizio A++!",
         "testimonialLink": "https://example.com/mikejohnson/testimonial",
@@ -53,7 +53,7 @@
       },
       {
         "_id": "6",
-        "username": "SaraMiller",
+        "username": "Sara Miller",
         "userIcon": "https://github.com/shadcn.png",
         "description": "Ho apprezzato l'attenzione personalizzata che ho ricevuto. È raro trovare fornitori di servizi così dedicati.",
         "testimonialLink": "https://example.com/saramiller/testimonial",
@@ -62,7 +62,7 @@
       },
       {
         "_id": "7",
-        "username": "DavidWilson",
+        "username": "David Wilson",
         "userIcon": "https://github.com/shadcn.png",
         "description": "Il loro lavoro è di prim'ordine e il personale è amichevole e competente. Sono profondamente impressionato!",
         "testimonialLink": "https://example.com/davidwilson/testimonial",
@@ -71,7 +71,7 @@
       },
       {
         "_id": "8",
-        "username": "LilyAnderson",
+        "username": "Lily Anderson",
         "userIcon": "https://github.com/shadcn.png",
         "description": "Non ho mai sperimentato un servizio così fluido ed efficace. Capiscono veramente le esigenze dei loro clienti.",
         "testimonialLink": "https://example.com/lilyanderson/testimonial",
