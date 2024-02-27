@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { SectionTag } from '../..';
 import { 
@@ -7,8 +7,11 @@ import {
   FacebookIcon, 
   TwitterIcon 
 } from 'lucide-react';
+import useWindowDimensions from '../../../lib/useWindowDimensions';
 
 const Testimonials: React.FC = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const { windowWidth } = useWindowDimensions();
   const { t } = useTranslation('testimonials');
 
   const testimonials: {
@@ -35,7 +38,7 @@ const Testimonials: React.FC = () => {
           </h2>
         </div>
         
-        <div className='grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-12'>
+        <div className={`grid xs:grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-12 ${windowWidth < 768 && !isExpanded ? 'h-screen overflow-hidden' : 'h-auto'} `}>
           {
             testimonials.map((testimonial) => (
               <article 
@@ -79,6 +82,14 @@ const Testimonials: React.FC = () => {
             ))
           }
         </div>
+        {windowWidth < 768 && (
+          <button 
+            onClick={() => setIsExpanded(!isExpanded)} 
+            className="w-full py-2 text-center font-semibold text-neutral/80 hover:text-neutral transition-colors duration-200 underline text-xl mt-6"
+          >
+            { isExpanded ? t('see-less') : t('see-more')}
+          </button>
+        )}
       </div>
     </section>
   )

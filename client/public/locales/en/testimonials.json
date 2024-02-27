@@ -2,6 +2,8 @@
     "title": "Because They Trust",
     "purple-word": "Us",
     "tag-label" : "Testimonials",
+    "see-more": "Show More",
+    "see-less": "Show Less",
     "testimonials": [
         {
             "_id": "1",
