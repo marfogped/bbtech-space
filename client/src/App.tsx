@@ -1,4 +1,4 @@
-import { Hero, About, Navbar, MatrixRain, Services, Jobs, Testimonials, Footer } from "./components";
+import { Hero, About, Navbar, MatrixRain, Services, Jobs, Testimonials, Footer, InitialTransition } from "./components";
 import "./lib/i18n";
 import { Route, Routes, useLocation } from "react-router-dom";
 
@@ -16,6 +16,7 @@ function App() {
         index 
         element={ 
           <>
+            <InitialTransition />
             <Hero />
             <About />
             <Services />
