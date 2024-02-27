@@ -1,6 +1,11 @@
-import { Hero, About, Navbar, MatrixRain, Services, Jobs, Testimonials, Footer, InitialTransition } from "./components";
-import "./lib/i18n";
+import { LandingPage, MatrixRain, Navbar } from "./components";
 import { Route, Routes, useLocation } from "react-router-dom";
+import "./lib/i18n";
+
+const routes = [
+  { path: "/", element: <LandingPage /> },
+  { path: "*", element: <div>Error</div> },
+];
 
 function App() {
 
@@ -12,21 +17,13 @@ function App() {
       <Navbar />
       <main>
       <Routes location={location} key={location.pathname}>
-        <Route 
-        index 
-        element={ 
-          <>
-            <InitialTransition />
-            <Hero />
-            <About />
-            <Services />
-            <Jobs />
-            <Testimonials />
-            <Footer />
-          </>
-        } 
-        />
-        <Route path="*" element={ <div>Error</div>} />
+        {routes.map((route, index) => (
+          <Route
+            key={index}
+            path={route.path}
+            element={route.element}
+          />
+        ))}
       </Routes>
       </main>
     </>
