@@ -1,9 +1,13 @@
-import React from "react";
-import { HeroImg } from "../../../lib/images";
+import React, { Suspense } from "react";
+import Spline from '@splinetool/react-spline';
 import { useTranslation } from 'react-i18next';
+import { Satelite1 } from "../../../lib/images";
+import { TypeWritterEffect } from "../.."
 
 const Hero: React.FC = () => {
   const { t } = useTranslation('hero');
+
+  const texts = [t('purple-word'), t('purple-word-second')];
 
   return (
     <header className="w-full h-screen">
@@ -12,9 +16,7 @@ const Hero: React.FC = () => {
           <div className="flex flex-col gap-5 xs:pt-16 sm:pt-16 lg:pt-0">
             <h1 className="xs:text-6xl sm:text-7xl lg:text-8xl font-vt323">
               {t('title')}{" "}
-              <span className="bg-purplePrimary block w-max text-black">
-                {t('purple-word')}
-              </span>{" "}
+              <TypeWritterEffect texts={texts} typingSpeed={100} deletingSpeed={100} />
             </h1>
             <p className="xs:text-xl sm:text-xl md:text-2xl font-zenKaku text-balance text-neutral/90">
               {t('description')}
@@ -31,8 +33,18 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="lg:col-span-2 flexCenter">
-          <img src={HeroImg} alt="hero image" className="w-full h-auto" />
+        <div className="lg:col-span-2 relative flexCenter overflow-hidden group">
+          <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flexCenter">
+            <img 
+            src={Satelite1} 
+            alt={"Satelite image"} 
+            className="w-[60%] h-auto group-hover:-translate-y-10 group-hover:scale-150 opacity-50 group-hover:opacity-100 transition duration-150 group-hover:drop-shadow-[0_35px_35px_rgba(154,17,217,0.80)]"
+            />
+          </div>
+
+          <Suspense>
+            <Spline scene="https://prod.spline.design/9vcpFirxkk4xMJe4/scene.splinecode" />
+          </Suspense>
         </div>
       </div>
     </header>

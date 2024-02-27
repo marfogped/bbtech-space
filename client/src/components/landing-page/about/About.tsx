@@ -1,11 +1,12 @@
 import React from "react";
 import { AboutImg } from "../../../lib/images";
-import { SectionTag } from "../..";
+import { SectionTag, TypeWritterEffect } from "../..";
 import { useTranslation } from 'react-i18next';
-
 
 const About: React.FC = () => {
   const { t } = useTranslation('about');
+  const texts = [t('purple-word'), t('purple-word-second')];
+  
   return (
     <section className="w-full h-max py-24" id="about">
       <div className="section-container container-grid">
@@ -14,9 +15,7 @@ const About: React.FC = () => {
             <SectionTag index={1} label={t('tag-label')} />
             <h2 className="xs:text-5xl sm:text-5xl lg:text-6xl font-vt323 text-pretty">
               {t('title')}{" "}
-              <span className="bg-purplePrimary w-max text-black">
-                {t('purple-word')}
-              </span>{" "}
+              <TypeWritterEffect texts={texts} typingSpeed={100} deletingSpeed={100} />
             </h2>
             <p className="xs:text-xl sm:text-xl md:text-2xl font-zenKaku text-balance text-neutral/90">
               {t('description-1')}

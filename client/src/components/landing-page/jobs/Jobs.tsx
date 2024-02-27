@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { SectionTag } from '../..';
+import { SectionTag, TypeWritterEffect } from '../..';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -10,6 +10,8 @@ import { Link } from "react-router-dom";
 const Jobs: React.FC = () => {
     const swiperRef = useRef(null);
     const { t } = useTranslation('jobs');
+    const texts = [t('purple-word'), t('purple-word-second')];
+
     
     const jobs: {
         company: string;
@@ -27,11 +29,9 @@ const Jobs: React.FC = () => {
             <div className="col-span-full flex xs:justify-end sm:justify-end md:justify-center flex-col gap-5">
                 <div className="flex flex-col items-center gap-5">
                 <SectionTag index={3} label={t('tag-label')} />
-                <h2 className="xs:text-5xl sm:text-5xl lg:text-6xl text-center font-vt323 text-pretty">
+                <h2 className="xs:text-5xl sm:text-5xl lg:text-6xl text-center font-vt323 text-pretty flex flex-col items-center">
                     {t('title')}{" "}
-                    <span className="bg-purplePrimary block w-max mx-auto text-black">
-                        {t('purple-word')}
-                    </span>{" "}
+                    <TypeWritterEffect texts={texts} typingSpeed={100} deletingSpeed={100} />
                 </h2>
                 </div>
             </div>
@@ -79,7 +79,7 @@ const Jobs: React.FC = () => {
                                         <img 
                                         src={job.companyIcon} 
                                         alt={job.company}
-                                        className='h-16 w-16 bg-purplePrimary rounded-full'
+                                        className='h-16 w-auto'
                                         />
 
                                         <div className='pt-4'>
