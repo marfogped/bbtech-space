@@ -4,6 +4,7 @@ export { default as ScrollTo } from "./common/ScrollTo";
 export { default as SectionTag } from "./common/SectionTag";
 export { default as Footer } from "./common/Footer";
 export { default as LanguageSelector } from "./common/LanguageSelector";
+export { default as TypeWritterEffect } from "./common/TypeWritterEffect";
 
 export { default as Hero } from "./landing-page/hero/Hero";
 export { default as About } from "./landing-page/about/About";
