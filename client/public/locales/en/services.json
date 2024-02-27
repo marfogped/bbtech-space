@@ -1,17 +1,18 @@
 {
-    "title": "rafting Pathways to Connect Talent and",
+    "title": "Crafting Pathways to Connect Talent and",
     "tag-label" : "Services",
     "purple-word": "Opportunities",
+    "purple-word-second": "Prospects",
     "services" : [
         {
-            "image" : "",
             "title" : "Discover Your Next Professional Opportunity",
             "tag" : "For Workers",
             "description" : "In the ever-changing tech landscape, finding the perfect role that aligns with your skills and aspirations can be daunting. Our opportunity search service is tailored for IT professionals aiming to advance their careers. We connect you with leading companies in search of your unique talents, ensuring your next career move is a triumph.",
-            "btn" : "Get Started"
+            "btn" : "Get Started",
+            "splineModelUrl" : "https://prod.spline.design/tSr2NMpjyGSv3ASj/scene.splinecode"
         },
         {
-            "image" : "",
+            "splineModelUrl" : "https://prod.spline.design/t0ch-apdUu834t5R/scene.splinecode",
             "title" : "Find the Talent your Company Needs",
             "tag" : "For Companies",
             "description" : "In the competitive IT world, your company's success hinges on the talent driving it. Our job posting service makes it easy to connect with highly qualified professionals ready to take your business to the next level. We specialize in understanding your company's unique needs to provide candidates who meet technical requirements and fit seamlessly into your corporate culture.",

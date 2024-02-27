@@ -2,16 +2,17 @@
     "title": "Creando Caminos para Conectar Talento y",
     "tag-label" : "Servicios",
     "purple-word": "Oportunidades",
+    "purple-word-second": "Prospectos",
     "services": [
         {
-            "image": "",
+            "splineModelUrl" : "https://prod.spline.design/tSr2NMpjyGSv3ASj/scene.splinecode",
             "title": "Descubre Tu Próxima Oportunidad Profesional",
             "tag": "Para Trabajadores",
             "description": "En el panorama tecnológico en constante cambio, encontrar el rol perfecto que se alinee con tus habilidades y aspiraciones puede ser desalentador. Nuestro servicio de búsqueda de oportunidades está diseñado para profesionales de TI que buscan avanzar en sus carreras. Te conectamos con empresas líderes en busca de tus talentos únicos, asegurando que tu próximo movimiento profesional sea un triunfo.",
             "btn": "Empezar"
         },
         {
-            "image": "",
+            "splineModelUrl" : "https://prod.spline.design/t0ch-apdUu834t5R/scene.splinecode",
             "title": "Encuentra el Talento que tu Empresa Necesita",
             "tag": "Para Empresas",
             "description": "En el competitivo mundo de la TI, el éxito de tu empresa depende del talento que la impulsa. Nuestro servicio de publicación de empleos facilita la conexión con profesionales altamente calificados listos para llevar tu negocio al siguiente nivel. Nos especializamos en entender las necesidades únicas de tu empresa para proporcionar candidatos que cumplan con los requisitos técnicos y se integren sin problemas en tu cultura corporativa.",

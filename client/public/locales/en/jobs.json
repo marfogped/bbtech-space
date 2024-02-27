@@ -2,13 +2,14 @@
     "title": "Elite Tech Opportunities",
     "tag-label" : "Jobs",
     "purple-word": "Await",
+    "purple-word-second": "Are Looking For You",
     "all-jobs" : "See All Jobs",
     "employees": "Employees",
     "offices": "Offices",
     "jobs": [
         {
             "company": "Apple Inc.",
-            "companyIcon" : "",
+            "companyIcon" : "https://cdn3.iconfinder.com/data/icons/picons-social/57/16-apple-512.png",
             "areas": ["AI", "Software", "Machine Learning"],
             "offices": 30,
             "employees" : 15000,
@@ -17,7 +18,7 @@
         },
         {
             "company": "Netflix",
-            "companyIcon" : "",
+            "companyIcon" : "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/227_Netflix_logo-512.png",
             "areas": ["Software", "Proffesional Services"],
             "offices": 15,
             "employees" : 5000,
@@ -26,7 +27,7 @@
         },
         {
             "company": "Google Inc.",
-            "companyIcon" : "",
+            "companyIcon" : "https://cdn-icons-png.flaticon.com/512/2504/2504739.png",
             "areas": ["AI", "Software", "Machine Learning"],
             "offices": 50,
             "employees" : 25000,
@@ -35,7 +36,7 @@
         },
         {
             "company": "Forbes",
-            "companyIcon" : "",
+            "companyIcon" : "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Forbes_logo.svg/640px-Forbes_logo.svg.png",
             "areas": ["Business", "Finance"],
             "offices": 5,
             "employees" : 2000,
@@ -44,7 +45,7 @@
         },
         {
             "company": "3M",
-            "companyIcon" : "",
+            "companyIcon" : "https://www.eng.ufl.edu/nimet/wp-content/uploads/sites/52/2021/10/3M-Logo-PNG-Clipart.png",
             "areas": ["Business", "Finance"],
             "offices": 10,
             "employees" : 2000,
