@@ -27,7 +27,7 @@ const Services: React.FC = () => {
           </div>
         </div>
 
-        <div className="col-span-full grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-5">
+        <div className="col-span-full grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-5 xs:pt-10 sm:pt-16 md:pt-0">
           {
             services.map((service, index) => (
               <ServiceCard key={index} service={service} />

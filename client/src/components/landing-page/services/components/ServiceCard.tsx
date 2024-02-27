@@ -16,7 +16,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   return (
     <article className="bg-bkgGray/70 backdrop-blur hover:shadow-xl shadow-purplePrimary p-4 h-max">
       <div className="grid grid-rows-2 gap-4">
-        <div className="grid grid-cols-4">
+        <div className="grid md:grid-cols-4 xs:grid-cols-1 sm:grid-cols-1">
           <div className="col-span-1 flexCenter">
             <img
               src=""
@@ -25,11 +25,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             />
           </div>
 
-          <div className="col-span-3">
+          <div className="col-span-3 xs:text-center sm:text-center md:text-center">
             <h3 className="font-vt323 text-3xl xxl:text-4xl">
               { service?.title }
             </h3>
-            <span className="font-vt323 bg-purplePrimary text-lg xxl:text-xl text-black">
+            <span className="font-vt323 bg-purplePrimary text-2xl text-black">
               { service?.tag }
             </span>
           </div>
