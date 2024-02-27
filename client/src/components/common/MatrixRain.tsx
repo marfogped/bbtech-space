@@ -77,7 +77,6 @@ const RainStream: React.FC<RainStreamProps> = ({ height }) => {
   return (
     <div
       style={{
-        fontFamily: "matrixFont",
         writingMode: "vertical-rl",
         textOrientation: "upright",
         userSelect: "none",
@@ -88,7 +87,7 @@ const RainStream: React.FC<RainStreamProps> = ({ height }) => {
         textShadow: "0px 0px 8px #9A11D9",
         fontSize: 50,
       }}
-      className="text-purplePrimary"
+      className="text-purplePrimary font-cutiveMono"
     >
       {stream.map((char, index) => (
         <span

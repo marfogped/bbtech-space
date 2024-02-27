@@ -21,6 +21,7 @@ export default {
       fontFamily: {
         vt323: ["VT323", "monospace"],
         zenKaku: ["Zen Kaku Gothic New", "sans-serif"],
+        cutiveMono: ["Cutive Mono", "monospace"],
       },
     },
   },

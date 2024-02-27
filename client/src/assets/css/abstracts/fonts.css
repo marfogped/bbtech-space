@@ -40,3 +40,11 @@
     format("truetype");
   font-weight: 900;
 }
+
+/* ========= Cutive Mono Import ========= */
+@font-face {
+  font-family: "Cutive Mono";
+  src: url("/src/assets/fonts/CutiveMono/CutiveMono-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+}
