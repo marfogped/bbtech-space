@@ -20,9 +20,6 @@ i18n.use(HttpBackend)
         interpolation: {
             escapeValue: false,
         },
-        backend: {
-            loadPath: "/locales/{{lng}}/{{ns}}.json",
-        },
     });
 
 export default i18n;
