@@ -8,7 +8,7 @@ export default {
         {
             title: 'Nombre',
             name: 'userName',
-            type: 'localizedString',
+            type: 'string',
         },
         {
             title: 'Icono de Usuario',
@@ -21,27 +21,17 @@ export default {
             type: 'localizedString',
         },
         {
-            title: 'URL del Testimonio',
-            name: 'testimonialLink',
-            type: 'url',
-        },
-        {
-            name: 'type',
-            title: 'Type',
+            title: 'Red Social',
+            name: 'socialMedia',
             type: 'string',
             options: {
-            list: option
+                list: option
             },
         },
         {
-            title: 'Red Social',
-            name: 'socialMedia',
+            title: 'URL del Testimonio',
+            name: 'testimonialLink',
             type: 'url',
-        },
-        {
-            title: 'Button',
-            name: 'btn',
-            type: 'localizedString',
         },
     ],
 };

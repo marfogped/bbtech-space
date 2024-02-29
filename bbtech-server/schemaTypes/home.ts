@@ -214,7 +214,7 @@ export default {
       name: 'testimonials',
       type: 'array',
       of: [{type: 'testimonialItem'}],
-      hidden: ({document}: {document: SanityDocument}) => document._type !== TESTIMONIALS,
+      hidden: ({document}: {document: SanityDocument}) => document.type !== TESTIMONIALS,
     },
   ],
   preview: {
