@@ -60,8 +60,16 @@ const Jobs: React.FC = () => {
                 modules={[Navigation]}
                 className="xs:w-[90%] sm:w-[90%] md:w-full"
                 breakpoints={{
-                    640: {
+                    992: {
                         slidesPerView: 4,
+                        spaceBetween: 20,
+                    },
+                    640: {
+                        slidesPerView: 3,
+                        spaceBetween: 20,
+                    },
+                    480: {
+                        slidesPerView: 2,
                         spaceBetween: 20,
                     },
                     0: {
