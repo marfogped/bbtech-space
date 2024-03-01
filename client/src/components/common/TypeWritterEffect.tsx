@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 type TypewriterEffectProps = {
-  texts: string[];
+  texts: string[] | null;
   typingSpeed?: number;
   deletingSpeed?: number;
 };
@@ -11,12 +11,14 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
   typingSpeed = 150,
   deletingSpeed = 50,
 }) => {
-  const [currentText, setCurrentText] = useState('');
+  const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [textIndex, setTextIndex] = useState(0);
   const [typingDelay, setTypingDelay] = useState(typingSpeed);
 
   useEffect(() => {
+    if (texts === null) return;
+
     let timer: number;
 
     if (isDeleting) {
@@ -29,7 +31,7 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
       timer = setTimeout(() => {
         setIsDeleting(true);
       }, 2000);
-    } else if (isDeleting && currentText === '') {
+    } else if (isDeleting && currentText === "") {
       setIsDeleting(false);
       setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
     } else {
@@ -43,9 +45,21 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
     }
 
     return () => clearTimeout(timer);
-  }, [currentText, isDeleting, textIndex, texts, typingDelay, deletingSpeed, typingSpeed]);
+  }, [
+    currentText,
+    isDeleting,
+    textIndex,
+    texts,
+    typingDelay,
+    deletingSpeed,
+    typingSpeed,
+  ]);
 
-  return <span className="bg-purplePrimary block w-max text-black">{currentText.length ? currentText : '\u00A0'}</span>;
+  return (
+    <span className="bg-purplePrimary block w-max text-black">
+      {currentText.length ? currentText : "\u00A0"}
+    </span>
+  );
 };
 
 export default TypewriterEffect;
