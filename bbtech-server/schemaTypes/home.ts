@@ -213,7 +213,15 @@ export default {
       title: 'Testimonios',
       name: 'testimonials',
       type: 'array',
-      of: [{type: 'testimonialItem'}],
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'testimonials'}],
+        },
+      ],
+      options: {
+        limit: 8,
+      },
       hidden: ({document}: {document: SanityDocument}) => document.type !== TESTIMONIALS,
     },
   ],

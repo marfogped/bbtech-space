@@ -2,7 +2,7 @@ const option = ['LinkedIn', 'Facebook', 'Instagram', 'Twitter']
 
 export default {
     title: 'Testimonios',
-    name: 'testimonialItem',
+    name: 'testimonials',
     type: 'document',
     fields: [
         {
