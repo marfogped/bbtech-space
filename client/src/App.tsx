@@ -8,7 +8,6 @@ const routes = [
 ];
 
 function App() {
-
   const location = useLocation();
 
   return (
@@ -16,15 +15,11 @@ function App() {
       <MatrixRain />
       <Navbar />
       <main>
-      <Routes location={location} key={location.pathname}>
-        {routes.map((route, index) => (
-          <Route
-            key={index}
-            path={route.path}
-            element={route.element}
-          />
-        ))}
-      </Routes>
+        <Routes location={location} key={location.pathname}>
+          {routes.map((route, index) => (
+            <Route key={index} path={route.path} element={route.element} />
+          ))}
+        </Routes>
       </main>
     </>
   );
