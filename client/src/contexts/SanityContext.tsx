@@ -10,6 +10,7 @@ interface SanityContextProps {
   isLoading: boolean;
   fetchError: boolean;
   language: string;
+  translationsAreReady: boolean;
 }
 
 interface SanityProviderProps {
@@ -24,9 +25,11 @@ export const SanityProvider = ({ children }: SanityProviderProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [fetchError, setFetchError] = useState<boolean>(false);
   const { i18n } = useTranslation();
+  const [translationsAreReady, setTranslationsAreReady] = useState(false);
   const [language, setLanguage] = useState(i18n.language);
 
   const getHomePage = async (language: string) => {
+    setTranslationsAreReady(false);
     try {
       const query = `*[_type == "home"]{
           ...,
@@ -60,6 +63,7 @@ export const SanityProvider = ({ children }: SanityProviderProps) => {
         i18n.changeLanguage(language);
         setIsLoading(false);
         console.log(translations);
+        setTranslationsAreReady(true);
         i18n.addResourceBundle(language, "home", translations);
         return homeResult;
       }
@@ -77,6 +81,7 @@ export const SanityProvider = ({ children }: SanityProviderProps) => {
     isLoading,
     fetchError,
     language,
+    translationsAreReady,
   };
 
   return (
