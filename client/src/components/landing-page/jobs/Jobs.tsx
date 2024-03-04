@@ -1,13 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import { SectionTag, TypeWritterEffect } from "../..";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
 import { Navigation } from "swiper/modules";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useSanity } from "../../../lib/useSanity";
 import { LocalizedString } from "../../../lib/utils";
+import "swiper/css";
+import "swiper/css/pagination";
 
 interface JobsProps {
   company: string;
@@ -21,26 +21,34 @@ interface JobsProps {
 
 const Jobs: React.FC = () => {
   const swiperRef = useRef(null);
-  const { t } = useTranslation("home");
-  const { translationsAreReady, language } = useSanity();
+  const { t, i18n } = useTranslation("home");
+  const { language } = useSanity();
   const [texts, setTexts] = useState<string[] | null>(null);
   const [jobs, setJobs] = useState<JobsProps[] | null>(null);
 
-  const jobsPurpleWord = t("jobs_purple_word");
-  const secondJobsPurpleWord = t("jobs_purple_word_second");
-
   useEffect(() => {
-    if (jobsPurpleWord && secondJobsPurpleWord) {
+    const updateTexts = () => {
+      const jobsPurpleWord = t("jobs_purple_word");
+      const secondJobsPurpleWord = t("jobs_purple_word_second");
+
       setTexts([jobsPurpleWord, secondJobsPurpleWord]);
-    }
+      const jobs: JobsProps[] = t("jobs", {
+        returnObjects: true,
+      });
 
-    const jobs: JobsProps[] = t("jobs", {
-      returnObjects: true,
-    });
+      setJobs(jobs);
+    };
 
-    setJobs(jobs);
-  }, [translationsAreReady, jobsPurpleWord, secondJobsPurpleWord, t]);
+    updateTexts();
 
+    i18n.on("languageChanged loaded", updateTexts);
+
+    return () => {
+      i18n.off("languageChanged loaded", updateTexts);
+    };
+  }, [i18n, t]);
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const lang: any = language as keyof LocalizedString;
 
   return (
@@ -66,7 +74,9 @@ const Jobs: React.FC = () => {
               to={"/jobs"}
               className="text-neutral underline font-zenKaku text-xl"
             >
-              {t("all_jobs")}
+              {language === "en" && "See All Jobs"}
+              {language === "es" && "Ver todos los Trabajos"}
+              {language === "it" && "Vedi tutti i lavori"}
             </Link>
           </div>
           <Swiper

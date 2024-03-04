@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 type TypewriterEffectProps = {
-  texts: string[] | null;
+  texts: string[] | null | undefined;
   typingSpeed?: number;
   deletingSpeed?: number;
 };
@@ -17,7 +17,7 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
   const [typingDelay, setTypingDelay] = useState(typingSpeed);
 
   useEffect(() => {
-    if (texts === null) return;
+    if (texts === null || texts === undefined) return;
 
     let timer: number;
 

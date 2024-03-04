@@ -2,28 +2,34 @@ import React, { useEffect, useState } from "react";
 import { AboutImg } from "../../../lib/images";
 import { SectionTag, TypeWritterEffect } from "../..";
 import { useTranslation } from "react-i18next";
-import { useSanity } from "../../../lib/useSanity";
 
 const About: React.FC = () => {
-  const { t } = useTranslation("home");
-  const { translationsAreReady } = useSanity();
+  const { t, i18n } = useTranslation("home");
   const [texts, setTexts] = useState<string[] | null>(null);
 
-  const aboutPurpleWord = t("about_purple_word");
-  const secondAboutPurpleWord = t("about_purple_word_second");
-
   useEffect(() => {
-    if (aboutPurpleWord && secondAboutPurpleWord) {
+    const updateTexts = () => {
+      const aboutPurpleWord = t("about_purple_word");
+      const secondAboutPurpleWord = t("about_purple_word_second");
+
       setTexts([aboutPurpleWord, secondAboutPurpleWord]);
-    }
-  }, [translationsAreReady, aboutPurpleWord, secondAboutPurpleWord]);
+    };
+
+    updateTexts();
+
+    i18n.on("languageChanged loaded", updateTexts);
+
+    return () => {
+      i18n.off("languageChanged loaded", updateTexts);
+    };
+  }, [i18n, t]);
 
   return (
     <section className="w-full h-max py-24" id="about">
       <div className="section-container container-grid">
         <div className="lg:col-span-3 flex xs:justify-end sm:justify-end md:justify-center flex-col gap-5">
           <div className="flex flex-col gap-5">
-            <SectionTag index={1} label={t("tag-label")} />
+            <SectionTag index={1} label={t("about_tag_label")} />
             <h2 className="xs:text-5xl sm:text-5xl lg:text-6xl font-vt323 text-pretty">
               {t("about_title")}{" "}
               <TypeWritterEffect

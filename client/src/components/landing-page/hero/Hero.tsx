@@ -5,22 +5,27 @@ import { Satelite1 } from "../../../lib/images";
 import { TypeWritterEffect } from "../..";
 import { useEnhancerMode } from "../../../lib/useEnhancerMode";
 import { HeroImg } from "../../../lib/images";
-import { useSanity } from "../../../lib/useSanity";
 
 const Hero: React.FC = () => {
-  const { t } = useTranslation("home");
-  const { translationsAreReady } = useSanity();
+  const { t, i18n } = useTranslation("home");
   const { enhancedMode, internetSpeed } = useEnhancerMode();
   const [texts, setTexts] = useState<string[] | null>(null);
 
-  const heroPurpleWord = t("hero_purple_word");
-  const secondHeroPurpleWord = t("hero_purple_word_second");
-
   useEffect(() => {
-    if (heroPurpleWord && secondHeroPurpleWord) {
+    const updateTexts = () => {
+      const heroPurpleWord = t("hero_purple_word");
+      const secondHeroPurpleWord = t("hero_purple_word_second");
       setTexts([heroPurpleWord, secondHeroPurpleWord]);
-    }
-  }, [translationsAreReady, heroPurpleWord, secondHeroPurpleWord]);
+    };
+
+    updateTexts();
+
+    i18n.on("languageChanged loaded", updateTexts);
+
+    return () => {
+      i18n.off("languageChanged loaded", updateTexts);
+    };
+  }, [i18n, t]);
 
   return (
     <header className="w-full h-screen">
