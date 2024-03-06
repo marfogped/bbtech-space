@@ -12,6 +12,8 @@ const Hero: React.FC = () => {
   const { enhancedMode, internetSpeed } = useEnhancerMode();
   const [texts, setTexts] = useState<string[] | null>(null);
 
+  console.log(enhancedMode, internetSpeed)
+
   useEffect(() => {
     const updateTexts = () => {
       setTexts(null); 
@@ -69,12 +71,12 @@ const Hero: React.FC = () => {
                 />
               </div>
               {
-                enhancedMode || internetSpeed !== "4G" ? (
-                  ""
-                ) : (
+                (internetSpeed === "4G" || internetSpeed === "unknown") && !enhancedMode ? (
                   <Suspense>
                     <Spline scene="https://prod.spline.design/9vcpFirxkk4xMJe4/scene.splinecode" />
                   </Suspense>
+                ) : (
+                  ""
                 )
               }
         </div>

@@ -30,7 +30,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
         <div className="grid md:grid-cols-4 xs:grid-cols-1 xs:gap-0 sm:gap-0 md:gap-4 sm:grid-cols-1">
           <div className="col-span-1 flexCenter w-full">
             <div className="w-32 h-32 rounded-full overflow-hidden bg-purplePrimary/60 flexCenter">
-              {enhancedMode || internetSpeed !== "4G" ? (
+              {(internetSpeed === "4G" || internetSpeed === "unknown") && !enhancedMode ? (
+                <Suspense>
+                  <Spline scene={`${service.splineModelUrl}`} />
+                </Suspense>
+              ) : (
                 <img
                   src={
                     isForWorkers ? WorkersServiceImage : CompaniesServiceImage
@@ -42,10 +46,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
                   }
                   className="w-24 h-24 aspect-square object-contain"
                 />
-              ) : (
-                <Suspense>
-                  <Spline scene={`${service.splineModelUrl}`} />
-                </Suspense>
               )}
             </div>
           </div>
