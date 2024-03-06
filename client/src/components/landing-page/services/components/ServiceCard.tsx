@@ -22,7 +22,7 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   const { internetSpeed, enhancedMode } = useEnhancerMode();
 
-  const isForWorkers = service.tag === "For Workers" ? true : false;
+  const isForWorkers = service.tag === "For Workers" || service.tag === "Per Lavoratori" || service.tag === "Para Trabajadores" ? true : false;
 
   return (
     <article className="bg-bkgGray/70 backdrop-blur hover:shadow-xl shadow-purplePrimary flex flex-col justify-between p-4 h-full">

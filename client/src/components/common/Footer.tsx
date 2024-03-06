@@ -61,16 +61,16 @@ const Footer: React.FC = () => {
 
             <section className='grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-6 gap-10 py-12'>
                 <div className='col-span-1 flex flex-col items-start justify-start gap-4'>
-                    <div className='flex items-center gap-2 font-zenKaku text-lg'>
+                    <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                         <WhatsAppIcon /> +54 9 1165689687
                     </div>
-                    <div className='flex items-center gap-2 font-zenKaku text-lg'>
+                    <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                         <InstagramIcon size={32} /> bbtech.space
                     </div>
-                    <div className='flex items-center gap-2 font-zenKaku text-lg'>
+                    <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                         <FacebookIcon size={32} /> BbTech
                     </div>
-                    <div className='flex items-center gap-2 font-zenKaku text-lg'>
+                    <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                         <LinkedinIcon size={32} /> BBTECH
                     </div>
                 </div>
@@ -78,13 +78,13 @@ const Footer: React.FC = () => {
                 <div className='col-span-4 flex items-start justify-between flex-wrap gap-4'>
                     
                     <div className='flex flex-col items-start justify-start gap-4'>
-                        <div className='flex items-center gap-2 font-zenKaku text-2xl font-semibold'>
+                        <div className='flex items-center gap-2 font-zenKaku xs:text-xl sm:text-xl xl:text-2xl font-semibold'>
                             <MapPinned size={32} /> {t('italy')}
                         </div>
-                        <div className='flex items-center gap-2 font-zenKaku text-lg'>
+                        <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                             Corso Stati Uniti, 38
                         </div>
-                        <div className='flex items-center gap-2 font-zenKaku text-lg'>
+                        <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                             10128 Torino TO
                         </div>
                     </div>
@@ -92,25 +92,25 @@ const Footer: React.FC = () => {
                     
                     
                     <div className='flex flex-col items-start justify-start gap-4'>
-                        <div className='flex items-center gap-2 font-zenKaku text-2xl font-semibold'>
+                        <div className='flex items-center gap-2 font-zenKaku xs:text-xl sm:text-xl xl:text-2xl font-semibold'>
                             <MapPinned size={32} /> {t('spain')}
                         </div>
-                        <div className='flex items-center gap-2 font-zenKaku text-lg'>
+                        <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                             P.º de la Pechina, 72
                         </div>
-                        <div className='flex items-center gap-2 font-zenKaku text-lg'>
+                        <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                             L'Olivereta, 46018 Valencia.
                         </div>
                     </div>
                     
                     <div className='flex flex-col items-start justify-start gap-4'>
-                        <div className='flex items-center gap-2 font-zenKaku text-2xl font-semibold'>
+                        <div className='flex items-center gap-2 font-zenKaku xs:text-xl sm:text-xl xl:text-2xl font-semibold'>
                             <MapPinned size={32} /> {t('england')}
                         </div>
-                        <div className='flex items-center gap-2 font-zenKaku text-lg'>
+                        <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                             172-180 Newhall St
                         </div>
-                        <div className='flex items-center gap-2 font-zenKaku text-lg'>
+                        <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                             Birmingham.
                         </div>
                     </div>
@@ -119,19 +119,19 @@ const Footer: React.FC = () => {
 
                 <div className='col-span-1 flex flex-col items-start justify-start'>
                     <div className='flex flex-col items-start justify-start gap-4'>
-                        <div className='flex items-center gap-2 font-zenKaku text-2xl font-semibold'>
+                        <div className='flex items-center gap-2 font-zenKaku xs:text-xl sm:text-xl xl:text-2xl font-semibold'>
                             <MapPinned size={32} /> {t('for-companies')}
                         </div>
-                        <div className='flex items-center gap-2 font-zenKaku text-lg'>
+                        <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                             barbi@bbtech.space
                         </div>
                     </div>
 
                     <div className='flex flex-col items-start justify-start gap-4 mt-4'>
-                        <div className='flex items-center gap-2 font-zenKaku text-2xl font-semibold'>
+                        <div className='flex items-center gap-2 font-zenKaku xs:text-xl sm:text-xl xl:text-2xl font-semibold'>
                             <MapPinned size={32} /> {t('for-workers')}
                         </div>
-                        <div className='flex items-center gap-2 font-zenKaku text-lg'>
+                        <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                             cv@bbtech.space
                         </div>
                     </div>

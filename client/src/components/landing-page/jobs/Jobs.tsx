@@ -136,11 +136,11 @@ const Jobs: React.FC = () => {
                           <h3 className="font-vt323 text-2xl xxl:text-3xl">
                             {job.company}
                           </h3>
-                          <ul className="font-zenKaku flex items-center gap-2 flex-wrap">
+                          <ul className="font-zenKaku flex items-center gap-x-1 flex-wrap justify-center">
                             {job.areas.map((area, areaIdx) => (
                               <React.Fragment key={areaIdx}>
                                 <li className="text-neutral/90">
-                                  {area[lang]}
+                                  { area[lang] }
                                 </li>
                                 {areaIdx < job.areas.length - 1 && (
                                   <span>-</span>
@@ -160,9 +160,9 @@ const Jobs: React.FC = () => {
                         </p>
                       </div>
 
-                      <div className="pt-4">
+                      <div className="pt-2">
                         <button className="font-zenKaku font-medium text-lg xxl:text-xl bg-purplePrimary w-full py-1 flexCenter gap-4">
-                          {job.jobs} {job.btn}
+                          {job.jobs} {language === "en" && "Jobs"} {language === "es" && "Trabajos"} {language === "it" && "Lavori"}
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
                             width="28"

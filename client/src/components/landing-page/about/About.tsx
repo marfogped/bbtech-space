@@ -59,7 +59,7 @@ const About: React.FC = () => {
           <img
             src={AboutImg}
             alt="hero image"
-            className="w-full h-auto aspect-square object-contain"
+            className="xs:w-[80%] sm:w-[80%] lg:w-full h-auto aspect-square object-contain"
           />
         </div>
       </div>

@@ -36,7 +36,7 @@ const Hero: React.FC = () => {
       <div className="section-container container-grid">
         <div className="lg:col-span-3 flex xs:justify-end sm:justify-end md:justify-center flex-col gap-5">
           <div className="flex flex-col gap-5 xs:pt-16 sm:pt-16 lg:pt-0">
-            <h1 className="xs:text-6xl sm:text-7xl lg:text-8xl font-vt323">
+            <h1 className="xs:text-6xl sm:text-6xl lg:text-8xl font-vt323">
               {t("hero_title")}{" "}
               <TypeWritterEffect
                 texts={texts}

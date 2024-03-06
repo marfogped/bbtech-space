@@ -55,6 +55,11 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
     typingSpeed,
   ]);
 
+  useEffect(() => {
+    setCurrentText("");
+  }, [texts])
+  
+
   return (
     <span className="bg-purplePrimary block w-max text-black">
       {currentText.length ? currentText : "\u00A0"}
