@@ -2,17 +2,21 @@ import React, { useEffect, useState } from "react";
 import { AboutImg } from "../../../lib/images";
 import { SectionTag, TypeWritterEffect } from "../..";
 import { useTranslation } from "react-i18next";
+import { useSanity } from "../../../lib/useSanity";
 
 const About: React.FC = () => {
   const { t, i18n } = useTranslation("home");
+  const { language } = useSanity();
   const [texts, setTexts] = useState<string[] | null>(null);
 
   useEffect(() => {
     const updateTexts = () => {
-      const aboutPurpleWord = t("about_purple_word");
-      const secondAboutPurpleWord = t("about_purple_word_second");
+      setTimeout(() => {
+        const aboutPurpleWord = t("about_purple_word");
+        const secondAboutPurpleWord = t("about_purple_word_second");
 
-      setTexts([aboutPurpleWord, secondAboutPurpleWord]);
+        setTexts([aboutPurpleWord, secondAboutPurpleWord]);
+      }, 100);
     };
 
     updateTexts();
@@ -23,6 +27,10 @@ const About: React.FC = () => {
       i18n.off("languageChanged loaded", updateTexts);
     };
   }, [i18n, t]);
+
+  useEffect(() => {
+    setTexts(null);
+  }, [language]);
 
   return (
     <section className="w-full h-max py-24" id="about">

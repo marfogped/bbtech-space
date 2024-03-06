@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { SectionTag, TypeWritterEffect } from "../..";
 import ServiceCard from "./components/ServiceCard";
 import { useTranslation } from "react-i18next";
+import { useSanity } from "../../../lib/useSanity";
 
 interface ServiceProps {
   image: string;
@@ -14,21 +15,24 @@ interface ServiceProps {
 
 const Services: React.FC = () => {
   const { t, i18n } = useTranslation("home");
+  const { language } = useSanity();
   const [texts, setTexts] = useState<string[] | null>(null);
   const [services, setServices] = useState<ServiceProps[] | null>(null);
 
   useEffect(() => {
     const updateTexts = () => {
-      const servicesPurpleWord = t("services_purple_word");
-      const secondServicesPurpleWord = t("services_purple_word_second");
+      setTimeout(() => {
+        const servicesPurpleWord = t("services_purple_word");
+        const secondServicesPurpleWord = t("services_purple_word_second");
 
-      setTexts([servicesPurpleWord, secondServicesPurpleWord]);
+        setTexts([servicesPurpleWord, secondServicesPurpleWord]);
 
-      const services: ServiceProps[] = t("services", {
-        returnObjects: true,
-      });
+        const services: ServiceProps[] = t("services", {
+          returnObjects: true,
+        });
 
-      setServices(services);
+        setServices(services);
+      }, 100);
     };
     updateTexts();
 
@@ -38,6 +42,10 @@ const Services: React.FC = () => {
       i18n.off("languageChanged loaded", updateTexts);
     };
   }, [i18n, t]);
+
+  useEffect(() => {
+    setTexts(null);
+  }, [language]);
 
   return (
     <section className="w-full h-max py-24" id="services">

@@ -28,15 +28,17 @@ const Jobs: React.FC = () => {
 
   useEffect(() => {
     const updateTexts = () => {
-      const jobsPurpleWord = t("jobs_purple_word");
-      const secondJobsPurpleWord = t("jobs_purple_word_second");
+      setTimeout(() => {
+        const jobsPurpleWord = t("jobs_purple_word");
+        const secondJobsPurpleWord = t("jobs_purple_word_second");
 
-      setTexts([jobsPurpleWord, secondJobsPurpleWord]);
-      const jobs: JobsProps[] = t("jobs", {
-        returnObjects: true,
-      });
+        setTexts([jobsPurpleWord, secondJobsPurpleWord]);
+        const jobs: JobsProps[] = t("jobs", {
+          returnObjects: true,
+        });
 
-      setJobs(jobs);
+        setJobs(jobs);
+      }, 100);
     };
 
     updateTexts();
@@ -47,6 +49,10 @@ const Jobs: React.FC = () => {
       i18n.off("languageChanged loaded", updateTexts);
     };
   }, [i18n, t]);
+
+  useEffect(() => {
+    setTexts(null);
+  }, [language]);
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const lang: any = language as keyof LocalizedString;

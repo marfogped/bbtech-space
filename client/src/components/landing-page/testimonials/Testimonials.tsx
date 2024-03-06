@@ -32,15 +32,19 @@ const Testimonials: React.FC = () => {
 
   useEffect(() => {
     const updateTexts = () => {
-      const testimonialsPurpleWord = t("testimonials_purple_word");
-      const secondTestimonialsPurpleWord = t("testimonials_purple_word_second");
-      setTexts([testimonialsPurpleWord, secondTestimonialsPurpleWord]);
+      setTimeout(() => {
+        const testimonialsPurpleWord = t("testimonials_purple_word");
+        const secondTestimonialsPurpleWord = t(
+          "testimonials_purple_word_second"
+        );
+        setTexts([testimonialsPurpleWord, secondTestimonialsPurpleWord]);
 
-      const testimonials: TestimonialsProps[] = t("testimonials", {
-        returnObjects: true,
-      });
+        const testimonials: TestimonialsProps[] = t("testimonials", {
+          returnObjects: true,
+        });
 
-      setTestimonials(testimonials);
+        setTestimonials(testimonials);
+      }, 100);
     };
 
     updateTexts();
@@ -51,6 +55,10 @@ const Testimonials: React.FC = () => {
       i18n.off("languageChanged loaded", updateTexts);
     };
   }, [i18n, t]);
+
+  useEffect(() => {
+    setTexts(null);
+  }, [language]);
 
   return (
     <section className="w-full h-max py-24">
