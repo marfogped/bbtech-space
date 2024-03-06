@@ -2,13 +2,14 @@ import React from "react";
 import i18n from "../../lib/i18n";
 import { useSanity } from "../../lib/useSanity";
 
-const LanguageSelector: React.FC = () => {
+const LanguageSelector: React.FC<{ onLanguageChange?: () => void }> = ({ onLanguageChange }) => {
   const { setLanguage, getHomePage } = useSanity();
 
   const changeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedLang = event.target.value;
     setLanguage(selectedLang);
     getHomePage(selectedLang);
+    if(onLanguageChange) onLanguageChange();
   };
 
   return (

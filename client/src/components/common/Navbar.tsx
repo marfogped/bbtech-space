@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef  } from "react";
 import { Logo } from "../../lib/images";
 import { LanguageSelector, ScrollTo } from "..";
 import useWindowDimensions from "../../lib/useWindowDimensions";
@@ -7,8 +7,10 @@ import { useTranslation } from 'react-i18next';
 const Navbar: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [color, setColor] = useState<boolean>(false);
+
   const { windowWidth } = useWindowDimensions();
   const { t } = useTranslation('navbar');
+  const navRef = useRef<HTMLElement | null>(null);
 
   const openNav = () => {
     setIsActive(!isActive);
@@ -21,12 +23,30 @@ const Navbar: React.FC = () => {
       setColor(false);
     }
   };
+
   useEffect(() => {
     window.addEventListener("scroll", changeColor);
     return () => {
       window.removeEventListener("scroll", changeColor);
     };
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsActive(false);
+      }
+    };
+
+    if (isActive && windowWidth < 768) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isActive, windowWidth]);
+
   return (
     <>
       <nav
@@ -96,7 +116,7 @@ const Navbar: React.FC = () => {
               </li>
             </ul>
 
-            <LanguageSelector />
+            <LanguageSelector onLanguageChange={() => setIsActive(false)} />
           </nav>
         ) : ("")
       }   
