@@ -11,15 +11,15 @@ const About: React.FC = () => {
 
   useEffect(() => {
     const updateTexts = () => {
+      setTexts(null); 
+
       setTimeout(() => {
         const aboutPurpleWord = t("about_purple_word");
         const secondAboutPurpleWord = t("about_purple_word_second");
 
         setTexts([aboutPurpleWord, secondAboutPurpleWord]);
-      }, 100);
+      }, 500);
     };
-
-    updateTexts();
 
     i18n.on("languageChanged loaded", updateTexts);
 

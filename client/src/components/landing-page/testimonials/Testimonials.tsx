@@ -32,6 +32,8 @@ const Testimonials: React.FC = () => {
 
   useEffect(() => {
     const updateTexts = () => {
+      setTexts(null); 
+
       setTimeout(() => {
         const testimonialsPurpleWord = t("testimonials_purple_word");
         const secondTestimonialsPurpleWord = t(
@@ -44,7 +46,7 @@ const Testimonials: React.FC = () => {
         });
 
         setTestimonials(testimonials);
-      }, 100);
+      }, 500);
     };
 
     updateTexts();

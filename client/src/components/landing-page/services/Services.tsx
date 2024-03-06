@@ -21,6 +21,8 @@ const Services: React.FC = () => {
 
   useEffect(() => {
     const updateTexts = () => {
+      setTexts(null); 
+
       setTimeout(() => {
         const servicesPurpleWord = t("services_purple_word");
         const secondServicesPurpleWord = t("services_purple_word_second");
@@ -32,9 +34,8 @@ const Services: React.FC = () => {
         });
 
         setServices(services);
-      }, 100);
+      }, 500);
     };
-    updateTexts();
 
     i18n.on("languageChanged loaded", updateTexts);
 

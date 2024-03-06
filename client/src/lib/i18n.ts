@@ -20,6 +20,10 @@ i18n.use(HttpBackend)
         interpolation: {
             escapeValue: false,
         },
+        react: {
+            bindI18n: "languageChanged",
+            useSuspense: true,
+        },
     });
 
 export default i18n;

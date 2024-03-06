@@ -28,6 +28,8 @@ const Jobs: React.FC = () => {
 
   useEffect(() => {
     const updateTexts = () => {
+      setTexts(null); 
+
       setTimeout(() => {
         const jobsPurpleWord = t("jobs_purple_word");
         const secondJobsPurpleWord = t("jobs_purple_word_second");
@@ -38,7 +40,7 @@ const Jobs: React.FC = () => {
         });
 
         setJobs(jobs);
-      }, 100);
+      }, 500);
     };
 
     updateTexts();

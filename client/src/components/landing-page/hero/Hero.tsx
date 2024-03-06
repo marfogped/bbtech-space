@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import { Satelite1 } from "../../../lib/images";
 import { TypeWritterEffect } from "../..";
 import { useEnhancerMode } from "../../../lib/useEnhancerMode";
-import { HeroImg } from "../../../lib/images";
 import { useSanity } from "../../../lib/useSanity";
 
 const Hero: React.FC = () => {
@@ -15,25 +14,22 @@ const Hero: React.FC = () => {
 
   useEffect(() => {
     const updateTexts = () => {
+      setTexts(null); 
+      
       setTimeout(() => {
         const heroPurpleWord = t("hero_purple_word");
         const secondHeroPurpleWord = t("hero_purple_word_second");
         setTexts([heroPurpleWord, secondHeroPurpleWord]);
-      }, 100);
+      }, 500);
     };
-
-    updateTexts();
 
     i18n.on("languageChanged loaded", updateTexts);
 
     return () => {
       i18n.off("languageChanged loaded", updateTexts);
     };
-  }, [i18n, t]);
+  }, [i18n, t, language]);
 
-  useEffect(() => {
-    setTexts(null);
-  }, [language]);
 
   return (
     <header className="w-full h-screen">
@@ -43,7 +39,7 @@ const Hero: React.FC = () => {
             <h1 className="xs:text-6xl sm:text-7xl lg:text-8xl font-vt323">
               {t("hero_title")}{" "}
               <TypeWritterEffect
-                texts={texts ? texts : null}
+                texts={texts}
                 typingSpeed={100}
                 deletingSpeed={100}
               />
@@ -63,15 +59,8 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="lg:col-span-2 relative flexCenter overflow-hidden group">
-          {enhancedMode || internetSpeed !== "4G" ? (
-            <img
-              src={HeroImg}
-              alt="hero image"
-              className="w-full h-full aspect-square object-contain"
-            />
-          ) : (
-            <>
+        <div className="lg:col-span-2 relative flexCenter group">
+          
               <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flexCenter">
                 <img
                   src={Satelite1}
@@ -79,11 +68,15 @@ const Hero: React.FC = () => {
                   className="w-[60%] h-auto group-hover:-translate-y-10 group-hover:scale-150 opacity-50 group-hover:opacity-100 transition duration-150 group-hover:drop-shadow-[0_35px_35px_rgba(154,17,217,0.80)]"
                 />
               </div>
-              <Suspense>
-                <Spline scene="https://prod.spline.design/9vcpFirxkk4xMJe4/scene.splinecode" />
-              </Suspense>
-            </>
-          )}
+              {
+                enhancedMode || internetSpeed !== "4G" ? (
+                  ""
+                ) : (
+                  <Suspense>
+                    <Spline scene="https://prod.spline.design/9vcpFirxkk4xMJe4/scene.splinecode" />
+                  </Suspense>
+                )
+              }
         </div>
       </div>
     </header>
