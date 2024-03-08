@@ -40,6 +40,47 @@ export default {
       name: 'jobs',
       type: 'number',
     },
+    {
+      title: 'Acerca del empleo',
+      name: 'aboutWork',
+      type: 'localizedString',
+    },
+    {
+      title: 'Responsabilidades',
+      name: 'responsibilities',
+      type: 'array',
+      of: [
+        {
+          title: 'Responsabilidad',
+          name: 'responsibility',
+          type: 'localizedString',
+        },
+      ],
+    },
+    {
+      title: 'Requisitos',
+      name: 'requirements',
+      type: 'array',
+      of: [
+        {
+          title: 'Requisito',
+          name: 'requirement',
+          type: 'localizedString',
+        },
+      ],
+    },
+    {
+      title: 'Oferta laboral (beneficios)',
+      name: 'workBenefits',
+      type: 'array',
+      of: [
+        {
+          title: 'Beneficio',
+          name: 'workBenefit',
+          type: 'localizedString',
+        },
+      ],
+    },
   ],
   preview: {
     select: {
