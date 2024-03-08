@@ -1,18 +1,16 @@
 import React, { Suspense, useEffect, useState } from "react";
-import Spline from "@splinetool/react-spline";
 import { useTranslation } from "react-i18next";
 import { Satelite1 } from "../../../lib/images";
-import { TypeWritterEffect } from "../..";
+import { TypeWritterEffect, ScrollTo } from "../..";
 import { useEnhancerMode } from "../../../lib/useEnhancerMode";
 import { useSanity } from "../../../lib/useSanity";
+import Spline from "@splinetool/react-spline";
 
 const Hero: React.FC = () => {
   const { t, i18n } = useTranslation("home");
   const { language } = useSanity();
   const { enhancedMode, internetSpeed } = useEnhancerMode();
   const [texts, setTexts] = useState<string[] | null>(null);
-
-  console.log(enhancedMode, internetSpeed)
 
   useEffect(() => {
     const updateTexts = () => {
@@ -53,15 +51,19 @@ const Hero: React.FC = () => {
 
           <div className="flex xs:flex-col sm:flex-col md:flex-row items-center gap-5">
             <button className="border-2 xs:w-full sm:w-full md:w-auto border-neutral px-12 py-2 font-vt323 text-2xl">
-              {t("btn_1")}
+              <ScrollTo id="about">
+                {t("btn_1")}
+              </ScrollTo>
             </button>
             <button className="border-2 xs:w-full sm:w-full md:w-auto border-purplePrimary bg-purplePrimary text-black px-12 py-2 font-vt323 text-2xl">
-              {t("btn_2")}
+              <ScrollTo id="services">
+                {t("btn_2")}
+              </ScrollTo>
             </button>
           </div>
         </div>
 
-        <div className="lg:col-span-2 relative flexCenter group">
+        <div className="lg:col-span-2 relative flexCenter my-auto group h-[500px]">
           
               <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flexCenter">
                 <img
