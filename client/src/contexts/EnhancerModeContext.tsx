@@ -29,7 +29,6 @@ const EnhancerMode: React.FC<EnhancerModeProps> = ({ children }) => {
       const load = performance.now();
       const threshold = 200;
       const acceptablePerformance = load < threshold;
-      console.log(load, acceptablePerformance)
       callback(acceptablePerformance);
     };
 
