@@ -3,10 +3,10 @@ import {
   About,
   Footer,
   Hero,
-  InitialTransition,
   Jobs,
   Services,
   Testimonials,
+  Navbar
 } from "..";
 import { useSanity } from "../../lib/useSanity";
 import { HomeProps } from "../../lib/types";
@@ -25,7 +25,7 @@ const LandingPage: React.FC = () => {
 
   return (
     <>
-      <InitialTransition />
+      <Navbar />
       <Hero />
       <About />
       <Services />
