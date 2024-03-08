@@ -4,7 +4,8 @@ import {
     InstagramIcon, 
     LinkedinIcon, 
     FacebookIcon, 
-    MapPinned
+    MapPinned,
+    MailIcon
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
@@ -39,7 +40,7 @@ const Footer: React.FC = () => {
     const { t } = useTranslation('footer');
 
   return (
-    <footer className='w-full h-max bg-bkgGray rounded-t-[3rem] mt-24'>
+    <footer className='w-full h-max bg-bkgGray/70 backdrop-blur rounded-t-[3rem] mt-24'>
         <div className="section-container">
             <header className='grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-6 gap-10 pt-8'>
                 <div className='col-span-1 flex items-center justify-start'>
@@ -120,7 +121,7 @@ const Footer: React.FC = () => {
                 <div className='col-span-1 flex flex-col items-start justify-start'>
                     <div className='flex flex-col items-start justify-start gap-4'>
                         <div className='flex items-center gap-2 font-zenKaku xs:text-xl sm:text-xl xl:text-2xl font-semibold'>
-                            <MapPinned size={32} /> {t('for-companies')}
+                            <MailIcon size={32} /> {t('for-companies')}
                         </div>
                         <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                             barbi@bbtech.space
@@ -129,7 +130,7 @@ const Footer: React.FC = () => {
 
                     <div className='flex flex-col items-start justify-start gap-4 mt-4'>
                         <div className='flex items-center gap-2 font-zenKaku xs:text-xl sm:text-xl xl:text-2xl font-semibold'>
-                            <MapPinned size={32} /> {t('for-workers')}
+                            <MailIcon size={32} /> {t('for-workers')}
                         </div>
                         <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                             cv@bbtech.space
