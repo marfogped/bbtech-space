@@ -45,8 +45,18 @@ export const SanityProvider = ({ children }: SanityProviderProps) => {
           "jobs": jobs[]-> {
             ...,
             "areas": areas[]{
-              "${language}": ${language}
-            },
+              "area": ${language}
+            }, 
+            "aboutWork": aboutWork.${language},
+            "responsibilities": responsibilities[]{
+              "responsibility": ${language}
+            }, 
+            "requirements": requirements[]{
+              "requirement": ${language}
+            }, 
+            "workBenefits": workBenefits[]{
+              "workBenefit": ${language}
+            }, 
             "companyIcon" : companyIcon.asset->url
           },
       }`;
@@ -99,16 +109,15 @@ export const SanityProvider = ({ children }: SanityProviderProps) => {
           language
         );
 
-
         i18n.changeLanguage(language);
         i18n.addResourceBundle(language, "jobs", translations);
         setIsLoading(false);
-        return jobsResult
+        return jobsResult;
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-  }
+  };
 
   const value: SanityContextProps = {
     getHomePage,

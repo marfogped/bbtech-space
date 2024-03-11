@@ -1,23 +1,15 @@
 import React, { useRef, useEffect, useState } from "react";
-import { SectionTag, TypeWritterEffect } from "../..";
+import { JobCard, SectionTag, TypeWritterEffect } from "../..";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useSanity } from "../../../lib/useSanity";
-import { LocalizedString } from "../../../lib/utils";
+import { ChevronRight, ChevronLeft } from "lucide-react";
+import JobDetails from "../../jobs/job-details/JobDetails";
+import { JobsProps } from "../../../lib/types";
 import "swiper/css";
 import "swiper/css/pagination";
-
-interface JobsProps {
-  company: string;
-  companyIcon: string;
-  areas: string[];
-  offices: number;
-  employees: number;
-  jobs: number;
-  btn: string;
-}
 
 const Jobs: React.FC = () => {
   const swiperRef = useRef(null);
@@ -26,9 +18,12 @@ const Jobs: React.FC = () => {
   const [texts, setTexts] = useState<string[] | null>(null);
   const [jobs, setJobs] = useState<JobsProps[] | null>(null);
 
+  const [selectedJob, setSelectedJob] = useState<JobsProps | null>(null);
+  const [showModal, setShowModal] = useState<boolean>(false);
+
   useEffect(() => {
     const updateTexts = () => {
-      setTexts(null); 
+      setTexts(null);
 
       setTimeout(() => {
         const jobsPurpleWord = t("jobs_purple_word");
@@ -56,8 +51,15 @@ const Jobs: React.FC = () => {
     setTexts(null);
   }, [language]);
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const lang: any = language as keyof LocalizedString;
+  const handleShowModal = (job: JobsProps | undefined) => {
+    if (job) {
+      setSelectedJob(job);
+      setShowModal(true);
+    } else {
+      setSelectedJob(null);
+      setShowModal(false);
+    }
+  };
 
   return (
     <section className="w-full h-max py-24" id="jobs">
@@ -122,65 +124,13 @@ const Jobs: React.FC = () => {
             }}
           >
             {jobs && Array.isArray(jobs)
-              ? jobs.map((job, index) => (
-                  <SwiperSlide key={index}>
-                    <div className="flex flex-col p-4 relative w-full">
-                      <div className="flexCenter flex-col">
-                        <img
-                          src={job.companyIcon}
-                          alt={job.company}
-                          className="h-16 w-auto"
-                        />
-
-                        <div className="pt-4">
-                          <h3 className="font-vt323 text-2xl xxl:text-3xl">
-                            {job.company}
-                          </h3>
-                          <ul className="font-zenKaku flex items-center gap-x-1 flex-wrap justify-center">
-                            {job.areas.map((area, areaIdx) => (
-                              <React.Fragment key={areaIdx}>
-                                <li className="text-neutral/90">
-                                  { area[lang] }
-                                </li>
-                                {areaIdx < job.areas.length - 1 && (
-                                  <span>-</span>
-                                )}
-                              </React.Fragment>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-
-                      <div className="mt-10 flex flex-col flex-grow">
-                        <p className="font-lato text-lg font-zenKaku text-start text-neutral/90">
-                          {job.employees} {t("employees")}
-                        </p>
-                        <p className="font-lato text-lg font-zenKaku text-start text-neutral/90">
-                          {job.offices} {t("offices")}
-                        </p>
-                      </div>
-
-                      <div className="pt-2">
-                        <button className="font-zenKaku font-medium text-lg xxl:text-xl bg-purplePrimary w-full py-1 flexCenter gap-4">
-                          {job.jobs} {language === "en" && "Jobs"} {language === "es" && "Trabajos"} {language === "it" && "Lavori"}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="28"
-                            height="28"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="mt-1"
-                          >
-                            <path d="M18 8L22 12L18 16" />
-                            <path d="M2 12H22" />
-                          </svg>
-                        </button>
-                      </div>
-                    </div>
+              ? jobs.map((job, jobIdx) => (
+                  <SwiperSlide key={jobIdx}>
+                    <JobCard
+                      job={job}
+                      jobIdx={jobIdx}
+                      handleShowModal={handleShowModal}
+                    />
                   </SwiperSlide>
                 ))
               : ""}
@@ -188,40 +138,20 @@ const Jobs: React.FC = () => {
 
           <div className="text-center mt-4 flex items-center justify-center mb-10 gap-2 py-4">
             <button className="swiper-button-prev">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-chevron-left"
-              >
-                <path d="m15 18-6-6 6-6" />
-              </svg>
+              <ChevronLeft size={48} />
             </button>
             <button className="swiper-button-next">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="48"
-                height="48"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-chevron-right"
-              >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
+              <ChevronRight size={48} />
             </button>
           </div>
         </div>
       </div>
+      <JobDetails
+        selectedJob={selectedJob}
+        setSelectedJob={setSelectedJob}
+        showModal={showModal}
+        setShowModal={setShowModal}
+      />
     </section>
   );
 };

@@ -4,6 +4,7 @@ import { JobsProps } from "../../lib/types";
 import JobsAside from "./aside/JobsAside";
 import { AnimatePresence, motion } from "framer-motion";
 import JobDetails from "./job-details/JobDetails";
+import { JobCard } from "..";
 import "./JobsPage.css";
 
 const JobsPage: React.FC = () => {
@@ -113,86 +114,11 @@ const JobsPage: React.FC = () => {
                   ? filteredJobs
                   : jobs
                 ).map((job, jobIdx) => (
-                  <motion.article
-                    className="container"
-                    layout
-                    key={job._id}
-                    initial={{ opacity: 0, y: 10 }}
-                    transition={{
-                      duration: 0.5,
-                      delay: jobIdx * 0.1,
-                      ease: [0.87, 0, 0.13, 1],
-                    }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    onClick={() => {
-                      handleShowModal(job);
-                    }}
-                  >
-                    <div className="card">
-                      <div className="front font-zenKaku">
-                        <h3 className="heading">
-                          {language === "en" && "Opportunity Areas"}{" "}
-                          {language === "es" && "Áreas de la Oportunidad"}{" "}
-                          {language === "it" && "Aree di opportunità"}
-                        </h3>
-                        <ul className="font-zenKaku flex items-center gap-x-1 flex-wrap justify-center">
-                          {job.areas
-                            ? job.areas.map((area, areaIdx) => (
-                                <React.Fragment key={areaIdx}>
-                                  <li className="text-neutral/90">
-                                    {area.area}
-                                  </li>
-                                  {job.areas &&
-                                    areaIdx < job.areas.length - 1 && (
-                                      <span>-</span>
-                                    )}
-                                </React.Fragment>
-                              ))
-                            : ""}
-                        </ul>
-                      </div>
-
-                      <div className="back">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="72"
-                          height="72"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
-                          <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
-                          <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
-                          <path d="M10 6h4" />
-                          <path d="M10 10h4" />
-                          <path d="M10 14h4" />
-                          <path d="M10 18h4" />
-                        </svg>
-
-                        <p className="heading">
-                          {job.jobs} {language === "en" && "Jobs"}{" "}
-                          {language === "es" && "Trabajos"}{" "}
-                          {language === "it" && "Lavori"}
-                        </p>
-
-                        <button
-                          className="font-zenKaku font-medium text-lg xxl:text-xl bg-purplePrimary w-10/12 py-1 flexCenter gap-4"
-                          type="button"
-                          onClick={() => {
-                            handleShowModal(job);
-                          }}
-                        >
-                          {language === "en" && "See Opportunity"}{" "}
-                          {language === "es" && "Ver Oportunidad"}{" "}
-                          {language === "it" && "Vedi Opportunità"}
-                        </button>
-                      </div>
-                    </div>
-                  </motion.article>
+                  <JobCard
+                    job={job}
+                    jobIdx={jobIdx}
+                    handleShowModal={handleShowModal}
+                  />
                 ))
               ) : (
                 <div className="text-3xl font-bold col-span-full flexCenter text-pretty">

@@ -35,9 +35,6 @@
 }
 
 .swiper-slide {
-  text-align: center;
-  background: rgba(20, 20, 20, 0.7);
-  backdrop-filter: blur(8px);
   display: flex;
   justify-content: center;
   align-items: center;
