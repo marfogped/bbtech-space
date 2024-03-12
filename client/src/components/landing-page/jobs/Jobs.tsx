@@ -137,12 +137,12 @@ const Jobs: React.FC = () => {
           </Swiper>
 
           <div className="text-center mt-4 flex items-center justify-center mb-10 gap-2 py-4">
-            <button className="swiper-button-prev">
+            <div aria-label="previous-jobs-button" className="swiper-button-prev cursor-pointer">
               <ChevronLeft size={48} />
-            </button>
-            <button className="swiper-button-next">
+            </div>
+            <div aria-label="next-jobs-button" className="swiper-button-next cursor-pointer">
               <ChevronRight size={48} />
-            </button>
+            </div>
           </div>
         </div>
       </div>

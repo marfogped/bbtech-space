@@ -19,9 +19,9 @@ const LanguageSelector: React.FC<{ onLanguageChange?: () => void }> = ({ onLangu
       onChange={changeLanguage}
       defaultValue={i18n.language}
     >
-      <option value="es">🇪🇸 Español</option>
-      <option value="en">🇬🇧 English</option>
-      <option value="it">🇮🇹 Italiano</option>
+      <option aria-label="Español-option" value="es">🇪🇸 Español</option>
+      <option aria-label="English-option" value="en">🇬🇧 English</option>
+      <option aria-label="Italiano-option" value="it">🇮🇹 Italiano</option>
     </select>
   );
 };

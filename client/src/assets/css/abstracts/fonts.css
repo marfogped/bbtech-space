@@ -1,50 +1,36 @@
 /* ========= VT323 Import ========= */
 @font-face {
-  font-family: "vt323";
-  src: url("/src/assets/fonts/VT323/VT323-Regular.ttf") format("truetype");
-  font-weight: 400;
+    font-family: "vt323";
+    src: url("/src/assets/fonts/VT323/VT323-Regular.ttf") format("truetype");
+    font-weight: 400;
 }
 
 /* ========= Zen Import ========= */
 @font-face {
-  font-family: "Zen Kaku Gothic New";
-  src: url("/src/assets/fonts/ZenKakuGothicNew/ZenKakuGothicNew-Regular.ttf")
-    format("truetype");
-  font-weight: 400;
+    font-family: "Zen Kaku Gothic New";
+    src: url("/src/assets/fonts/ZenKakuGothicNew/ZenKakuGothicNew-Regular.ttf")
+        format("truetype");
+    font-weight: 400;
 }
 
 @font-face {
-  font-family: "Zen Kaku Gothic New";
-  src: url("/src/assets/fonts/ZenKakuGothicNew/ZenKakuGothicNew-Medium.ttf")
-    format("truetype");
-  font-weight: 500;
+    font-family: "Zen Kaku Gothic New";
+    src: url("/src/assets/fonts/ZenKakuGothicNew/ZenKakuGothicNew-Medium.ttf")
+        format("truetype");
+    font-weight: 500;
 }
 
 @font-face {
-  font-family: "Zen Kaku Gothic New";
-  src: url("/src/assets/fonts/ZenKakuGothicNew/ZenKakuGothicNew-Light.ttf")
-    format("truetype");
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: "Zen Kaku Gothic New";
-  src: url("/src/assets/fonts/ZenKakuGothicNew/ZenKakuGothicNew-Bold.ttf")
-    format("truetype");
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: "Zen Kaku Gothic New";
-  src: url("/src/assets/fonts/ZenKakuGothicNew/ZenKakuGothicNew-Black.ttf")
-    format("truetype");
-  font-weight: 900;
+    font-family: "Zen Kaku Gothic New";
+    src: url("/src/assets/fonts/ZenKakuGothicNew/ZenKakuGothicNew-Bold.ttf")
+        format("truetype");
+    font-weight: 700;
 }
 
 /* ========= Cutive Mono Import ========= */
 @font-face {
-  font-family: "Cutive Mono";
-  src: url("/src/assets/fonts/CutiveMono/CutiveMono-Regular.ttf")
-    format("truetype");
-  font-weight: 400;
+    font-family: "Cutive Mono";
+    src: url("/src/assets/fonts/CutiveMono/CutiveMono-Regular.ttf")
+        format("truetype");
+    font-weight: 400;
 }

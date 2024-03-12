@@ -90,7 +90,7 @@ const Testimonials: React.FC = () => {
                   <div className="flex items-center gap-6 w-full">
                     <img
                       src={testimonial.userIcon}
-                      alt={testimonial.username}
+                      alt={`${testimonial.username} user icon`}
                       className="h-20 rounded-full"
                     />
 
@@ -127,7 +127,7 @@ const Testimonials: React.FC = () => {
                       target="_blank"
                       className="underline text-neutral/90 hover:text-neutral font-zenKaku text-md"
                       href={testimonial.testimonialLink}
-                      aria-label={`${testimonial.username}`}
+                      aria-label={`${testimonial.username} testimonial`}
                     >
                       {language === "en" && "See Post"}
                       {language === "es" && "Ver Publicación"}

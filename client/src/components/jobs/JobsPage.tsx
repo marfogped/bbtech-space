@@ -18,7 +18,7 @@ const JobsPage: React.FC = () => {
   }>({});
 
   const { getJobs, language } = useSanity();
-
+  window.scrollTo({ top: 0 }); 
   useEffect(() => {
     async function callJobs() {
       const allJobs = await getJobs(language);

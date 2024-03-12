@@ -37,18 +37,18 @@ const JobCard: React.FC<JobCardProps> = ({ job, jobIdx, handleShowModal }) => {
             {language === "es" && "Áreas de la Oportunidad"}{" "}
             {language === "it" && "Aree di opportunità"}
           </h3>
-          <ul className="font-zenKaku flex items-center gap-x-1 flex-wrap justify-center">
+          <div className="font-zenKaku flex items-center gap-x-1 flex-wrap justify-center">
             {job.areas
               ? job.areas.map((area, areaIdx) => (
                   <React.Fragment key={areaIdx}>
-                    <li className="text-neutral/90">{area.area}</li>
+                    <p className="text-neutral/90">{area.area}</p>
                     {job.areas && areaIdx < job.areas.length - 1 && (
                       <span>-</span>
                     )}
                   </React.Fragment>
                 ))
               : ""}
-          </ul>
+          </div>
         </div>
 
         <div className="back">
