@@ -1,5 +1,7 @@
 import React from 'react';
 import { Logo } from '../../lib/images';
+import { Link } from 'react-router-dom';
+import { Link as ExternalLink } from 'lucide-react';
 import { 
     InstagramIcon, 
     LinkedinIcon, 
@@ -63,7 +65,7 @@ const Footer: React.FC = () => {
             <section className='grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-6 gap-10 py-12'>
                 <div className='col-span-1 flex flex-col items-start justify-start gap-4'>
                     <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
-                        <WhatsAppIcon /> +54 9 1165689687
+                        <WhatsAppIcon /> +(54) 9 11 65689687
                     </div>
                     <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
                         <InstagramIcon size={32} /> bbtech.space
@@ -124,7 +126,14 @@ const Footer: React.FC = () => {
                             <MailIcon size={32} /> {t('for-companies')}
                         </div>
                         <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
-                            barbi@bbtech.space
+                            <a 
+                            className='underline flex items-center gap-2'
+                            href="mailto:barbi@bbtech.space"
+                            aria-label='companies mail redirect'
+                            >
+                                barbi@bbtech.space
+                                <ExternalLink size={16} />
+                            </a>
                         </div>
                     </div>
 
@@ -133,7 +142,13 @@ const Footer: React.FC = () => {
                             <MailIcon size={32} /> {t('for-workers')}
                         </div>
                         <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
-                            cv@bbtech.space
+                            <a
+                            className='underline flex items-center gap-2'
+                            href="mailto:cv@bbtech.space"
+                            aria-label='workers mail redirect'>
+                                cv@bbtech.space
+                                <ExternalLink size={16} />
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -147,10 +162,10 @@ const Footer: React.FC = () => {
                     <p>{t('copy')}</p>
                 </div>
 
-                <ul className='flex items-center xs:pt-4 sm:pt-4 lg:pt-0 lg:gap-16 xs:flex-col sm:flex-col lg:flex-row'>
-                    <li><a href="#">{t('terms')}</a></li>
-                    <li><a href="#">{t('privacy')}</a></li>
-                    <li><a href="#">{t('faq')}</a></li>
+                <ul className='flex items-center xs:pt-4 sm:pt-4 lg:pt-0 lg:gap-16 xs:flex-col sm:flex-col lg:flex-row xs:gap-y-1 sm:gap-y-1'>
+                    <li><Link to={`/terms-of-service`}>{t('terms')}</Link></li>
+                    <li><Link to={`/privacy-policy`}>{t('privacy')}</Link></li>
+                    <li><Link to={`/faq`}>{t('faq')}</Link></li>
                 </ul>
             </div>
         </div>
