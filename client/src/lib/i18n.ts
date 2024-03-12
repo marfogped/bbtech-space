@@ -17,6 +17,7 @@ i18n.use(HttpBackend)
             "testimonials",
             "footer",
             "terms",
+            "privacy",
         ],
         interpolation: {
             escapeValue: false,

@@ -5,7 +5,8 @@ import {
   InitialTransition,
   Transition,
   NotFound,
-  Terms
+  Terms,
+  Privacy
 } from "./components";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
@@ -15,6 +16,7 @@ const routes = [
   { path: "/", element: <LandingPage /> },
   { path: "/jobs", element: <JobsPage /> },
   { path: "/terms-of-service", element: <Terms /> },
+  { path: "/privacy-policy", element: <Privacy /> },
   { path: "*", element: <NotFound /> },
 ];
 

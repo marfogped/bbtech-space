@@ -20,3 +20,4 @@ export { default as LandingPage } from "./landing-page/LandingPage";
 export { default as JobsPage } from "./jobs/JobsPage";
 
 export { default as Terms } from "./support/Terms";
+export { default as Privacy } from "./support/Privacy";
