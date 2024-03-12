@@ -16,6 +16,7 @@ i18n.use(HttpBackend)
             "jobs",
             "testimonials",
             "footer",
+            "terms",
         ],
         interpolation: {
             escapeValue: false,
