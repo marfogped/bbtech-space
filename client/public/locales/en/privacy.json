@@ -1,0 +1,38 @@
+{
+    "section": "Privacy Policy",
+    "lastUpdated": "Last Updated on March 12, 2024",
+    "subSections": [
+        {
+            "title": "Introduction",
+            "content": "At BBTECH Space, we are committed to protecting your privacy. This policy outlines how we collect, use, and protect the personal information of our users and candidates."
+        },
+        {
+            "title": "Data Collection",
+            "content": "We collect personal information such as name, email address, phone number, and resume when you register on our platform or apply to a job offer."
+        },
+        {
+            "title": "Use of Information",
+            "content": "We use your personal information to facilitate the recruitment process, including communication between candidates and companies, and to improve our services."
+        },
+        {
+            "title": "Sharing Information",
+            "content": "We do not share your personal information with third parties, except as necessary for the recruitment process or when required by law."
+        },
+        {
+            "title": "Data Security",
+            "content": "We take security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
+        },
+        {
+            "title": "Your Rights",
+            "content": "You have the right to access, correct, or delete your personal information on our platform at any time."
+        },
+        {
+            "title": "Changes to Privacy Policy",
+            "content": "BBTECH Space reserves the right to modify this privacy policy. Any changes will be communicated through our website."
+        },
+        {
+            "title": "Contact",
+            "content": "If you have questions about this privacy policy, please contact us at barbi@bbtech.space."
+        }
+    ]
+}
