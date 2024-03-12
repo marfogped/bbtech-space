@@ -18,3 +18,5 @@ export { default as Jobs } from "./landing-page/jobs/Jobs";
 export { default as Testimonials } from "./landing-page/testimonials/Testimonials";
 export { default as LandingPage } from "./landing-page/LandingPage";
 export { default as JobsPage } from "./jobs/JobsPage";
+
+export { default as Terms } from "./support/Terms";

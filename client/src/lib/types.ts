@@ -64,3 +64,13 @@ export interface HomeProps {
     testimonials_tag_label?: string;
     testimonials?: TestimonialsProps[];
 }
+
+export interface SubSectionTranslation {
+    title: string;
+    content: string;
+}
+
+export interface SectionTranslationProps {
+    section: string;
+    subSections: SubSectionTranslation[];
+}
