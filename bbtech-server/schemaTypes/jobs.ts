@@ -9,11 +9,6 @@ export default {
       type: 'string',
     },
     {
-      title: 'Logo de Empresa',
-      name: 'companyIcon',
-      type: 'image',
-    },
-    {
       title: 'Areas',
       name: 'areas',
       type: 'array',
