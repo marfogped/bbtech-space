@@ -148,7 +148,7 @@
 }
 
 .form-input {
-    @apply block w-full appearance-none border border-neutral bg-transparent p-2.5 text-sm text-neutral focus:border-purplePrimary focus:outline-none focus:ring-0;
+    @apply block w-full appearance-none border border-neutral bg-transparent p-2.5 text-sm text-neutral focus:border-purplePrimary focus:outline-none focus:ring-0 font-zenKaku;
 }
 
 .form-label {
