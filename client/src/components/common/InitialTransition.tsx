@@ -44,7 +44,7 @@ const text = {
 const InitialTransition = () => {
   return (
     <motion.div
-      className="absolute z-[60] flex items-center justify-center w-full bg-[#040404] "
+      className="absolute z-[60] flex items-center justify-center w-full bg-[#040404] pointer-events-none"
       initial="initial"
       animate="animate"
       variants={darkBox}

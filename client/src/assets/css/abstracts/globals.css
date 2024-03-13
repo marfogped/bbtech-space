@@ -20,7 +20,7 @@
 
 .cta-btn {
     transition: all 0.3s cubic-bezier(0.87, 0, 0.13, 1);
-    @apply font-zenKaku font-medium text-lg xxl:text-xl bg-purplePrimary w-full py-2 flexCenter gap-4;
+    @apply font-zenKaku font-medium text-lg xxl:text-xl bg-purplePrimary w-full py-2 flexCenter gap-4 cursor-pointer;
 }
 
 .cta-btn:hover {
