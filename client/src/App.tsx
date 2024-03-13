@@ -16,7 +16,7 @@ import "./lib/i18n";
 const routes = [
   { path: "/", element: <LandingPage /> },
   { path: "/jobs", element: <JobsPage /> },
-  { path: "/contact", element: <Contact /> },
+  { path: "/contact/:jobId", element: <Contact /> },
   { path: "/terms-of-service", element: <Terms /> },
   { path: "/privacy-policy", element: <Privacy /> },
   { path: "*", element: <NotFound /> },
