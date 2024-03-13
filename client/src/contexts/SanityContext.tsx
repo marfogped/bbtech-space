@@ -11,6 +11,7 @@ interface SanityContextProps {
   isLoading: boolean;
   fetchError: boolean;
   language: string;
+  jobs: JobsProps[]
 }
 
 interface SanityProviderProps {
@@ -22,10 +23,11 @@ export const SanityContext = React.createContext<SanityContextProps | null>(
 );
 
 export const SanityProvider = ({ children }: SanityProviderProps) => {
+  const { i18n } = useTranslation();
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [fetchError, setFetchError] = useState<boolean>(false);
-  const { i18n } = useTranslation();
   const [language, setLanguage] = useState(i18n.language);
+  const [jobs, setJobs] = useState<JobsProps[]>([])
 
   const getHomePage = async (language: string) => {
     try {
@@ -109,6 +111,7 @@ export const SanityProvider = ({ children }: SanityProviderProps) => {
           language
         );
 
+        setJobs(jobsResult);
         i18n.changeLanguage(language);
         i18n.addResourceBundle(language, "jobs", translations);
         setIsLoading(false);
@@ -126,6 +129,7 @@ export const SanityProvider = ({ children }: SanityProviderProps) => {
     isLoading,
     fetchError,
     language,
+    jobs
   };
 
   return (

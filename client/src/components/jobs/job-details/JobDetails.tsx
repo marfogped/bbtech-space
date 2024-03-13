@@ -18,7 +18,6 @@ const JobDetails: React.FC<JobDetailsProps> = ({
   setShowModal,
 }) => {
   const { language } = useSanity();
-  console.log(selectedJob);
 
   return (
     <Modal
@@ -94,7 +93,7 @@ const JobDetails: React.FC<JobDetailsProps> = ({
         </div>
 
         <div className="pt-12 pb-6">
-          <Link to={"/contact"} className="cta-btn">
+          <Link to={`/contact/${selectedJob?._id}`} className="cta-btn">
             {language === "en" && "I'm Interested"}{" "}
             {language === "es" && "Estoy Interesado"}{" "}
             {language === "it" && "Sono interessato"}
