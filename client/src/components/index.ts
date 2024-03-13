@@ -10,6 +10,7 @@ export { default as Transition } from "./common/Transition";
 export { default as JobCard } from "./common/JobCard";
 export { default as Modal } from "./common/Modal";
 export { default as NotFound } from "./common/NotFound";
+export { default as Contact } from "./common/Contact";
 
 export { default as Hero } from "./landing-page/hero/Hero";
 export { default as About } from "./landing-page/about/About";

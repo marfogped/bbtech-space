@@ -6,7 +6,8 @@ import {
   Jobs,
   Services,
   Testimonials,
-  Navbar
+  Navbar,
+  Contact
 } from "..";
 import { useSanity } from "../../lib/useSanity";
 import { HomeProps } from "../../lib/types";
@@ -31,6 +32,7 @@ const LandingPage: React.FC = () => {
       <Services />
       <Jobs />
       <Testimonials />
+      <Contact />
       <Footer />
     </>
   );
