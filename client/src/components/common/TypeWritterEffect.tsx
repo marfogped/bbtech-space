@@ -19,7 +19,8 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
   useEffect(() => {
     if (texts === null || texts === undefined) return;
 
-    let timer: number;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let timer: any;
 
     if (isDeleting) {
       setTypingDelay(deletingSpeed);

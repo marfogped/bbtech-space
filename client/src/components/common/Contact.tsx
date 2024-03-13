@@ -145,7 +145,8 @@ const Contact: React.FC = () => {
                 import.meta.env.VITE_EMAILJS_PUBLIC_KEY
             )
             .then(
-              (result) => {
+              (result: { status: number, text: string}) => {
+                console.log(result)
                 setShowResponse({ response: 'success', text: t("emailSenderResponse.success"), show: true})
                 formElement.reset();
                 setTimeout(() => {
