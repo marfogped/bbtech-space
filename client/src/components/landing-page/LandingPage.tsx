@@ -27,13 +27,15 @@ const LandingPage: React.FC = () => {
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <Jobs />
-      <Testimonials />
-      <Contact />
-      <Footer />
+      <main>
+        <Hero />
+        <About />
+        <Services />
+        <Jobs />
+        <Testimonials />
+        <Contact />
+        <Footer />
+      </main>
     </>
   );
 };

@@ -29,18 +29,16 @@ function App() {
     <>
       <MatrixRain />
       <InitialTransition />
-      <main>
-        <AnimatePresence mode="wait">
-          <motion.div key={location.pathname} className="h-full">
-            <Transition />
-            <Routes location={location} key={location.pathname}>
-              {routes.map((route, index) => (
-                <Route key={index} path={route.path} element={route.element} />
-              ))}
-            </Routes>
-          </motion.div>
-        </AnimatePresence>
-      </main>
+      <AnimatePresence mode="wait">
+        <motion.div key={location.pathname} className="h-full">
+          <Transition />
+          <Routes location={location} key={location.pathname}>
+            {routes.map((route, index) => (
+              <Route key={index} path={route.path} element={route.element} />
+            ))}
+          </Routes>
+        </motion.div>
+      </AnimatePresence>
     </>
   );
 }

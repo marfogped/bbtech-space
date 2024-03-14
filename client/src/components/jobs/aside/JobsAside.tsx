@@ -49,8 +49,6 @@ const JobsAside: React.FC<JobsAsideProps> = ({
     if (jobs) setFilters(extractAreas(jobs));
   }, [jobs, language]);
 
-  console.log(jobs);
-
   const inputPlaceholder =
     language === "en"
       ? "Search Opportunity"

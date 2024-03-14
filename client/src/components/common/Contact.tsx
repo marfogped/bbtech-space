@@ -35,6 +35,7 @@ const Contact: React.FC = () => {
         setTimeout(() => {
           const contactPurpleWord = t("contact_purple_word");
           const secondContactPurpleWord = t("contact_purple_word_second");
+
           setTexts([contactPurpleWord, secondContactPurpleWord]);
         }, 500);
       };
@@ -44,8 +45,8 @@ const Contact: React.FC = () => {
       return () => {
         i18n.off("languageChanged loaded", updateTexts);
       };
-    }, [i18n, t, language]);
-
+    }, [jobId]);
+    
     useEffect(() => {
         const filterJob = () =>{
             if(jobId){
@@ -172,14 +173,12 @@ const Contact: React.FC = () => {
                     !isSubdirectory ? (
                         <SectionTag index={5} label={t("contact_tag_label")} />
                     ) : (
-                        <div className="flex items-center gap-2 mb-5">
+                        <Link className="font-zenKaku flex items-center gap-2 mb-5" to={"/"}>
                             <MoveLeft size={24} />
-                            <Link className="font-zenKaku" to={"/"}>
-                                {language === "en" && "Back Home"}{" "}
-                                {language === "es" && "Volver al Inicio"}{" "}
-                                {language === "it" && "Ritorno a casa"}
-                            </Link>
-                        </div>
+                            {language === "en" && "Back Home"}{" "}
+                            {language === "es" && "Volver al Inicio"}{" "}
+                            {language === "it" && "Ritorno a casa"}
+                        </Link>
                     )
                 }
                 <h2 className="xs:text-5xl sm:text-5xl lg:text-6xl font-vt323 text-pretty flex flex-col items-center">

@@ -23,7 +23,6 @@ const JobsPage: React.FC = () => {
   useEffect(() => {
     async function callJobs() {
       const allJobs = await getJobs(language);
-      console.log(allJobs);
       setJobs(allJobs);
     }
     callJobs();
@@ -33,8 +32,6 @@ const JobsPage: React.FC = () => {
     searchValue: string,
     filters: { [key: string]: boolean }
   ) => {
-    console.log(searchValue, filters);
-
     let result = jobs || [];
 
     if (searchValue) {
@@ -53,7 +50,6 @@ const JobsPage: React.FC = () => {
     if (activeFilters.length > 0) {
       result = result.filter((job) =>
         activeFilters.some((filter) => {
-          console.log(job.areas?.some((area) => area.area === filter));
           return job.areas?.some((area) => area.area === filter);
         })
       );
@@ -110,58 +106,61 @@ const JobsPage: React.FC = () => {
         <meta name="theme-color" content="#0A0A0A" />
       </Helmet>
 
-      <section className="w-full h-max overflow-hidden py-5">
-        <div className="section-container container-grid">
-          <aside className="col-span-1 h-max flex flex-col gap-y-5">
-            <JobsAside
-              jobs={jobs}
-              inputSearch={inputSearch}
-              handleUserSearch={handleUserSearch}
-              selectedFilters={selectedFilters}
-              handleFilterChange={handleFilterChange}
-            />
-          </aside>
+      <main>
+        <section className="w-full h-max overflow-hidden py-5">
+          <div className="section-container container-grid">
+            <aside className="col-span-1 h-max flex flex-col gap-y-5">
+              <JobsAside
+                jobs={jobs}
+                inputSearch={inputSearch}
+                handleUserSearch={handleUserSearch}
+                selectedFilters={selectedFilters}
+                handleFilterChange={handleFilterChange}
+              />
+            </aside>
 
-          <motion.section
-            layout
-            className="col-span-4 grid xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4 gap-5"
-          >
-            <AnimatePresence mode="wait">
-              <Suspense fallback="loading">
-                {jobs &&
-                filteredJobs &&
-                (inputSearch || Object.keys(selectedFilters).length
-                  ? filteredJobs
-                  : jobs
-                )?.length > 0 ? (
+            <motion.section
+              layout
+              className="col-span-4 grid xs:grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xxl:grid-cols-4 gap-5"
+            >
+              <AnimatePresence mode="wait">
+                <Suspense fallback="loading">
+                  {jobs &&
+                  filteredJobs &&
                   (inputSearch || Object.keys(selectedFilters).length
                     ? filteredJobs
                     : jobs
-                  ).map((job, jobIdx) => (
-                    <JobCard
-                      job={job}
-                      jobIdx={jobIdx}
-                      handleShowModal={handleShowModal}
-                    />
-                  ))
-                ) : (
-                  <div className="text-3xl font-bold col-span-full flexCenter text-pretty">
-                    {language === "en" && "No matches found"}{" "}
-                    {language === "es" && "No se encontraron coincidencias"}{" "}
-                    {language === "it" && "Nessun risultato trovato"}
-                  </div>
-                )}
-              </Suspense>
-            </AnimatePresence>
-          </motion.section>
-        </div>
-        <JobDetails
-          selectedJob={selectedJob}
-          setSelectedJob={setSelectedJob}
-          showModal={showModal}
-          setShowModal={setShowModal}
-        />
-      </section>
+                  )?.length > 0 ? (
+                    (inputSearch || Object.keys(selectedFilters).length
+                      ? filteredJobs
+                      : jobs
+                    ).map((job, jobIdx) => (
+                      <JobCard
+                        job={job}
+                        jobIdx={jobIdx}
+                        key={job._id}
+                        handleShowModal={handleShowModal}
+                      />
+                    ))
+                  ) : (
+                    <div className="text-3xl font-bold col-span-full flexCenter text-pretty">
+                      {language === "en" && "No matches found"}{" "}
+                      {language === "es" && "No se encontraron coincidencias"}{" "}
+                      {language === "it" && "Nessun risultato trovato"}
+                    </div>
+                  )}
+                </Suspense>
+              </AnimatePresence>
+            </motion.section>
+          </div>
+          <JobDetails
+            selectedJob={selectedJob}
+            setSelectedJob={setSelectedJob}
+            showModal={showModal}
+            setShowModal={setShowModal}
+          />
+        </section>
+      </main>
     </>
   );
 };
