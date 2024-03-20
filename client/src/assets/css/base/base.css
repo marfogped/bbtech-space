@@ -1,19 +1,29 @@
 @import url("../abstracts/fonts.css");
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 :root {
-  font-family: "Zen Kaku Gothic New", sans-serif;
-  --line-height-base: 1.5;
-  --font-weight-base: 400;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    --line-height-base: 1.5;
+    --font-weight-base: 400;
 
-  color: #f5f5f5;
-  background-color: #0a0a0a;
+    color: #f5f5f5;
+    background-color: #0a0a0a;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+::-moz-selection {
+    color: #f5f5f5;
+    background: rgba(154, 17, 217, 0.6);
+}
+
+::selection {
+    color: #f5f5f5;
+    background: rgba(154, 17, 217, 0.6);
 }
