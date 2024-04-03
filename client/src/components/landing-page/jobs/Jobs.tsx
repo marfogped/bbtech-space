@@ -71,8 +71,6 @@ const Jobs: React.FC = () => {
               {t("jobs_title")}{" "}
               <TypeWritterEffect
                 texts={texts ? texts : null}
-                typingSpeed={100}
-                deletingSpeed={100}
               />
             </h2>
           </div>

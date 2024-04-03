@@ -1,15 +1,15 @@
-import React, { useEffect, useState, useRef  } from "react";
-import { Logo } from "../../lib/images";
+import React, { useEffect, useState, useRef } from "react";
 import { LanguageSelector, ScrollTo } from "..";
 import useWindowDimensions from "../../lib/useWindowDimensions";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
+import Spline from "@splinetool/react-spline";
 
 const Navbar: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
   const [color, setColor] = useState<boolean>(false);
 
   const { windowWidth } = useWindowDimensions();
-  const { t } = useTranslation('navbar');
+  const { t } = useTranslation("navbar");
   const navRef = useRef<HTMLElement | null>(null);
 
   const openNav = () => {
@@ -56,26 +56,22 @@ const Navbar: React.FC = () => {
       >
         <div className="section-container flex items-center justify-between py-4">
           <div className="flexCenter">
-            <img src={Logo} alt="bbtech logo" className="h-14 w-auto" />
+            <div className="h-24 w-40">
+              <Spline scene="https://prod.spline.design/jbbME-z8f2ozAgpR/scene.splinecode" />
+            </div>
           </div>
 
           {windowWidth > 768 ? (
             <div className="flex items-center gap-4">
               <ul className="flex items-center gap-5 font-zenKaku text-xl">
                 <li>
-                  <ScrollTo id="about">
-                    {t('about')}
-                  </ScrollTo>
+                  <ScrollTo id="about">{t("about")}</ScrollTo>
                 </li>
                 <li>
-                  <ScrollTo id="services">
-                    {t('services')}
-                  </ScrollTo>
+                  <ScrollTo id="services">{t("services")}</ScrollTo>
                 </li>
                 <li>
-                  <ScrollTo id="jobs">
-                    {t('jobs')}
-                  </ScrollTo>
+                  <ScrollTo id="jobs">{t("jobs")}</ScrollTo>
                 </li>
               </ul>
 
@@ -95,31 +91,31 @@ const Navbar: React.FC = () => {
         </div>
       </nav>
 
-      {
-        windowWidth < 768 ? (
-          <nav className={`${isActive ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"} backdrop-blur-md z-40 transition-all fixed top-0 left-0 w-full h-max p-4 flex flex-col items-center`}>
-            <ul className="flex flex-col h-max items-center gap-5 font-zenKaku text-3xl mb-8 pt-20">
-              <li>
-                <ScrollTo id="about">
-                  {t('about')}
-                </ScrollTo>
-              </li>
-              <li>
-                <ScrollTo id="services">
-                  {t('services')}
-                </ScrollTo>
-              </li>
-              <li>
-                <ScrollTo id="jobs">
-                  {t('jobs')}
-                </ScrollTo>
-              </li>
-            </ul>
+      {windowWidth < 768 ? (
+        <nav
+          className={`${
+            isActive
+              ? "opacity-100 translate-y-0"
+              : "opacity-0 translate-y-4 pointer-events-none"
+          } backdrop-blur-md z-40 transition-all fixed top-0 left-0 w-full h-max p-4 flex flex-col items-center`}
+        >
+          <ul className="flex flex-col h-max items-center gap-5 font-zenKaku text-3xl mb-8 pt-20">
+            <li>
+              <ScrollTo id="about">{t("about")}</ScrollTo>
+            </li>
+            <li>
+              <ScrollTo id="services">{t("services")}</ScrollTo>
+            </li>
+            <li>
+              <ScrollTo id="jobs">{t("jobs")}</ScrollTo>
+            </li>
+          </ul>
 
-            <LanguageSelector onLanguageChange={() => setIsActive(false)} />
-          </nav>
-        ) : ("")
-      }   
+          <LanguageSelector onLanguageChange={() => setIsActive(false)} />
+        </nav>
+      ) : (
+        ""
+      )}
     </>
   );
 };

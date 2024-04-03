@@ -71,8 +71,6 @@ const Testimonials: React.FC = () => {
             {t("testimonials_title")}{" "}
             <TypeWritterEffect
               texts={texts}
-              typingSpeed={100}
-              deletingSpeed={100}
             />
           </h2>
         </div>

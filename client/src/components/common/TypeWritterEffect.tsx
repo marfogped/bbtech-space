@@ -9,7 +9,7 @@ type TypewriterEffectProps = {
 const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
   texts,
   typingSpeed = 150,
-  deletingSpeed = 50,
+  deletingSpeed = 100,
 }) => {
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
@@ -58,8 +58,7 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
 
   useEffect(() => {
     setCurrentText("");
-  }, [texts])
-  
+  }, [texts]);
 
   return (
     <span className="bg-purplePrimary block w-max text-black font-vt323">

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Logo } from '../../lib/images';
 import { Link } from 'react-router-dom';
 import { Link as ExternalLink } from 'lucide-react';
 import { 
@@ -10,6 +9,7 @@ import {
     MailIcon
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
+import Spline from '@splinetool/react-spline';
 
 const WhatsAppIcon = () => {
     return (
@@ -46,11 +46,9 @@ const Footer: React.FC = () => {
         <div className="section-container">
             <header className='grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-6 gap-10 pt-8'>
                 <div className='col-span-1 flex items-center justify-start'>
-                    <img 
-                    src={Logo} 
-                    alt="bbtech logo"
-                    className='h-24'
-                    />
+                    <div className='h-32 w-48'>
+                        <Spline scene="https://prod.spline.design/jbbME-z8f2ozAgpR/scene.splinecode" />
+                    </div>
                 </div>
 
                 <div className='col-span-4 items-center justify-start xs:hidden sm:hidden lg:flex'>
@@ -64,17 +62,25 @@ const Footer: React.FC = () => {
 
             <section className='grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-6 gap-10 py-12'>
                 <div className='col-span-1 flex flex-col items-start justify-start gap-4'>
-                    <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
-                        <WhatsAppIcon /> +(54) 9 11 65689687
+                    <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125'>
+                        <a target='_blank' aria-label='Chat in WhatsApp' href="https://wa.me/+5491165689687">
+                            <WhatsAppIcon />
+                        </a>
                     </div>
-                    <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
-                        <InstagramIcon size={32} /> bbtech.space
+                    <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125'>
+                        <a target='_blank' aria-label='Instagram Official Website' href="https://www.linkedin.com/in/barbitech/">
+                            <InstagramIcon size={32} />
+                        </a>
                     </div>
-                    <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
-                        <FacebookIcon size={32} /> BbTech
+                    <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125'>
+                        <a target='_blank' href="https://www.facebook.com/bbtech.space" aria-label='Facebook Official Website'>
+                            <FacebookIcon size={32} />
+                        </a>
                     </div>
-                    <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg'>
-                        <LinkedinIcon size={32} /> BBTECH
+                    <div className='flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125'>
+                        <a target='_blank' href="https://www.instagram.com/bbtech.space/" aria-label='LinkedIn Official Website'>
+                            <LinkedinIcon size={32} />
+                        </a>
                     </div>
                 </div>
 

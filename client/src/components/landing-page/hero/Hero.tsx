@@ -40,8 +40,6 @@ const Hero: React.FC = () => {
               {t("hero_title")}{" "}
               <TypeWritterEffect
                 texts={texts}
-                typingSpeed={100}
-                deletingSpeed={100}
               />
             </h1>
             <p className="xs:text-xl sm:text-xl md:text-2xl font-zenKaku text-balance text-neutral/90">

@@ -42,8 +42,6 @@ const About: React.FC = () => {
               {t("about_title")}{" "}
               <TypeWritterEffect
                 texts={texts ? texts : null}
-                typingSpeed={100}
-                deletingSpeed={100}
               />
             </h2>
             <p className="xs:text-xl sm:text-xl md:text-2xl font-zenKaku text-balance text-neutral/90">

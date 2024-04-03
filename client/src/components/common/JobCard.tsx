@@ -2,6 +2,7 @@ import React from "react";
 import { JobsProps } from "../../lib/types";
 import { useSanity } from "../../lib/useSanity";
 import { motion } from "framer-motion";
+import Spline from "@splinetool/react-spline";
 
 interface JobCardProps {
   job: JobsProps;
@@ -18,6 +19,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, jobIdx, handleShowModal }) => {
       layout
       key={job._id}
       initial={{ opacity: 0, y: 10 }}
+      viewport={{ once: true }}
       transition={{
         duration: 0.5,
         delay: jobIdx * 0.1,
@@ -49,26 +51,11 @@ const JobCard: React.FC<JobCardProps> = ({ job, jobIdx, handleShowModal }) => {
           </div>
         </div>
 
-        <div className="back">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="72"
-            height="72"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
-            <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
-            <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
-            <path d="M10 6h4" />
-            <path d="M10 10h4" />
-            <path d="M10 14h4" />
-            <path d="M10 18h4" />
-          </svg>
+        <div className="back relative">
+          <div className="absolute top-1/2 left-0 -z-[10] -translate-y-1/2 h-full w-full">
+            <Spline scene="https://prod.spline.design/Hp0rHDOyVD5NlI8R/scene.splinecode" />
+          </div>
+          <div className="absolute top-1/2 left-1/2 -z-[9] -translate-y-1/2 -translate-x-1/2 bg-black/40 h-full w-full"></div>
 
           <p className="heading">
             {job.jobs} {language === "en" && "Jobs"}{" "}
@@ -82,9 +69,9 @@ const JobCard: React.FC<JobCardProps> = ({ job, jobIdx, handleShowModal }) => {
               handleShowModal(job);
             }}
           >
-            {language === "en" && "See Opportunity"}{" "}
-            {language === "es" && "Ver Oportunidad"}{" "}
-            {language === "it" && "Vedi Opportunità"}
+            {language === "en" && "Apply Now"}{" "}
+            {language === "es" && "Aplicar Ahora"}{" "}
+            {language === "it" && "Applica Ora"}
           </button>
         </div>
       </div>

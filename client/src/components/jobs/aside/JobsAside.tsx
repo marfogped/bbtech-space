@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { LanguageSelector } from "../..";
-import { Logo } from "../../../lib/images";
 import { MoveLeft, SearchIcon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { JobsProps } from "../../../lib/types";
 import { motion } from "framer-motion";
 import { useSanity } from "../../../lib/useSanity";
 import { ListFilterIcon } from "lucide-react";
+import Spline from "@splinetool/react-spline";
 
 interface SelectedFilterProps {
   [key: string]: boolean;
@@ -76,9 +76,9 @@ const JobsAside: React.FC<JobsAsideProps> = ({
         </div>
 
         <div className="flex flex-col items-center mb-4">
-          <picture>
-            <img src={Logo} alt="bbtech logo" className="h-24 w-auto" />
-          </picture>
+          <div className='h-32 w-48'>
+              <Spline scene="https://prod.spline.design/jbbME-z8f2ozAgpR/scene.splinecode" />
+          </div>
           <div className="flex flex-col items-center">
             <h1>BBTECH Space</h1>
             <h2 className="font-vt323 bg-purplePrimary w-max mt-2 text-2xl text-black">

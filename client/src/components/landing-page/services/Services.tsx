@@ -58,8 +58,6 @@ const Services: React.FC = () => {
               {t("services_title")}{" "}
               <TypeWritterEffect
                 texts={texts ? texts : null}
-                typingSpeed={100}
-                deletingSpeed={100}
               />
             </h2>
           </div>
