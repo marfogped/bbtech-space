@@ -11,7 +11,7 @@ interface SanityContextProps {
   isLoading: boolean;
   fetchError: boolean;
   language: string;
-  jobs: JobsProps[]
+  jobs: JobsProps[];
 }
 
 interface SanityProviderProps {
@@ -27,7 +27,7 @@ export const SanityProvider = ({ children }: SanityProviderProps) => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [fetchError, setFetchError] = useState<boolean>(false);
   const [language, setLanguage] = useState(i18n.language);
-  const [jobs, setJobs] = useState<JobsProps[]>([])
+  const [jobs, setJobs] = useState<JobsProps[]>([]);
 
   const getHomePage = async (language: string) => {
     try {
@@ -61,6 +61,10 @@ export const SanityProvider = ({ children }: SanityProviderProps) => {
             }, 
             "companyIcon" : companyIcon.asset->url
           },
+          "offices": offices[]-> {
+            ...,
+            "country": country.${language},
+          },
       }`;
 
       const homeResult = await client.fetch(query);
@@ -70,6 +74,7 @@ export const SanityProvider = ({ children }: SanityProviderProps) => {
           homeResult,
           language
         );
+        console.log(translations);
         i18n.changeLanguage(language);
         setIsLoading(false);
         i18n.addResourceBundle(language, "home", translations);
@@ -129,7 +134,7 @@ export const SanityProvider = ({ children }: SanityProviderProps) => {
     isLoading,
     fetchError,
     language,
-    jobs
+    jobs,
   };
 
   return (

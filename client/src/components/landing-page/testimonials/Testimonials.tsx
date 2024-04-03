@@ -73,6 +73,9 @@ const Testimonials: React.FC = () => {
               texts={texts}
             />
           </h2>
+          <p className="xs:text-xl sm:text-xl md:text-2xl font-zenKaku text-balance text-center text-neutral/90 mt-5">
+            {t("testimonials_description")}
+          </p>
         </div>
 
         <div

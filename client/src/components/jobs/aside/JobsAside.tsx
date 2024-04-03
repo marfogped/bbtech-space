@@ -58,10 +58,10 @@ const JobsAside: React.FC<JobsAsideProps> = ({
 
   const jobBoard =
     language === "en"
-      ? "Job Board"
+      ? "Talent Searches"
       : language === "es"
-      ? "Bolsa de trabajo"
-      : "Bacheca di lavoro";
+      ? "Búsquedas de Talento"
+      : "Ricerche di talenti";
 
   return (
     <>
@@ -76,8 +76,8 @@ const JobsAside: React.FC<JobsAsideProps> = ({
         </div>
 
         <div className="flex flex-col items-center mb-4">
-          <div className='h-32 w-48'>
-              <Spline scene="https://prod.spline.design/jbbME-z8f2ozAgpR/scene.splinecode" />
+          <div className="h-32 w-48">
+            <Spline scene="https://prod.spline.design/jbbME-z8f2ozAgpR/scene.splinecode" />
           </div>
           <div className="flex flex-col items-center">
             <h1>BBTECH Space</h1>
