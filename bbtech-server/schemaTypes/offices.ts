@@ -11,7 +11,7 @@ export default {
     {
       title: 'Dirección',
       name: 'address',
-      type: 'localizedString',
+      type: 'string',
     },
   ],
   preview: {

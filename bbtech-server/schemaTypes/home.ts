@@ -194,6 +194,12 @@ export default {
       hidden: ({document}: {document: SanityDocument}) => document.type !== TESTIMONIALS,
     },
     {
+      title: 'Descripción',
+      name: 'testimonials_description',
+      type: 'localizedString',
+      hidden: ({document}: {document: SanityDocument}) => document.type !== TESTIMONIALS,
+    },
+    {
       title: 'Palabra con Background',
       name: 'testimonials_purple_word',
       type: 'localizedString',
@@ -226,11 +232,17 @@ export default {
       },
       hidden: ({document}: {document: SanityDocument}) => document.type !== TESTIMONIALS,
     },
-    
+
     // ----- Contact -----
     {
       title: 'Título',
       name: 'contact_title',
+      type: 'localizedString',
+      hidden: ({document}: {document: SanityDocument}) => document.type !== CONTACT,
+    },
+    {
+      title: 'Descripción',
+      name: 'contact_description',
       type: 'localizedString',
       hidden: ({document}: {document: SanityDocument}) => document.type !== CONTACT,
     },
