@@ -3,6 +3,7 @@ import localizedString from "./localizedString"
 import services from "./services"
 import jobs from "./jobs"
 import testimonials from "./testimonials"
+import offices from "./offices"
 
 export const schemaTypes = [
     home,
@@ -10,4 +11,5 @@ export const schemaTypes = [
     jobs,
     testimonials,
     localizedString,
+    offices
 ]

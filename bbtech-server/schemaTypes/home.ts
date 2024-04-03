@@ -6,8 +6,10 @@ const ABOUT = 'about'
 const SERVICES = 'services'
 const JOBS = 'jobs'
 const TESTIMONIALS = 'testimonials'
+const FOOTER = 'footer'
+const CONTACT = 'contact'
 
-const option = [HERO, ABOUT, SERVICES, JOBS, TESTIMONIALS]
+const option = [HERO, ABOUT, SERVICES, JOBS, TESTIMONIALS, CONTACT, FOOTER]
 
 export default {
   name: 'home',
@@ -223,6 +225,62 @@ export default {
         limit: 8,
       },
       hidden: ({document}: {document: SanityDocument}) => document.type !== TESTIMONIALS,
+    },
+    
+    // ----- Contact -----
+    {
+      title: 'Título',
+      name: 'contact_title',
+      type: 'localizedString',
+      hidden: ({document}: {document: SanityDocument}) => document.type !== CONTACT,
+    },
+    {
+      title: 'Palabra con Background',
+      name: 'contact_purple_word',
+      type: 'localizedString',
+      hidden: ({document}: {document: SanityDocument}) => document.type !== CONTACT,
+    },
+    {
+      title: 'Segunda Palabra con Background',
+      name: 'contact_purple_word_second',
+      type: 'localizedString',
+      hidden: ({document}: {document: SanityDocument}) => document.type !== CONTACT,
+    },
+    {
+      title: 'Etiqueta de la Sección',
+      name: 'contact_tag_label',
+      type: 'localizedString',
+      hidden: ({document}: {document: SanityDocument}) => document.type !== CONTACT,
+    },
+
+    // ----- Footer -----
+
+    {
+      title: 'Oficinas',
+      name: 'offices',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'offices'}],
+        },
+      ],
+      options: {
+        limit: 3,
+      },
+      hidden: ({document}: {document: SanityDocument}) => document.type !== FOOTER,
+    },
+    {
+      title: 'Mail para Empresas',
+      name: 'companies_mail',
+      type: 'string',
+      hidden: ({document}: {document: SanityDocument}) => document.type !== FOOTER,
+    },
+    {
+      title: 'Mail para Candidatos',
+      name: 'workers_mail',
+      type: 'string',
+      hidden: ({document}: {document: SanityDocument}) => document.type !== FOOTER,
     },
   ],
   preview: {
