@@ -76,8 +76,10 @@ const Footer: React.FC = () => {
       returnObjects: true,
     });
 
-    setOffices(officcesArr);
-  }, [language]);
+    if (typeof officcesArr !== "string") {
+      setOffices(officcesArr);
+    }
+  }, [language, t]);
 
   return (
     <footer className="w-full h-max bg-bkgGray/70 backdrop-blur rounded-t-[3rem] mt-24">
@@ -140,8 +142,11 @@ const Footer: React.FC = () => {
 
           <div className="col-span-4 flex items-start justify-between flex-wrap gap-4">
             {offices && offices.length
-              ? offices.map((office) => (
-                  <div className="flex flex-col items-start justify-start gap-4">
+              ? offices.map((office, officeIdx) => (
+                  <div
+                    key={officeIdx}
+                    className="flex flex-col items-start justify-start gap-4"
+                  >
                     <div className="flex items-center gap-2 font-zenKaku xs:text-xl sm:text-xl xl:text-2xl font-semibold">
                       <MapPinned size={32} /> {office.country}
                     </div>
