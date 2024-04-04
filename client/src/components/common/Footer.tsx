@@ -132,7 +132,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125">
               <a
                 target="_blank"
-                href="https://www.instagram.com/bbtech.space/"
+                href="https://www.linkedin.com/in/barbitech/"
                 aria-label="LinkedIn Official Website"
               >
                 <LinkedinIcon size={32} />
