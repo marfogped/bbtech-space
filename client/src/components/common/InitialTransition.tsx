@@ -1,4 +1,7 @@
+import Spline from "@splinetool/react-spline";
 import { motion } from "framer-motion";
+import { Suspense } from "react";
+import { useEnhancerMode } from "../../lib/useEnhancerMode";
 
 const darkBox = {
   initial: {
@@ -42,6 +45,8 @@ const text = {
 };
 
 const InitialTransition = () => {
+  const { enhancedMode, internetSpeed } = useEnhancerMode();
+
   return (
     <motion.div
       className="absolute z-[60] flex items-center justify-center w-full bg-[#040404] pointer-events-none"
@@ -53,30 +58,37 @@ const InitialTransition = () => {
         document.body.classList.remove("overflow-hidden")
       }
     >
-      <motion.svg variants={textContainer} className="absolute z-[60] flex">
-        <pattern
-          id="pattern"
-          patternUnits="userSpaceOnUse"
-          width={800}
-          height={800}
-          className="text-purplePrimary "
-        >
-          <rect className="w-full h-full fill-current" />
-          <motion.rect
-            variants={text}
-            className="w-full h-full text-white fill-current"
-          />
-        </pattern>
-        <text
-          className="text-4xl font-bold font-zenKaku"
-          textAnchor="middle"
-          x="50%"
-          y="50%"
-          style={{ fill: "url(#pattern)" }}
-        >
-          BBTECH Space
-        </text>
-      </motion.svg>
+      {(internetSpeed === "4G" || internetSpeed === "unknown") &&
+      !enhancedMode ? (
+        <Suspense>
+          <Spline scene="https://prod.spline.design/iQenIyHzOzftEA9t/scene.splinecode" />
+        </Suspense>
+      ) : (
+        <motion.svg variants={textContainer} className="absolute z-[60] flex">
+          <pattern
+            id="pattern"
+            patternUnits="userSpaceOnUse"
+            width={800}
+            height={800}
+            className="text-purplePrimary "
+          >
+            <rect className="w-full h-full fill-current" />
+            <motion.rect
+              variants={text}
+              className="w-full h-full text-white fill-current"
+            />
+          </pattern>
+          <text
+            className="text-4xl font-bold font-zenKaku"
+            textAnchor="middle"
+            x="50%"
+            y="50%"
+            style={{ fill: "url(#pattern)" }}
+          >
+            BBTECH Space
+          </text>
+        </motion.svg>
+      )}
     </motion.div>
   );
 };

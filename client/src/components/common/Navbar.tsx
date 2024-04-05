@@ -56,7 +56,7 @@ const Navbar: React.FC = () => {
       >
         <div className="section-container flex items-center justify-between py-4">
           <div className="flexCenter">
-            <div className="h-24 w-40">
+            <div className="h-24 w-40 xxl:h-36 xxl:w-52">
               <Spline scene="https://prod.spline.design/jbbME-z8f2ozAgpR/scene.splinecode" />
             </div>
           </div>

@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { AboutImg } from "../../../lib/images";
 import { SectionTag, TypeWritterEffect } from "../..";
 import { useTranslation } from "react-i18next";
 import { useSanity } from "../../../lib/useSanity";
+import Spline from "@splinetool/react-spline";
 
 const About: React.FC = () => {
   const { t, i18n } = useTranslation("home");
@@ -11,7 +11,7 @@ const About: React.FC = () => {
 
   useEffect(() => {
     const updateTexts = () => {
-      setTexts(null); 
+      setTexts(null);
 
       setTimeout(() => {
         const aboutPurpleWord = t("about_purple_word");
@@ -40,9 +40,7 @@ const About: React.FC = () => {
             <SectionTag index={1} label={t("about_tag_label")} />
             <h2 className="xs:text-5xl sm:text-5xl lg:text-6xl font-vt323 text-pretty">
               {t("about_title")}{" "}
-              <TypeWritterEffect
-                texts={texts ? texts : null}
-              />
+              <TypeWritterEffect texts={texts ? texts : null} />
             </h2>
             <p className="xs:text-xl sm:text-xl md:text-2xl font-zenKaku text-balance text-neutral/90">
               {t("description_1")}
@@ -54,11 +52,9 @@ const About: React.FC = () => {
         </div>
 
         <div className="lg:col-span-2 relative flexCenter overflow-hidden">
-          <img
-            src={AboutImg}
-            alt="hero image"
-            className="xs:w-[80%] sm:w-[80%] lg:w-full h-auto aspect-square object-contain"
-          />
+          <div className="w-[80%] h-[80%]">
+            <Spline scene="https://prod.spline.design/1mUP4c2L0lLRj1Z0/scene.splinecode" />
+          </div>
         </div>
       </div>
     </section>

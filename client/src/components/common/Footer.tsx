@@ -55,6 +55,28 @@ const WhatsAppIcon = () => {
   );
 };
 
+const DiscordIcon = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="32px"
+      height="32px"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+      <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+      <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" />
+      <path d="M7 16.5c3.5 1 6.5 1 10 0" />
+    </svg>
+  );
+};
+
 interface OfficesProps {
   country: string;
   address: string;
@@ -106,6 +128,7 @@ const Footer: React.FC = () => {
               <a
                 target="_blank"
                 aria-label="Chat in WhatsApp"
+                content="Chat in WhatsApp"
                 href="https://wa.me/+5491165689687"
               >
                 <WhatsAppIcon />
@@ -115,6 +138,7 @@ const Footer: React.FC = () => {
               <a
                 target="_blank"
                 aria-label="Instagram Official Website"
+                content="Instagram Official Website"
                 href="https://www.linkedin.com/in/barbitech/"
               >
                 <InstagramIcon size={32} />
@@ -125,6 +149,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 href="https://www.facebook.com/bbtech.space"
                 aria-label="Facebook Official Website"
+                content="Facebook Official Website"
               >
                 <FacebookIcon size={32} />
               </a>
@@ -134,8 +159,20 @@ const Footer: React.FC = () => {
                 target="_blank"
                 href="https://www.linkedin.com/in/barbitech/"
                 aria-label="LinkedIn Official Website"
+                content="LinkedIn Official Website"
               >
                 <LinkedinIcon size={32} />
+              </a>
+            </div>
+
+            <div className="flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125">
+              <a
+                target="_blank"
+                href="https://discord.com/channels/@me/1215722896442269696/1225505074785157172"
+                aria-label="Discord Group"
+                content="Discord Group"
+              >
+                <DiscordIcon />
               </a>
             </div>
           </div>
@@ -150,7 +187,7 @@ const Footer: React.FC = () => {
                     <div className="flex items-center gap-2 font-zenKaku xs:text-xl sm:text-xl xl:text-2xl font-semibold">
                       <MapPinned size={32} /> {office.country}
                     </div>
-                    <div className="flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg">
+                    <div className="flex items-center text-wrap w-full gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg">
                       {office.address}
                     </div>
                   </div>
