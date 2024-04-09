@@ -1,6 +1,7 @@
 import {SanityDocument} from '@sanity/types'
 
 // --- DOCUMENT TYPES ---
+const NAVBAR = 'navbar'
 const HERO = 'hero'
 const ABOUT = 'about'
 const SERVICES = 'services'
@@ -9,15 +10,13 @@ const TESTIMONIALS = 'testimonials'
 const FOOTER = 'footer'
 const CONTACT = 'contact'
 
-const option = [HERO, ABOUT, SERVICES, JOBS, TESTIMONIALS, CONTACT, FOOTER]
+const option = [HERO, ABOUT, SERVICES, JOBS, TESTIMONIALS, CONTACT, FOOTER, NAVBAR]
 
 export default {
   name: 'home',
   title: 'Home',
   type: 'document',
   fields: [
-    // ----- Hero -----
-
     {
       name: 'type',
       title: 'Type',
@@ -25,6 +24,24 @@ export default {
       options: {
         list: option,
       },
+    },
+    {
+      title: 'Acerca De',
+      name: 'navbar_about',
+      type: 'localizedString',
+      hidden: ({document}: {document: SanityDocument}) => document.type !== NAVBAR,
+    },
+    {
+      title: 'Servicios',
+      name: 'navbar_services',
+      type: 'localizedString',
+      hidden: ({document}: {document: SanityDocument}) => document.type !== NAVBAR,
+    },
+    {
+      title: 'Trabajos',
+      name: 'navbar_jobs',
+      type: 'localizedString',
+      hidden: ({document}: {document: SanityDocument}) => document.type !== NAVBAR,
     },
     {
       title: 'Título',
