@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { SectionTag, TypeWritterEffect } from "../..";
 import { useTranslation } from "react-i18next";
 import { useSanity } from "../../../lib/useSanity";
-import Spline from "@splinetool/react-spline";
+const SplineModel = lazy(() => import("../../common/SplineModel"));
 
 const About: React.FC = () => {
   const { t, i18n } = useTranslation("home");
@@ -53,7 +53,13 @@ const About: React.FC = () => {
 
         <div className="lg:col-span-2 relative flexCenter overflow-hidden">
           <div className="w-[80%] h-[80%]">
-            <Spline scene="https://prod.spline.design/1mUP4c2L0lLRj1Z0/scene.splinecode" />
+            <Suspense fallback={<div>Cargando...</div>}>
+              <SplineModel
+                splineModelUrl={
+                  "https://prod.spline.design/1mUP4c2L0lLRj1Z0/scene.splinecode"
+                }
+              />
+            </Suspense>
           </div>
         </div>
       </div>

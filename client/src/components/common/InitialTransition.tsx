@@ -1,7 +1,7 @@
-import Spline from "@splinetool/react-spline";
 import { motion } from "framer-motion";
-import { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { useEnhancerMode } from "../../lib/useEnhancerMode";
+const SplineModel = lazy(() => import("../common/SplineModel"));
 
 const darkBox = {
   initial: {
@@ -60,8 +60,12 @@ const InitialTransition = () => {
     >
       {(internetSpeed === "4G" || internetSpeed === "unknown") &&
       !enhancedMode ? (
-        <Suspense>
-          <Spline scene="https://prod.spline.design/iQenIyHzOzftEA9t/scene.splinecode" />
+        <Suspense fallback={<div>Cargando...</div>}>
+          <SplineModel
+            splineModelUrl={
+              "https://prod.spline.design/iQenIyHzOzftEA9t/scene.splinecode"
+            }
+          />
         </Suspense>
       ) : (
         <motion.svg variants={textContainer} className="absolute z-[60] flex">

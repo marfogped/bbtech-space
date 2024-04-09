@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, lazy, Suspense } from "react";
 import { LanguageSelector, ScrollTo } from "..";
 import useWindowDimensions from "../../lib/useWindowDimensions";
 import { useTranslation } from "react-i18next";
-import Spline from "@splinetool/react-spline";
+const SplineModel = lazy(() => import("../common/SplineModel"));
 
 const Navbar: React.FC = () => {
   const [isActive, setIsActive] = useState<boolean>(false);
@@ -57,7 +57,13 @@ const Navbar: React.FC = () => {
         <div className="section-container flex items-center justify-between py-4">
           <div className="flexCenter">
             <div className="h-24 w-40 xxl:h-36 xxl:w-52">
-              <Spline scene="https://prod.spline.design/jbbME-z8f2ozAgpR/scene.splinecode" />
+              <Suspense fallback={<div>Cargando...</div>}>
+                <SplineModel
+                  splineModelUrl={
+                    "https://prod.spline.design/jbbME-z8f2ozAgpR/scene.splinecode"
+                  }
+                />
+              </Suspense>
             </div>
           </div>
 

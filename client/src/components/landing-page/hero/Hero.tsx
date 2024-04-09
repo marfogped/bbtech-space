@@ -1,10 +1,10 @@
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Satelite1 } from "../../../lib/images";
 import { TypeWritterEffect, ScrollTo } from "../..";
 import { useEnhancerMode } from "../../../lib/useEnhancerMode";
 import { useSanity } from "../../../lib/useSanity";
-import Spline from "@splinetool/react-spline";
+const SplineModel = lazy(() => import("../../common/SplineModel"));
 
 const Hero: React.FC = () => {
   const { t, i18n } = useTranslation("home");
@@ -56,8 +56,12 @@ const Hero: React.FC = () => {
         <div className="lg:col-span-2 relative flexCenter my-auto group h-[500px]">
           {(internetSpeed === "4G" || internetSpeed === "unknown") &&
           !enhancedMode ? (
-            <Suspense>
-              <Spline scene="https://prod.spline.design/iQenIyHzOzftEA9t/scene.splinecode" />
+            <Suspense fallback={<div>Cargando...</div>}>
+              <SplineModel
+                splineModelUrl={
+                  "https://prod.spline.design/iQenIyHzOzftEA9t/scene.splinecode"
+                }
+              />
             </Suspense>
           ) : (
             <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flexCenter">

@@ -1,10 +1,10 @@
-import React, { Suspense } from "react";
+import React, { Suspense, lazy } from "react";
 import { useEnhancerMode } from "../../../../lib/useEnhancerMode";
 import {
   WorkersServiceImage,
   CompaniesServiceImage,
 } from "../../../../lib/images";
-import Spline from "@splinetool/react-spline";
+const SplineModel = lazy(() => import("../../../common/SplineModel"));
 
 interface Service {
   image: string;
@@ -37,8 +37,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
             <div className="w-32 h-32 rounded-full overflow-hidden bg-purplePrimary/60 flexCenter">
               {(internetSpeed === "4G" || internetSpeed === "unknown") &&
               !enhancedMode ? (
-                <Suspense>
-                  <Spline scene={`${service.splineModelUrl}`} />
+                <Suspense fallback={<div>Cargando...</div>}>
+                  <SplineModel splineModelUrl={service.splineModelUrl} />
                 </Suspense>
               ) : (
                 <img

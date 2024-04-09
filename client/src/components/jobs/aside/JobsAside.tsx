@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { LanguageSelector } from "../..";
 import { MoveLeft, SearchIcon } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -6,7 +6,7 @@ import { JobsProps } from "../../../lib/types";
 import { motion } from "framer-motion";
 import { useSanity } from "../../../lib/useSanity";
 import { ListFilterIcon } from "lucide-react";
-import Spline from "@splinetool/react-spline";
+const SplineModel = lazy(() => import("../../common/SplineModel"));
 
 interface SelectedFilterProps {
   [key: string]: boolean;
@@ -77,7 +77,13 @@ const JobsAside: React.FC<JobsAsideProps> = ({
 
         <div className="flex flex-col items-center mb-4">
           <div className="h-32 w-48">
-            <Spline scene="https://prod.spline.design/jbbME-z8f2ozAgpR/scene.splinecode" />
+            <Suspense fallback={<div>Cargando...</div>}>
+              <SplineModel
+                splineModelUrl={
+                  "https://prod.spline.design/jbbME-z8f2ozAgpR/scene.splinecode"
+                }
+              />
+            </Suspense>
           </div>
           <div className="flex flex-col items-center">
             <h1>BBTECH Space</h1>

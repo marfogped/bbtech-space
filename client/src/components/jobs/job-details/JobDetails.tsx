@@ -21,7 +21,7 @@ const JobDetails: React.FC<JobDetailsProps> = ({
 
   return (
     <Modal
-      height="90vh"
+      height="75vh"
       width="100vw"
       show={showModal}
       onClose={() => {

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Link as ExternalLink } from "lucide-react";
 import {
@@ -9,7 +9,7 @@ import {
   MailIcon,
 } from "lucide-react";
 import { useTranslation } from "react-i18next";
-import Spline from "@splinetool/react-spline";
+const SplineModel = lazy(() => import("../common/SplineModel"));
 import { useSanity } from "../../lib/useSanity";
 import { getFooterStrings, FooterTranslations } from "../../lib/utils";
 
@@ -109,7 +109,13 @@ const Footer: React.FC = () => {
         <header className="grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-6 gap-10 pt-8">
           <div className="col-span-1 flex items-center justify-start">
             <div className="h-32 w-48">
-              <Spline scene="https://prod.spline.design/jbbME-z8f2ozAgpR/scene.splinecode" />
+              <Suspense fallback={<div>Cargando...</div>}>
+                <SplineModel
+                  splineModelUrl={
+                    "https://prod.spline.design/jbbME-z8f2ozAgpR/scene.splinecode"
+                  }
+                />
+              </Suspense>
             </div>
           </div>
 
