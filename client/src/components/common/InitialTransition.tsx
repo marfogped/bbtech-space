@@ -1,51 +1,65 @@
 import { motion } from "framer-motion";
-import { Suspense, lazy } from "react";
 import { useEnhancerMode } from "../../lib/useEnhancerMode";
-const SplineModel = lazy(() => import("../common/SplineModel"));
-
-const darkBox = {
-  initial: {
-    height: "100vh",
-    bottom: 0,
-  },
-  animate: {
-    height: 0,
-    transition: {
-      when: "afterChildren",
-      duration: 1.5,
-      ease: [0.87, 0, 0.13, 1],
-    },
-  },
-};
-
-const textContainer = {
-  initial: {
-    opacity: 1,
-  },
-  animate: {
-    opacity: 0,
-    transition: {
-      duration: 0.25,
-      when: "afterChildren",
-    },
-  },
-};
-
-const text = {
-  initial: {
-    y: 20,
-  },
-  animate: {
-    y: 100,
-    transition: {
-      duration: 4,
-      ease: [0.87, 0, 0.13, 1],
-    },
-  },
-};
+import SplineModel from "./SplineModel";
 
 const InitialTransition = () => {
   const { enhancedMode, internetSpeed } = useEnhancerMode();
+
+  const showSplineModel =
+    (internetSpeed === "4G" || internetSpeed === "unknown") && !enhancedMode;
+
+  const darkBox = {
+    initial: {
+      height: "100vh",
+      bottom: 0,
+    },
+    animate: {
+      height: 0,
+      transition: {
+        when: "afterChildren",
+        duration: 1.5,
+        ease: [0.87, 0, 0.13, 1],
+      },
+    },
+  };
+
+  const modelContainer = {
+    initial: {
+      opacity: 1,
+    },
+    animate: {
+      opacity: 0,
+      transition: {
+        duration: 5,
+      },
+    },
+  };
+
+  const textContainer = {
+    initial: {
+      opacity: 1,
+    },
+    animate: {
+      opacity: 0,
+      transition: {
+        duration: 0.25,
+        when: "afterChildren",
+      },
+    },
+  };
+
+  const text = {
+    initial: {
+      y: 20,
+    },
+    animate: {
+      y: 100,
+      transition: {
+        duration: 4,
+        ease: [0.87, 0, 0.13, 1],
+      },
+    },
+  };
 
   return (
     <motion.div
@@ -58,15 +72,15 @@ const InitialTransition = () => {
         document.body.classList.remove("overflow-hidden")
       }
     >
-      {(internetSpeed === "4G" || internetSpeed === "unknown") &&
-      !enhancedMode ? (
-        <Suspense fallback={<div>Cargando...</div>}>
+      {showSplineModel ? (
+        <motion.div variants={modelContainer}>
           <SplineModel
+            delay={0}
             splineModelUrl={
-              "https://prod.spline.design/iQenIyHzOzftEA9t/scene.splinecode"
+              "https://prod.spline.design/jbbME-z8f2ozAgpR/scene.splinecode"
             }
           />
-        </Suspense>
+        </motion.div>
       ) : (
         <motion.svg variants={textContainer} className="absolute z-[60] flex">
           <pattern

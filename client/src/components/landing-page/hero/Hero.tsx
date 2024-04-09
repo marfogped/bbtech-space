@@ -1,15 +1,12 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Satelite1 } from "../../../lib/images";
 import { TypeWritterEffect, ScrollTo } from "../..";
-import { useEnhancerMode } from "../../../lib/useEnhancerMode";
 import { useSanity } from "../../../lib/useSanity";
 const SplineModel = lazy(() => import("../../common/SplineModel"));
 
 const Hero: React.FC = () => {
   const { t, i18n } = useTranslation("home");
   const { language } = useSanity();
-  const { enhancedMode, internetSpeed } = useEnhancerMode();
   const [texts, setTexts] = useState<string[] | null>(null);
 
   useEffect(() => {
@@ -54,24 +51,13 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="lg:col-span-2 relative flexCenter my-auto group h-[500px]">
-          {(internetSpeed === "4G" || internetSpeed === "unknown") &&
-          !enhancedMode ? (
-            <Suspense fallback={<div>Cargando...</div>}>
-              <SplineModel
-                splineModelUrl={
-                  "https://prod.spline.design/iQenIyHzOzftEA9t/scene.splinecode"
-                }
-              />
-            </Suspense>
-          ) : (
-            <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 flexCenter">
-              <img
-                src={Satelite1}
-                alt={"Satelite image"}
-                className="w-[60%] h-auto group-hover:-translate-y-10 group-hover:scale-150 opacity-50 group-hover:opacity-100 transition duration-150 group-hover:drop-shadow-[0_35px_35px_rgba(154,17,217,0.80)]"
-              />
-            </div>
-          )}
+          <Suspense fallback={<div>Cargando...</div>}>
+            <SplineModel
+              splineModelUrl={
+                "https://prod.spline.design/jbbME-z8f2ozAgpR/scene.splinecode"
+              }
+            />
+          </Suspense>
         </div>
       </div>
     </header>

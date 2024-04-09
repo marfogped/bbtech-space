@@ -1,9 +1,5 @@
 import React, { Suspense, lazy } from "react";
 import { useEnhancerMode } from "../../../../lib/useEnhancerMode";
-import {
-  WorkersServiceImage,
-  CompaniesServiceImage,
-} from "../../../../lib/images";
 const SplineModel = lazy(() => import("../../../common/SplineModel"));
 
 interface Service {
@@ -22,13 +18,6 @@ interface ServiceCardProps {
 const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
   const { internetSpeed, enhancedMode } = useEnhancerMode();
 
-  const isForWorkers =
-    service.tag === "For Workers" ||
-    service.tag === "Per Lavoratori" ||
-    service.tag === "Para Trabajadores"
-      ? true
-      : false;
-
   return (
     <article className="bg-bkgGray/70 backdrop-blur hover:shadow-xl shadow-purplePrimary flex flex-col justify-between p-4 h-full">
       <div className="flex flex-col gap-4">
@@ -42,15 +31,9 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
                 </Suspense>
               ) : (
                 <img
-                  src={
-                    isForWorkers ? WorkersServiceImage : CompaniesServiceImage
-                  }
-                  alt={
-                    isForWorkers
-                      ? "Workers Service Image"
-                      : "Companies Service Image"
-                  }
-                  className="w-24 h-24 aspect-square object-contain"
+                  src={service.image}
+                  alt={`${service.title} Image`}
+                  className="w-full h-full object-cover"
                 />
               )}
             </div>

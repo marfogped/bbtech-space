@@ -100,7 +100,7 @@ export function getLocalizedStrings(
       userType: {
         label: "Type",
         company: "Company",
-        worker: "Worker",
+        worker: "Talent",
       },
       formValidations: {
         firstName: "Please enter your name.",
@@ -125,7 +125,7 @@ export function getLocalizedStrings(
       userType: {
         label: "Tipo",
         company: "Empresa",
-        worker: "Trabajador",
+        worker: "Talento",
       },
       formValidations: {
         firstName: "Por favor, ingrese su nombre.",
@@ -150,7 +150,7 @@ export function getLocalizedStrings(
       userType: {
         label: "Tipo",
         company: "Azienda",
-        worker: "Lavoratore",
+        worker: "Talento",
       },
       formValidations: {
         firstName: "Per favore, inserisci il tuo nome.",
@@ -207,30 +207,30 @@ export function getFooterStrings(
 ): FooterTranslations | undefined {
   const footerStrings: FooterStrings = {
     en: {
-      ourOffices: "Our Offices",
+      ourOffices: "Command Centers",
       contact: "Contact",
-      forCompanies: "For Companies",
-      forWorkers: "For Workers",
+      forCompanies: "Company",
+      forWorkers: "Talents",
       copy: "© 2024 All Rights Reserved.",
       terms: "Terms of Service",
       privacy: "Privacy Policy",
       faq: "FAQ",
     },
     es: {
-      ourOffices: "Nuestras Oficinas",
+      ourOffices: "Centros de Comando",
       contact: "Contacto",
-      forCompanies: "Para Empresas",
-      forWorkers: "Para Trabajadores",
+      forCompanies: "Empresa",
+      forWorkers: "Talento",
       copy: "© 2024 Todos los Derechos Reservados.",
       terms: "Términos de Servicio",
       privacy: "Política de Privacidad",
       faq: "Preguntas Frecuentes",
     },
     it: {
-      ourOffices: "Le Nostre Uffici",
+      ourOffices: "Centri di Comando",
       contact: "Contatto",
-      forCompanies: "Per le Aziende",
-      forWorkers: "Per i Lavoratori",
+      forCompanies: "Aziende",
+      forWorkers: "Talento",
       copy: "© 2024 Tutti i Diritti Riservati.",
       terms: "Termini di Servizio",
       privacy: "Politica sulla Privacy",

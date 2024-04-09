@@ -38,7 +38,8 @@ export const SanityProvider = ({ children }: SanityProviderProps) => {
             "description": description.${language},
             "title": title.${language},
             "tag": tag.${language},
-            "btn": btn.${language}
+            "btn": btn.${language},
+            "image" : image.asset->url
           },
           "testimonials": testimonials[]-> {
             ...,
@@ -74,7 +75,6 @@ export const SanityProvider = ({ children }: SanityProviderProps) => {
           homeResult,
           language
         );
-        console.log(translations);
         i18n.changeLanguage(language);
         setIsLoading(false);
         i18n.addResourceBundle(language, "home", translations);

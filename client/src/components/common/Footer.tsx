@@ -64,9 +64,9 @@ const DiscordIcon = () => {
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     >
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
@@ -128,38 +128,19 @@ const Footer: React.FC = () => {
           </div>
         </header>
 
-        <section className="grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-6 gap-10 py-12">
-          <div className="col-span-1 flex flex-col items-start justify-start gap-4">
+        <section className="grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-6 py-12">
+          <div className="col-span-1 flex flex-wrap items-start place-content-start justify-start gap-4">
             <div className="flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125">
               <a
                 target="_blank"
-                aria-label="Chat in WhatsApp"
-                content="Chat in WhatsApp"
-                href="https://wa.me/+5491165689687"
+                href="https://discord.com/channels/@me/1215722896442269696/1225505074785157172"
+                aria-label="Discord Group"
+                content="Discord Group"
               >
-                <WhatsAppIcon />
+                <DiscordIcon />
               </a>
             </div>
-            <div className="flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125">
-              <a
-                target="_blank"
-                aria-label="Instagram Official Website"
-                content="Instagram Official Website"
-                href="https://www.linkedin.com/in/barbitech/"
-              >
-                <InstagramIcon size={32} />
-              </a>
-            </div>
-            <div className="flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125">
-              <a
-                target="_blank"
-                href="https://www.facebook.com/bbtech.space"
-                aria-label="Facebook Official Website"
-                content="Facebook Official Website"
-              >
-                <FacebookIcon size={32} />
-              </a>
-            </div>
+
             <div className="flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125">
               <a
                 target="_blank"
@@ -174,21 +155,43 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125">
               <a
                 target="_blank"
-                href="https://discord.com/channels/@me/1215722896442269696/1225505074785157172"
-                aria-label="Discord Group"
-                content="Discord Group"
+                aria-label="Instagram Official Website"
+                content="Instagram Official Website"
+                href="https://www.linkedin.com/in/barbitech/"
               >
-                <DiscordIcon />
+                <InstagramIcon size={32} />
+              </a>
+            </div>
+
+            <div className="flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125">
+              <a
+                target="_blank"
+                aria-label="Chat in WhatsApp"
+                content="Chat in WhatsApp"
+                href="https://wa.me/+5491165689687"
+              >
+                <WhatsAppIcon />
+              </a>
+            </div>
+
+            <div className="flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125">
+              <a
+                target="_blank"
+                href="https://www.facebook.com/bbtech.space"
+                aria-label="Facebook Official Website"
+                content="Facebook Official Website"
+              >
+                <FacebookIcon size={32} />
               </a>
             </div>
           </div>
 
-          <div className="col-span-4 flex items-start justify-between flex-wrap gap-4">
+          <div className="col-span-4 flex items-start justify-between flex-wrap gap-4 gap-y-8">
             {offices && offices.length
               ? offices.map((office, officeIdx) => (
                   <div
                     key={officeIdx}
-                    className="flex flex-col items-start justify-start gap-4"
+                    className="flex w-[30%] flex-col items-start justify-start gap-4"
                   >
                     <div className="flex items-center gap-2 font-zenKaku xs:text-xl sm:text-xl xl:text-2xl font-semibold">
                       <MapPinned size={32} /> {office.country}

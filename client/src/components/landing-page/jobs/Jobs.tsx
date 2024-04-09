@@ -69,9 +69,7 @@ const Jobs: React.FC = () => {
             <SectionTag index={3} label={t("jobs_tag_label")} />
             <h2 className="xs:text-5xl sm:text-5xl lg:text-6xl text-center font-vt323 text-pretty flex flex-col items-center">
               {t("jobs_title")}{" "}
-              <TypeWritterEffect
-                texts={texts ? texts : null}
-              />
+              <TypeWritterEffect texts={texts ? texts : null} />
             </h2>
           </div>
         </div>
@@ -82,9 +80,9 @@ const Jobs: React.FC = () => {
               to={"/jobs"}
               className="text-neutral underline font-zenKaku text-xl"
             >
-              {language === "en" && "See All Jobs"}
-              {language === "es" && "Ver todos los Trabajos"}
-              {language === "it" && "Vedi tutti i lavori"}
+              {language === "en" && "All Opportunities"}
+              {language === "es" && "Todas las Oportunidades"}
+              {language === "it" && "Tutte le opportunità"}
             </Link>
           </div>
           <Swiper
@@ -135,10 +133,16 @@ const Jobs: React.FC = () => {
           </Swiper>
 
           <div className="text-center mt-4 flex items-center justify-center mb-10 gap-2 py-4">
-            <div aria-label="previous-jobs-button" className="swiper-button-prev cursor-pointer">
+            <div
+              aria-label="previous-jobs-button"
+              className="swiper-button-prev cursor-pointer"
+            >
               <ChevronLeft size={48} />
             </div>
-            <div aria-label="next-jobs-button" className="swiper-button-next cursor-pointer">
+            <div
+              aria-label="next-jobs-button"
+              className="swiper-button-next cursor-pointer"
+            >
               <ChevronRight size={48} />
             </div>
           </div>

@@ -239,7 +239,7 @@ const Contact: React.FC = () => {
               {isSubdirectory ? (
                 <select
                   name="type"
-                  className="peer form-input font-zenKaku bg-bkgBlack"
+                  className="peer block w-full appearance-none border border-neutral bg-transparent p-1.5 text-lg text-neutral focus:border-purplePrimary focus:outline-none focus:ring-0 font-zenKaku"
                   disabled
                 >
                   <option defaultValue="worker">{workerOpt}</option>
@@ -248,7 +248,7 @@ const Contact: React.FC = () => {
               ) : (
                 <select
                   name="type"
-                  className="peer form-input font-zenKaku bg-bkgBlack"
+                  className="peer block w-full appearance-none border border-neutral bg-transparent p-1.5 text-lg text-neutral focus:border-purplePrimary focus:outline-none focus:ring-0 font-zenKaku"
                 >
                   <option value="worker">{workerOpt}</option>
                   <option defaultValue="company">{companyOpt}</option>
@@ -315,9 +315,8 @@ const Contact: React.FC = () => {
                 type="submit"
                 className="mt-5 bg-purplePrimary px-10 py-2 text-neutral xs:w-full sm:w-full md:w-auto font-medium"
               >
-                {language === "en" && "Send Menssage"}{" "}
-                {language === "es" && "Enviar Mensaje"}{" "}
-                {language === "it" && "Invia messaggio"}
+                {language === "en" && "Send"} {language === "es" && "Enviar"}{" "}
+                {language === "it" && "Invia"}
               </button>
             </div>
           </div>
