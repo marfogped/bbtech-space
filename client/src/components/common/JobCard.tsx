@@ -2,6 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { JobsProps } from "../../lib/types";
 import { useSanity } from "../../lib/useSanity";
 import { motion } from "framer-motion";
+import { StaircaseVideo } from "../../lib/images";
 const SplineModel = lazy(() => import("../common/SplineModel"));
 
 interface JobCardProps {
@@ -52,14 +53,10 @@ const JobCard: React.FC<JobCardProps> = ({ job, jobIdx, handleShowModal }) => {
         </div>
 
         <div className="back relative">
-          <div className="absolute top-1/2 left-0 -z-[10] -translate-y-1/2 h-full w-full">
-            <Suspense fallback={<div>Cargando...</div>}>
-              <SplineModel
-                splineModelUrl={
-                  "https://prod.spline.design/Hp0rHDOyVD5NlI8R/scene.splinecode"
-                }
-              />
-            </Suspense>
+          <div className="absolute top-1/2 left-0 -z-[10] -translate-y-1/2 h-full w-full scale-150">
+            <video autoPlay muted playsInline loop>
+              <source src={StaircaseVideo} />
+            </video>
           </div>
           <div className="absolute top-1/2 left-1/2 -z-[9] -translate-y-1/2 -translate-x-1/2 bg-black/40 h-full w-full"></div>
 
