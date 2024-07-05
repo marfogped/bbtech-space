@@ -13,11 +13,17 @@ interface Service {
 
 interface ServiceCardProps {
   service: Service;
+  cardType: string;
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
+const ServiceCard: React.FC<ServiceCardProps> = ({ service, cardType }) => {
   const { internetSpeed, enhancedMode } = useEnhancerMode();
-
+  const tag =
+    cardType.toLocaleLowerCase() === "talents" ||
+    cardType.toLocaleLowerCase() === "talentos" ||
+    cardType.toLocaleLowerCase() === "talenti"
+      ? true
+      : false;
   return (
     <article className="bg-bkgGray/70 backdrop-blur hover:shadow-xl shadow-purplePrimary flex flex-col justify-between p-4 h-full">
       <div className="flex flex-col gap-4">
@@ -55,9 +61,21 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service }) => {
       </div>
 
       <div className="self-end flex justify-end pt-8">
-        <button className="border-2 xs:w-full sm:w-full md:w-auto border-purplePrimary bg-purplePrimary text-black px-12 py-1 font-vt323 text-2xl">
-          {service?.btn}
-        </button>
+        {tag ? (
+          <a
+            href="mailto:cv@bbtech.space"
+            className="border-2 xs:w-full sm:w-full md:w-auto border-purplePrimary bg-purplePrimary text-black px-12 py-1 font-vt323 text-2xl"
+          >
+            {service?.btn}
+          </a>
+        ) : (
+          <a
+            href="https://wa.me/message/4PSFJ7RFMA5DA1"
+            className="border-2 xs:w-full sm:w-full md:w-auto border-purplePrimary bg-purplePrimary text-black px-12 py-1 font-vt323 text-2xl"
+          >
+            {service?.btn}
+          </a>
+        )}
       </div>
     </article>
   );

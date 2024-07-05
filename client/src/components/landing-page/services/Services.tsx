@@ -21,7 +21,7 @@ const Services: React.FC = () => {
 
   useEffect(() => {
     const updateTexts = () => {
-      setTexts(null); 
+      setTexts(null);
 
       setTimeout(() => {
         const servicesPurpleWord = t("services_purple_word");
@@ -56,9 +56,7 @@ const Services: React.FC = () => {
             <SectionTag index={2} label={t("services_tag_label")} />
             <h2 className="xs:text-5xl sm:text-5xl lg:text-6xl text-center font-vt323 flex flex-col items-center text-pretty">
               {t("services_title")}{" "}
-              <TypeWritterEffect
-                texts={texts ? texts : null}
-              />
+              <TypeWritterEffect texts={texts ? texts : null} />
             </h2>
           </div>
         </div>
@@ -66,7 +64,11 @@ const Services: React.FC = () => {
         <div className="col-span-full grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-5 xs:pt-10 sm:pt-16 md:pt-0">
           {services && Array.isArray(services)
             ? services.map((service, index) => (
-                <ServiceCard key={index} service={service} />
+                <ServiceCard
+                  key={index}
+                  service={service}
+                  cardType={service.tag}
+                />
               ))
             : ""}
         </div>

@@ -7,7 +7,7 @@ import {
   Services,
   Testimonials,
   Navbar,
-  Contact
+  Contact,
 } from "..";
 import { useSanity } from "../../lib/useSanity";
 import { HomeProps } from "../../lib/types";
@@ -27,15 +27,15 @@ const LandingPage: React.FC = () => {
   return (
     <>
       <Navbar />
-      <main>
+      <main className="max-w-screen overflow-hidden">
         <Hero />
         <About />
         <Services />
         <Jobs />
         <Testimonials />
         <Contact />
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 };

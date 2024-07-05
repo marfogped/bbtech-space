@@ -61,7 +61,7 @@ const TypewriterEffect: React.FC<TypewriterEffectProps> = ({
   }, [texts]);
 
   return (
-    <span className="bg-purplePrimary block w-max text-black font-vt323">
+    <span className="bg-purplePrimary w-max text-black font-vt323">
       {currentText.length ? currentText : "\u00A0"}
     </span>
   );

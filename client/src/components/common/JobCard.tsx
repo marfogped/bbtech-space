@@ -1,9 +1,8 @@
-import React, { Suspense, lazy } from "react";
+import React from "react";
 import { JobsProps } from "../../lib/types";
 import { useSanity } from "../../lib/useSanity";
 import { motion } from "framer-motion";
 import { StaircaseVideo } from "../../lib/images";
-const SplineModel = lazy(() => import("../common/SplineModel"));
 
 interface JobCardProps {
   job: JobsProps;

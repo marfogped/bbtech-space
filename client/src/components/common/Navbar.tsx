@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   const [color, setColor] = useState<boolean>(false);
 
   const { windowWidth } = useWindowDimensions();
-  const { t } = useTranslation("home");
+  const { t } = useTranslation("navbar");
   const navRef = useRef<HTMLElement | null>(null);
 
   const openNav = () => {
@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <nav
+      <header
         className={`z-50 w-screen h-max fixed transition-all duration-300 ${
           color && !isActive ? "backdrop-blur-md" : ""
         }`}
@@ -71,13 +71,13 @@ const Navbar: React.FC = () => {
             <div className="flex items-center gap-4">
               <ul className="flex items-center gap-5 font-zenKaku text-xl">
                 <li>
-                  <ScrollTo id="about">{t("navbar_about")}</ScrollTo>
+                  <ScrollTo id="about">{t("about")}</ScrollTo>
                 </li>
                 <li>
-                  <ScrollTo id="services">{t("navbar_services")}</ScrollTo>
+                  <ScrollTo id="services">{t("services")}</ScrollTo>
                 </li>
                 <li>
-                  <ScrollTo id="jobs">{t("navbar_jobs")}</ScrollTo>
+                  <ScrollTo id="jobs">{t("jobs")}</ScrollTo>
                 </li>
               </ul>
 
@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
             </div>
           )}
         </div>
-      </nav>
+      </header>
 
       {windowWidth < 768 ? (
         <nav
@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
             isActive
               ? "opacity-100 translate-y-0"
               : "opacity-0 translate-y-4 pointer-events-none"
-          } backdrop-blur-md z-40 transition-all fixed top-0 left-0 w-full h-max p-4 flex flex-col items-center`}
+          } backdrop-blur-md z-40 transition-all fixed top-0 left-0 w-screen h-max p-4 flex flex-col items-center`}
         >
           <ul className="flex flex-col h-max items-center gap-5 font-zenKaku text-3xl mb-8 pt-20">
             <li>

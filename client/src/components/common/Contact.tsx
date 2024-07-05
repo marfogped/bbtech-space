@@ -209,12 +209,12 @@ const Contact: React.FC = () => {
           {t("contact_title")}
           <TypewriterEffect texts={texts} />
         </h2>
-        <p className="xs:text-xl sm:text-xl md:text-2xl font-zenKaku text-balance text-center text-neutral/90 mt-5">
+        <p className="xs:text-xl sm:text-xl md:text-2xl font-zenKaku text-balance text-center text-neutral/90 mt-5 lg:w-[70%]">
           {t("contact_description")}
         </p>
       </div>
 
-      <div className="mt-10 w-[70%] mx-auto">
+      <div className="mt-10 w-full lg:w-[70%] mx-auto">
         <form
           action="POST"
           onSubmit={sendMessage}

@@ -28,12 +28,12 @@ const Hero: React.FC = () => {
   }, [i18n, t, language]);
 
   return (
-    <header className="w-full h-screen">
+    <section className="w-full min-h-screen flex items-center">
       <div className="section-container container-grid">
         <div className="lg:col-span-3 flex xs:justify-end sm:justify-end md:justify-center flex-col gap-5">
           <div className="flex flex-col gap-5 xs:pt-16 sm:pt-16 lg:pt-0">
             <h1 className="xs:text-6xl sm:text-6xl lg:text-8xl font-vt323">
-              {t("hero_title")} <TypeWritterEffect texts={texts} />
+              {t("hero_title")} <br /> <TypeWritterEffect texts={texts} />
             </h1>
             <p className="xs:text-xl sm:text-xl md:text-2xl font-zenKaku text-balance text-neutral/90">
               {t("description")}
@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
           </Suspense>
         </div>
       </div>
-    </header>
+    </section>
   );
 };
 

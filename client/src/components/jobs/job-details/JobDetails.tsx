@@ -2,7 +2,6 @@ import React from "react";
 import { Modal } from "../..";
 import { JobsProps } from "../../../lib/types";
 import { useSanity } from "../../../lib/useSanity";
-import { Link } from "react-router-dom";
 
 interface JobDetailsProps {
   selectedJob: JobsProps | null;
@@ -31,7 +30,7 @@ const JobDetails: React.FC<JobDetailsProps> = ({
         }, 400);
       }}
     >
-      <section className="xs:w-full sm:w-full lg:w-[50%] lg:mx-auto h-full p-4">
+      <section className="xs:w-full sm:w-full lg:w-[50%] lg:mx-auto h-full px-4">
         <div className="pt-12">
           <h3 className="text-lg lg:text-xl font-bold font-zenKaku">
             {language === "en" && "About the Opportunity"}{" "}
@@ -90,14 +89,6 @@ const JobDetails: React.FC<JobDetailsProps> = ({
                 ))
               : ""}
           </ul>
-        </div>
-
-        <div className="pt-12 pb-6">
-          <Link to={`/contact/${selectedJob?._id}`} className="cta-btn">
-            {language === "en" && "I'm Interested"}{" "}
-            {language === "es" && "Estoy Interesado"}{" "}
-            {language === "it" && "Sono interessato"}
-          </Link>
         </div>
       </section>
     </Modal>

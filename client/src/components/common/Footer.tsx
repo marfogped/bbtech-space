@@ -128,12 +128,12 @@ const Footer: React.FC = () => {
           </div>
         </header>
 
-        <section className="grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-6 py-12">
+        <section className="grid xs:grid-cols-1 sm:grid-cols-1 lg:grid-cols-6 py-6 gap-[20px]">
           <div className="col-span-1 flex flex-wrap items-start place-content-start justify-start gap-4">
             <div className="flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125">
               <a
                 target="_blank"
-                href="https://discord.com/channels/@me/1215722896442269696/1225505074785157172"
+                href="https://discord.gg/myfNQjve"
                 aria-label="Discord Group"
                 content="Discord Group"
               >
@@ -144,7 +144,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125">
               <a
                 target="_blank"
-                href="https://www.linkedin.com/in/barbitech/"
+                href="https://www.linkedin.com/company/bbtechspace/"
                 aria-label="LinkedIn Official Website"
                 content="LinkedIn Official Website"
               >
@@ -157,7 +157,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 aria-label="Instagram Official Website"
                 content="Instagram Official Website"
-                href="https://www.linkedin.com/in/barbitech/"
+                href="https://www.instagram.com/bbtech.space/"
               >
                 <InstagramIcon size={32} />
               </a>
@@ -168,7 +168,7 @@ const Footer: React.FC = () => {
                 target="_blank"
                 aria-label="Chat in WhatsApp"
                 content="Chat in WhatsApp"
-                href="https://wa.me/+5491165689687"
+                href="https://wa.me/message/4PSFJ7RFMA5DA1"
               >
                 <WhatsAppIcon />
               </a>
@@ -177,7 +177,7 @@ const Footer: React.FC = () => {
             <div className="flex items-center gap-2 font-zenKaku xs:text-md sm:text-md xl:text-lg hover:scale-125">
               <a
                 target="_blank"
-                href="https://www.facebook.com/bbtech.space"
+                href="https://www.facebook.com/bbtech.itrecruiting"
                 aria-label="Facebook Official Website"
                 content="Facebook Official Website"
               >
@@ -186,12 +186,12 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          <div className="col-span-4 flex items-start justify-between flex-wrap gap-4 gap-y-8">
+          <div className="col-span-4 flex items-start justify-between flex-wrap gap-4 gap-y-8 w-full xs:py-8 sm:py-8 md:py-0">
             {offices && offices.length
               ? offices.map((office, officeIdx) => (
                   <div
                     key={officeIdx}
-                    className="flex w-[30%] flex-col items-start justify-start gap-4"
+                    className="flex w-max flex-col items-start justify-start gap-4"
                   >
                     <div className="flex items-center gap-2 font-zenKaku xs:text-xl sm:text-xl xl:text-2xl font-semibold">
                       <MapPinned size={32} /> {office.country}

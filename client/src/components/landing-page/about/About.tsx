@@ -39,7 +39,7 @@ const About: React.FC = () => {
           <div className="flex flex-col gap-5">
             <SectionTag index={1} label={t("about_tag_label")} />
             <h2 className="xs:text-5xl sm:text-5xl lg:text-6xl font-vt323 text-pretty">
-              {t("about_title")}{" "}
+              {t("about_title")} <br />
               <TypeWritterEffect texts={texts ? texts : null} />
             </h2>
             <p className="xs:text-xl sm:text-xl md:text-2xl font-zenKaku text-balance text-neutral/90">
@@ -52,7 +52,7 @@ const About: React.FC = () => {
         </div>
 
         <div className="lg:col-span-2 relative flexCenter overflow-hidden">
-          <div className="w-[80%] h-[80%]">
+          <div className="w-[90%] h-[50vh] lg:w-[80%] lg:h-[80%]">
             <Suspense fallback={<div>Cargando...</div>}>
               <SplineModel
                 splineModelUrl={
