@@ -15,8 +15,7 @@ interface AreasProps {
 
 export interface JobsProps {
     _id: string;
-    company?: string;
-    companyIcon?: string;
+    title?: string;
     areas?: AreasProps[];
     offices?: number;
     employees?: number;

@@ -4,8 +4,8 @@ export default {
   type: 'document',
   fields: [
     {
-      title: 'Empresa',
-      name: 'company',
+      title: 'Título',
+      name: 'title',
       type: 'string',
     },
     {
@@ -79,11 +79,11 @@ export default {
   ],
   preview: {
     select: {
-      companyEs: 'company',
+      title: 'title',
     },
-    prepare({companyEs}: {companyEs: string}) {
+    prepare({title}: {title: string}) {
       return {
-        title: companyEs.toUpperCase(),
+        title: title?.toUpperCase(),
       }
     },
   },

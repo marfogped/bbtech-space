@@ -90,6 +90,33 @@ const JobDetails: React.FC<JobDetailsProps> = ({
               : ""}
           </ul>
         </div>
+
+        <p className="text-lg lg:text-xl font-zenKaku pt-16 font-bold">
+          {language === "en" && (
+            <span
+              dangerouslySetInnerHTML={{
+                __html:
+                  'Send your application to <a href="mailto:cv@bbtech.space" class="underline font-bold">cv@bbtech.space</a>',
+              }}
+            />
+          )}
+          {language === "es" && (
+            <span
+              dangerouslySetInnerHTML={{
+                __html:
+                  'Envia tu postulacion a <a href="mailto:cv@bbtech.space" class="underline font-bold">cv@bbtech.space</a>',
+              }}
+            />
+          )}
+          {language === "it" && (
+            <span
+              dangerouslySetInnerHTML={{
+                __html:
+                  'Invia la tua candidatura a <a href="mailto:cv@bbtech.space" class="underline font-bold">cv@bbtech.space</a>',
+              }}
+            />
+          )}
+        </p>
       </section>
     </Modal>
   );

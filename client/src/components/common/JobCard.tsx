@@ -12,6 +12,7 @@ interface JobCardProps {
 
 const JobCard: React.FC<JobCardProps> = ({ job, jobIdx, handleShowModal }) => {
   const { language } = useSanity();
+  console.log(job);
 
   return (
     <motion.article
@@ -32,11 +33,7 @@ const JobCard: React.FC<JobCardProps> = ({ job, jobIdx, handleShowModal }) => {
     >
       <div className="card">
         <div className="front font-zenKaku">
-          <h3 className="heading text-neutral/90">
-            {language === "en" && "Opportunity Areas"}{" "}
-            {language === "es" && "Áreas de la Oportunidad"}{" "}
-            {language === "it" && "Aree di opportunità"}
-          </h3>
+          <h3 className="heading text-neutral/90 w-full">{job?.title}</h3>
           <div className="font-zenKaku flex items-center gap-x-1 flex-wrap justify-center">
             {job.areas
               ? job.areas.map((area, areaIdx) => (
