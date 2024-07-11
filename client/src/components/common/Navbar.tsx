@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
   const [color, setColor] = useState<boolean>(false);
 
   const { windowWidth } = useWindowDimensions();
-  const { t } = useTranslation("navbar");
+  const { t } = useTranslation("home");
   const navRef = useRef<HTMLElement | null>(null);
 
   const openNav = () => {
@@ -71,13 +71,13 @@ const Navbar: React.FC = () => {
             <div className="flex items-center gap-4">
               <ul className="flex items-center gap-5 font-zenKaku text-xl">
                 <li>
-                  <ScrollTo id="about">{t("about")}</ScrollTo>
+                  <ScrollTo id="about">{t("navbar_about")}</ScrollTo>
                 </li>
                 <li>
-                  <ScrollTo id="services">{t("services")}</ScrollTo>
+                  <ScrollTo id="services">{t("navbar_services")}</ScrollTo>
                 </li>
                 <li>
-                  <ScrollTo id="jobs">{t("jobs")}</ScrollTo>
+                  <ScrollTo id="jobs">{t("navbar_jobs")}</ScrollTo>
                 </li>
               </ul>
 
@@ -107,13 +107,13 @@ const Navbar: React.FC = () => {
         >
           <ul className="flex flex-col h-max items-center gap-5 font-zenKaku text-3xl mb-8 pt-20">
             <li>
-              <ScrollTo id="about">{t("about")}</ScrollTo>
+              <ScrollTo id="about">{t("navbar_about")}</ScrollTo>
             </li>
             <li>
-              <ScrollTo id="services">{t("services")}</ScrollTo>
+              <ScrollTo id="services">{t("navbar_services")}</ScrollTo>
             </li>
             <li>
-              <ScrollTo id="jobs">{t("jobs")}</ScrollTo>
+              <ScrollTo id="jobs">{t("navbar_jobs")}</ScrollTo>
             </li>
           </ul>
 
