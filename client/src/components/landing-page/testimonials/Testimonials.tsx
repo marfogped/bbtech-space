@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import useWindowDimensions from "../../../lib/useWindowDimensions";
 import { useSanity } from "../../../lib/useSanity";
+import { HomeProps } from "../../../lib/types";
 
 interface TestimonialsProps {
   _id: string;
@@ -19,12 +20,17 @@ interface TestimonialsProps {
   socialMedia: string;
 }
 
-const Testimonials: React.FC = () => {
+interface ComponentProps {
+  home: HomeProps[] | null;
+}
+
+const Testimonials: React.FC<ComponentProps> = ({ home }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [texts, setTexts] = useState<string[] | null>(null);
   const [testimonials, setTestimonials] = useState<TestimonialsProps[] | null>(
     null
   );
+  const [showComponent, setShowComponent] = useState(true);
 
   const { windowWidth } = useWindowDimensions();
   const { t, i18n } = useTranslation("home");
@@ -32,7 +38,7 @@ const Testimonials: React.FC = () => {
 
   useEffect(() => {
     const updateTexts = () => {
-      setTexts(null); 
+      setTexts(null);
 
       setTimeout(() => {
         const testimonialsPurpleWord = t("testimonials_purple_word");
@@ -62,16 +68,21 @@ const Testimonials: React.FC = () => {
     setTexts(null);
   }, [language]);
 
+  useEffect(() => {
+    const component = home?.find((section) => section.type === "testimonials");
+    if (component && component.showSection) setShowComponent(true);
+    else setShowComponent(false);
+  }, [home]);
+
+  if (!showComponent) return null;
+
   return (
     <section className="w-full h-max py-24">
       <div className="section-container">
         <div className="flex flex-col items-center gap-5">
           <SectionTag index={4} label={t("testimonials_tag_label")} />
           <h2 className="xs:text-5xl sm:text-5xl lg:text-6xl text-center flex flex-col items-center font-vt323 text-pretty">
-            {t("testimonials_title")}{" "}
-            <TypeWritterEffect
-              texts={texts}
-            />
+            {t("testimonials_title")} <TypeWritterEffect texts={texts} />
           </h2>
           <p className="xs:text-xl sm:text-xl md:text-2xl font-zenKaku text-balance text-center text-neutral/90 mt-5">
             {t("testimonials_description")}

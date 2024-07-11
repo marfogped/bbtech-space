@@ -3,11 +3,17 @@ import { useTranslation } from "react-i18next";
 import { TypeWritterEffect, ScrollTo } from "../..";
 import { useSanity } from "../../../lib/useSanity";
 const SplineModel = lazy(() => import("../../common/SplineModel"));
+import { HomeProps } from "../../../lib/types";
 
-const Hero: React.FC = () => {
+interface ComponentProps {
+  home: HomeProps[] | null;
+}
+
+const Hero: React.FC<ComponentProps> = ({ home }) => {
   const { t, i18n } = useTranslation("home");
   const { language } = useSanity();
   const [texts, setTexts] = useState<string[] | null>(null);
+  const [showComponent, setShowComponent] = useState(true);
 
   useEffect(() => {
     const updateTexts = () => {
@@ -26,6 +32,14 @@ const Hero: React.FC = () => {
       i18n.off("languageChanged loaded", updateTexts);
     };
   }, [i18n, t, language]);
+
+  useEffect(() => {
+    const hero = home?.find((section) => section.type === "hero");
+    if (hero && hero.showSection) setShowComponent(true);
+    else setShowComponent(false);
+  }, [home]);
+
+  if (!showComponent) return null;
 
   return (
     <section className="w-full min-h-screen flex items-center">

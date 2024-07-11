@@ -4,12 +4,16 @@ import { useSanity } from "../../lib/useSanity";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import TypewriterEffect from "./TypeWritterEffect";
 import { SectionTag } from "..";
-import { JobsProps } from "../../lib/types";
+import { HomeProps, JobsProps } from "../../lib/types";
 import { ChevronDown, CheckCircle, XCircleIcon, MoveLeft } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import { getLocalizedStrings, Translations } from "../../lib/utils";
 
-const Contact: React.FC = () => {
+interface ComponentProps {
+  home?: HomeProps[] | null;
+}
+
+const Contact: React.FC<ComponentProps> = ({ home }) => {
   const [isSubdirectory, setIsSubdirectory] = useState<boolean>(false);
   const [selectedJob, setSelectedJob] = useState<JobsProps | null>(null);
   const [showResponse, setShowResponse] = useState({
@@ -27,6 +31,7 @@ const Contact: React.FC = () => {
   });
 
   const [translations, setTranslations] = useState<Translations | undefined>();
+  const [showComponent, setShowComponent] = useState(true);
   const navigate = useNavigate();
   const { t, i18n } = useTranslation("home");
   const { language, jobs, getJobs } = useSanity();
@@ -69,6 +74,14 @@ const Contact: React.FC = () => {
     const contactTranslations = getLocalizedStrings(language);
     setTranslations(contactTranslations);
   }, [jobId, jobs]);
+
+  useEffect(() => {
+    const component = home?.find((section) => section.type === "contact");
+    if (component && component.showSection) setShowComponent(true);
+    else setShowComponent(false);
+  }, [home]);
+
+  if (!showComponent) return null;
 
   const sendMessage = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();

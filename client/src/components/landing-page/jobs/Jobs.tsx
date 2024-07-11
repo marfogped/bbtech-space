@@ -7,11 +7,15 @@ import { Link } from "react-router-dom";
 import { useSanity } from "../../../lib/useSanity";
 import { ChevronRight, ChevronLeft } from "lucide-react";
 import JobDetails from "../../jobs/job-details/JobDetails";
-import { JobsProps } from "../../../lib/types";
+import { HomeProps, JobsProps } from "../../../lib/types";
 import "swiper/css";
 import "swiper/css/pagination";
 
-const Jobs: React.FC = () => {
+interface ComponentProps {
+  home: HomeProps[] | null;
+}
+
+const Jobs: React.FC<ComponentProps> = ({ home }) => {
   const swiperRef = useRef(null);
   const { t, i18n } = useTranslation("home");
   const { language } = useSanity();
@@ -20,6 +24,7 @@ const Jobs: React.FC = () => {
 
   const [selectedJob, setSelectedJob] = useState<JobsProps | null>(null);
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [showComponent, setShowComponent] = useState(true);
 
   useEffect(() => {
     const updateTexts = () => {
@@ -60,6 +65,14 @@ const Jobs: React.FC = () => {
       setShowModal(false);
     }
   };
+
+  useEffect(() => {
+    const component = home?.find((section) => section.type === "jobs");
+    if (component && component.showSection) setShowComponent(true);
+    else setShowComponent(false);
+  }, [home]);
+
+  if (!showComponent) return null;
 
   return (
     <section className="w-full h-max py-24" id="jobs">

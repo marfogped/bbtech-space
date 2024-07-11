@@ -12,8 +12,6 @@ interface JobCardProps {
 
 const JobCard: React.FC<JobCardProps> = ({ job, jobIdx, handleShowModal }) => {
   const { language } = useSanity();
-  console.log(job);
-
   return (
     <motion.article
       className="container"

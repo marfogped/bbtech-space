@@ -3,6 +3,7 @@ import { SectionTag, TypeWritterEffect } from "../..";
 import ServiceCard from "./components/ServiceCard";
 import { useTranslation } from "react-i18next";
 import { useSanity } from "../../../lib/useSanity";
+import { HomeProps } from "../../../lib/types";
 
 interface ServiceProps {
   image: string;
@@ -13,11 +14,16 @@ interface ServiceProps {
   splineModelUrl: string;
 }
 
-const Services: React.FC = () => {
+interface ComponentProps {
+  home: HomeProps[] | null;
+}
+
+const Services: React.FC<ComponentProps> = ({ home }) => {
   const { t, i18n } = useTranslation("home");
   const { language } = useSanity();
   const [texts, setTexts] = useState<string[] | null>(null);
   const [services, setServices] = useState<ServiceProps[] | null>(null);
+  const [showComponent, setShowComponent] = useState(true);
 
   useEffect(() => {
     const updateTexts = () => {
@@ -47,6 +53,14 @@ const Services: React.FC = () => {
   useEffect(() => {
     setTexts(null);
   }, [language]);
+
+  useEffect(() => {
+    const about = home?.find((section) => section.type === "about");
+    if (about && about.showSection) setShowComponent(true);
+    else setShowComponent(false);
+  }, [home]);
+
+  if (!showComponent) return null;
 
   return (
     <section className="w-full h-max py-24" id="services">

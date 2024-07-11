@@ -28,12 +28,12 @@ const LandingPage: React.FC = () => {
     <>
       <Navbar />
       <main className="max-w-screen overflow-hidden">
-        <Hero />
-        <About />
-        <Services />
-        <Jobs />
-        <Testimonials />
-        <Contact />
+        <Hero home={home} />
+        <About home={home} />
+        <Services home={home} />
+        <Jobs home={home} />
+        <Testimonials home={home} />
+        <Contact home={home} />
       </main>
       <Footer />
     </>

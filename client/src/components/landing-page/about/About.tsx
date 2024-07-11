@@ -2,12 +2,18 @@ import React, { Suspense, lazy, useEffect, useState } from "react";
 import { SectionTag, TypeWritterEffect } from "../..";
 import { useTranslation } from "react-i18next";
 import { useSanity } from "../../../lib/useSanity";
+import { HomeProps } from "../../../lib/types";
 const SplineModel = lazy(() => import("../../common/SplineModel"));
 
-const About: React.FC = () => {
+interface ComponentProps {
+  home: HomeProps[] | null;
+}
+
+const About: React.FC<ComponentProps> = ({ home }) => {
   const { t, i18n } = useTranslation("home");
   const { language } = useSanity();
   const [texts, setTexts] = useState<string[] | null>(null);
+  const [showComponent, setShowComponent] = useState(true);
 
   useEffect(() => {
     const updateTexts = () => {
@@ -31,6 +37,14 @@ const About: React.FC = () => {
   useEffect(() => {
     setTexts(null);
   }, [language]);
+
+  useEffect(() => {
+    const about = home?.find((section) => section.type === "about");
+    if (about && about.showSection) setShowComponent(true);
+    else setShowComponent(false);
+  }, [home]);
+
+  if (!showComponent) return null;
 
   return (
     <section className="w-full h-max py-24" id="about">

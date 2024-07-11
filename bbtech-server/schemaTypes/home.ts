@@ -26,6 +26,18 @@ export default {
       },
     },
     {
+      name: 'showSection',
+      title: 'Mostrar sección',
+      type: 'boolean',
+      options: {
+        layout: 'radio',
+        list: [
+          {title: 'Si', value: true},
+          {title: 'No', value: false},
+        ],
+      },
+    },
+    {
       title: 'Acerca De',
       name: 'navbar_about',
       type: 'localizedString',
