@@ -139,7 +139,6 @@ const Contact: React.FC<ComponentProps> = ({ home }) => {
                 Tipo de usuario: ${type}
                 Idioma: ${language}
                 Oportunidad de interés: ${selectedJob.title} - ${selectedJob.areas} 
-                Puestos disponibles de la oportunidad: ${selectedJob.jobs}
                 `;
 
         form.innerHTML = `

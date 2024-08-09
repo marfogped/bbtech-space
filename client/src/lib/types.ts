@@ -19,7 +19,6 @@ export interface JobsProps {
   areas?: AreasProps[];
   offices?: number;
   employees?: number;
-  jobs?: number;
   aboutWork: string;
   requirements: AreasProps[];
   responsibilities: AreasProps[];

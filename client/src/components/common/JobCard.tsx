@@ -54,11 +54,6 @@ const JobCard: React.FC<JobCardProps> = ({ job, jobIdx, handleShowModal }) => {
           </div>
           <div className="absolute top-1/2 left-1/2 -z-[9] -translate-y-1/2 -translate-x-1/2 bg-black/40 h-full w-full"></div>
 
-          <p className="heading">
-            {job.jobs} {language === "en" && "Jobs"}{" "}
-            {language === "es" && "Trabajos"} {language === "it" && "Lavori"}
-          </p>
-
           <button
             className="font-zenKaku font-medium text-lg xxl:text-xl bg-purplePrimary w-10/12 py-1 flexCenter gap-4"
             type="button"
