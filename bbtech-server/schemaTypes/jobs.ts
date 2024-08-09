@@ -31,11 +31,6 @@ export default {
       type: 'number',
     },
     {
-      title: 'Cantidad de Trabajos Disponibles',
-      name: 'jobs',
-      type: 'number',
-    },
-    {
       title: 'Acerca del empleo',
       name: 'aboutWork',
       type: 'localizedString',
